@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            .w3-example {
+                background-color: #f1f1f1;
+                padding: 16px 16px;
+                margin: 20px 0;
+                box-shadow: 0 2px 4px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12) !important;
+                width: 400px;
+            }
+            .w3-code {
+                width: auto;
+                background-color: #fff;
+                padding: 8px 12px;
+                border-left: 4px solid #4CAF50;
+                word-wrap: break-word;
+            }
+        </style>
+    </head>
+    <body>
+        <h2>Uniform Resource Locator (URL) Syntax</h2>
+        <div class="w3-example"><div class="w3-code">scheme://prefix.domain:port/path/filename</div></div>
+        <p>Explanation:</p>
+        <ul>
+            <li><b>scheme - </b>defines the <b>type</b> of Internet service (most common is <b>http or https</b>)</li>
+            <li><b>prefix - </b>defines a domain <b>prefix</b> (default for http is <b>wwww</b>)</li>
+            <li><b>domain - </b>defines the Internet <b>domain name</b> (like w3schools.com)</li>
+            <li><b>port - </b> defines the <b>port number</b> at the host (default for http is <b>80</b>)</li>
+            <li><b>path - </b> defines a <b>path</b> at the server (If omitted: the root directory of the site)</li>
+            <li><b>filename - </b> defines the name of a document or resource</li>
+        </ul>
+        <hr>
+        <h2>URL Encoding</h2>
+        <p>URLs can only be sent over the Internet using the ASCII character-set. 
+        If a URL contains characters outside the ASCII set, the URL has to be converted.</p>
+        <p>URL encoding converts non-ASCII characters into a format that can be transmitted over the Internet.</p>
+        <p>URL encoding replaces non-ASCII characters with a "%" followed by hexadecimal digits.</p>
+        <p>URLs cannot contain spaces. URL encoding normally replaces a space with a plus (+) sign, or %20.</p>
+        <hr>
+        <p style="font-size: 20px">For a complete reference of all URL encodings, visit our <a href="https://www.w3schools.com/tags/ref_urlencode.asp">URL Encoding Reference</a>.</p>
+    </body>
+</html>

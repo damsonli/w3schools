@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewpoint" content="width=device-width, initial-scale=1.0">
+        <style>
+            * {
+                box-sizing: border-box;
+            }
+            .left {
+                background-color: #2196F3;
+                padding: 20px;
+                float: left;
+                width: 20%; /* The width is 20%, by default */
+            }
+            .main {
+                background-color: #f1f1f1;
+                padding: 20px;
+                float: left;
+                width: 60%; /* The width is 60%, by default */
+            }
+            .right {
+                background-color: #4CAF50;
+                padding: 20px;
+                float: left;
+                width: 20%; /* The width is 20%, by default */
+            }
+
+            /* Use a media query to add a brek point at 800px */
+            @media (max-width: 800px) {
+                .left, .main, .right {
+                    width: 100%; /* The width is 100%, when the viewport is 800px or smaller */
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <h2>What is Responsive Web Design</h2>
+        <p>Responsive Web Design makes web page look good on all devices.</p>
+        <p>Responsive Web Design is about using HTML and CSS to resize, hide, shrink, enlarge, 
+            or move the content to make it look good on any screen.</p>
+        <hr>
+
+        <h2>Setting the Viewport</h2>
+        <p>Add the following &lt;meta&gt; element in all web pages:</p>
+        <p>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</p>
+        <hr>
+
+        <h2>Responsive Images</h2>
+        <p>Responsive images are images that scale nicely to fit any browser size.</p>
+        <ul>
+            <li>Using the width property</li>
+            <p>&lt;img src="img_girl.jpg" style="width: 100%;"&gt;</p>
+            <p>The image can be scaled up to be larger than its original size.</p>
+            <li>Using the max-width property</li>
+            <p>&lt;img src="img_girl.jpg" style="max-width: 100%; height: auto;"&gt;</p>
+            <p>If the max-width property is set to 100%, the image will scale down if it has to, 
+                but never scale up to be larger than its original size.</p>
+        </ul>
+        <hr>
+
+        <h2>Show Different Images Depending on Browser Width</h2>
+        <p>The HTML &lt;picture&gt; element allows you to define different images for different browser window sizes.</p>
+        <p>&lt;picture&gt;</p>
+        <p>&nbsp;&nbsp;&lt;source srcset="img_smallflower.jpg" media="(max-width: 600px)"&gt;</p>
+        <p>&nbsp;&nbsp;&lt;source srcset="img_flowers.jpg" media="(max-width: 1500px)"&gt;</p>
+        <p>&nbsp;&nbsp;&lt;source srcset="flowers.jpg"&gt;</p>
+        <p>&nbsp;&nbsp;&lt;img src="img_smallflower.jpg" alt="Flowers"&gt;</p>
+        <p>&lt;/picture&gt;</p>
+        <hr>
+
+        <h2>Responsive Text Size</h2>
+        <p>The text size can be set with a "vw" unit, which means the "viewpoint width".</p>
+        <p>That way the text size will follow the size of the browser window.</p>
+        <p>&lt;h1 style="font-size: 10vw"&gt;Hello World&lt;/h1&gt;</p>
+        <h3 style="font-size: 2vw">Hello World</h3>
+        <p>Viewport is the browser window size. 1vm = 1% of viewport width.</p>
+        <hr>
+
+        <h2>Media Queries</h2>
+        <p>With media queries you can define completely different styles for different browser sizes.</p>
+        <div class="left">Left Menu<br><br><br><br></div>
+        <div class="main">Main Content<br><br><br><br></div>
+        <div class="right">Right Content<br><br><br><br></div>
+        <hr>
+
+        <h2>Responsive Web Page - Frameworks</h2>
+        <ul>
+            <li>Using W3.CSS</li>
+            <li>Using Bootstrap</li>
+        </ul>
+    </body>
+</html>
