@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <h3>Input Type Text</h3>
+        <p>This type defines a one-line text input field.</p>
+        <form>
+            First name:<br>
+            <input type="text" name="firstname"><br>
+            Last name:<br>
+            <input type="text" name="lastname">
+        </form>
+
+        <h3>Input Type Password</h3>
+        <p>This type defines a password field, where the characters are masked.</p>
+        <form>
+            User name:<br>
+            <input type="text" name="username"><br>
+            User password:<br>
+            <input type="password" name="psw">
+        </form>
+
+        <h3>Input Type Submit</h3>
+        <p>This type defines a button for submitting form data to a form-handler.</p>
+        <p>The form-handler is typically a server page with a script for processing input data.</p>
+        <p>The form-handler is specified in the form's action attribute.</p>
+        <p>If you omit the submit button's value attribute, the button will get a default text.</p>
+        <form action="/action_page.php">
+            First name:<br>
+            <input type="text" name="firstname" value="Mickey"><br>
+            Last name:<br>
+            <input type="text" name="lastname" value="Mouse"><br><br>
+            <input type="submit" value="Submit"><br>
+            Here is a button without value attribute.
+            <input type="submit">
+        </form>
+
+        <h3>Input Type Reset</h3>
+        <p>This type defines a reset button that will reset all form values to their default values.</p>
+        <form action="/action_page.php">
+            First name:<br>
+            <input type="text" name="firstname" value="Mickey"><br>
+            Last name:<br>
+            <input type="tezt" name="lastname" value="Mouse"><br><br>
+            <input type="submit" value="Submit">
+            <input type="reset">
+        </form>
+
+        <h3>Input Type Radio</h3>
+        <p>This type defines a radio button. Radio buttons let a user select ONLY ONE of a limited number of choices.</p>
+        <form>
+            <input type="radio" name="gender" value="male" checked> Male<br>
+            <input type="radio" name="gender" value="femail"> Female<br>
+            <input type="radio" name="gender" value="other"> Other
+        </form>
+
+        <h3>Input Type Checkbox</h3>
+        <p>This type defines a checkbox. Checkboxes let a user select ZERO or MORE options of a limited number of choices.</p>
+        <form>
+            <input type="checkbox" name="vehicle1" value="Bike"> I have a bike<br>
+            <input type="checkbox" name="vehicle2" value="Car"> I have a car
+        </form>
+
+        <h3>Input Type Button</h3>
+        <p>This type defines a button.</p>
+        <form>
+            <input type="button" onclick="alert('Hello World!')" value="Click Me!">
+        </form>
+
+        <h3>HTML5 Input Types</h3>
+        <p>HTML5 added several new input types:</p>
+        <ul>
+            <li>color</li>
+            <li>date</li>
+            <li>datetime-local</li>
+            <li>email</li>
+            <li>month</li>
+            <li>number</li>
+            <li>range</li>
+            <li>search</li>
+            <li>tel</li>
+            <li>time</li>
+            <li>url</li>
+            <li>week</li>
+        </ul>
+        <p>New input types that are not supported by older web browsers, will behave as type "text".</p>
+
+        <h3>Input Type Color</h3>
+        <p>This type is used for input fields that should contain a color. 
+            Depending on browser support, a color picker can show up in the input field.</p>
+        <form>
+            Select your favorite color:
+            <input type="color" name="favcolor">
+        </form>
+
+        <h3>Input Type Date</h3>
+        <p>This type is used for input fields that should contain a date.
+            Depending on browser support, a date picker can show up in the input field.</p>
+        <p>You can use the min and max attributes to add restrictions to dates.</p>
+        <form>
+            Birthday:
+            <input type="date" name="bday"><br>
+            Enter a date between 1980-01-01 and 1999-12-31:
+            <input type="date" name="bday" min="1980-01-01" max="1999-12-31">
+        </form>
+
+        <h3>Input Type Datetime-local</h3>
+        <p>This type specifies a date and time input field, with no time zone.
+            Depending on browser support, a date picker can show up in the input field.</p>
+        <form>
+            Birthday (date and time):
+            <input type="datetime-local" name="bdaytime">
+        </form>
+
+        <h3>Input Type Email</h3>
+        <p>This type is used for input fields tha should contain an e-mail address.
+            Depending on browser support, the e-mail address can be automatically validated when submitted.
+            Some smartphones recognize the email type, and adds ".com" to the keyboard to match email input.</p>
+        <form>
+            E-mail:
+            <input type="email" name="email">
+        </form>
+
+        <h3>Input Type Month</h3>
+        <p>This type allows the user to select a month and year.
+            Depending on browser support, a date picker can show up in the input field.</p>
+        <form>
+            Birthday (month and year):
+            <input type="month" name="bdaymonth">
+        </form>
+
+        <h3>Input Type Number</h3>
+        <p>This type defines a numeric input field.
+            You can also set restrictions on what numbers are accepted.</p>
+        <p>The following example displays a numberic input field, where you can enter a value from 1 to 5.</p>
+        <form>
+            Quantity (between 1 and 5):
+            <input type="number" name="quantity" min="1" max="5">
+        </form>
+
+        <h3>Input Type Number Restrictions</h3>
+        <p>Here is a list of some common input restrictions (some are new in HTML5):</p>
+        <table border="1px" padding="2px">
+            <tr>
+                <th>Attribute</th>
+                <th>HTML5</th>
+                <th>Description</th>
+            </tr>
+            <tr>
+                <td>disabled</td>
+                <td></td>
+                <td>Specifies that an input field should be disabled</td>
+            </tr>
+            <tr>
+                <td>max</td>
+                <td>Yes</td>
+                <td>Specifies the maximum value for an input field</td>
+            </tr>
+            <tr>
+                <td>maxlength</td>
+                <td></td>
+                <td>Specifies the maximum number of character for an input field</td>
+            </tr>
+            <tr>
+                <td>min</td>
+                <td>Yes</td>
+                <td>Specifies the minimum value for an input field</td>
+            </tr>
+            <tr>
+                <td>pattern</td>
+                <td>Yes</td>
+                <td>Specifies a regular expression to check the input value against</td>
+            </tr>
+            <tr>
+                <td>readonly</td>
+                <td></td>
+                <td>Specifies that an input field is read only (cannot be changed)</td>
+            </tr>
+            <tr>
+                <td>required</td>
+                <td>Yes</td>
+                <td>Specifies that an input field is required (must be filled out)</td>
+            </tr>
+            <tr>
+                <td>size</td>
+                <td></td>
+                <td>Specifies the width (in characters) of an input field</td>
+            </tr>
+            <tr>
+                <td>step</td>
+                <td>Yes</td>
+                <td>Specifies the legal number intervals for an input field</td>
+            </tr>
+            <tr>
+                <td>value</td>
+                <td></td>
+                <td>Specifies the default value for an input field</td>
+            </tr>
+        </table>
+        <p>The following example dispalys a numberic input field, 
+            where you can enter a value from 0 to 100, in steps of 10. The default value is 30:</p>
+        <form>
+            Quantity:
+            <input type="number" name="points" min="0" max="100" step="10" value="30">
+        </form>
+
+        <h3>Input Type Range</h3>
+        <p>This type defines a control for entering a number whose exact value is not important (like a slider control).
+            Default range is 0 to 100. However, you can set restrictions on what numbers are accepted with the min, max and step attributes.</p>
+        <form>
+            <input type="range" name="points" min="0" max="10">
+        </form>
+
+        <h3>Input Type Search</h3>
+        <p>This type is used for search fields (a search field behaves like a regular text field).</p>
+        <form>
+            Search Google:
+            <input type="search" name="googlesearch">
+        </form>
+
+        <h3>Input Type Tel</h3>
+        <p>This type is used for input fields that should contain a telephone number.</p>
+        <form>
+            Telephone:
+            <input type="tel" name="usrtel">
+        </form>
+
+        <h3>Input Type Time</h3>
+        <p>This type allows the user to select a time (no time zone).
+            Depending on browser support, a time picker can show up in the input field.</p>
+        <form>
+            Select a time:
+            <input type="time" name="usr_time">
+        </form>
+
+        <h3>Input Type Url</h3>
+        <p>This type is used for input fields that should contain a URL address.
+            Depending on browser support, the url field can be automatically validated when submitted.
+            Some smartphones recognize the url type, and adds ".com" to the keyboard to match url input.</p>
+        <form>
+            Add your homepage:
+            <input type="url" name="homepage">
+        </form>
+
+        <h3>Input Type Week</h3>
+        <p>This type allows the user to select a week and year.
+                Depending on browser support, a date picker can show up in the input field.</p>
+        <form>
+            <input type="week" name="week_year">
+        </form>
+
+        <!-- Exercises -->
+        <input type="text">
+
+        <form action="/action_page.php">
+            First name: <input type="text" name="firstname"><br>
+            <input type="submit">
+        </form>
+        
+        <form action="/action_page.php">
+            Favorite color:<br>
+            <input type="radio" name="color" value="blue"> Blue<br>
+            <input type="radio" name="color" value="red"> Red<br>
+            <input type="submit">
+        </form>
+        
+        <input type="button" onclick="alert('Hello World')" value="Click Me">
+
+        <form action="/action_page.php">
+            Quantity (between 1 and 5):
+            <input type="number" min="1" max="5">
+            <input type="submit">
+        </form>
+    </body>
+</html>

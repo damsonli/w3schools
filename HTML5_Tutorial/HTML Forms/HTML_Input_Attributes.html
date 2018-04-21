@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <h3>The value Attribute</h3>
+        <p>This attribute specifies the initial value for an input field.</p>
+        <form action="">
+            First name:<br>
+            <input type="text" name="firstname" value="John">
+        </form>
+
+        <h3>The readonly Attribute</h3>
+        <p>This attribute specifies that the input field is read only (cannot be changed).</p>
+        <form action="">
+            First name:<br>
+            <input type="text" name="firstname" value="John" readonly>
+        </form>
+
+        <h3>The disabled Attribute</h3>
+        <p>This attribute specifies that the input field is disabled.
+            A disabled input field is unusable and un-clickable, and its value will not be sent when submitting the form.</p>
+        <form action="">
+            First name:<br>
+            <input type="text" name="firstname" value="John" disabled>
+        </form>
+
+        <h3>The size Attribute</h3>
+        <p>This attribute specifies the size (in characters) for the input field.</p>
+        <form action="">
+            First name:<br>
+            <input type="text" name="firstname" value="John" size="40">
+        </form>
+
+        <h3>The maxlength Attribute</h3>
+        <p>This attribute specifies the maximum allowed length for the input field.</p>
+        <p>With a maxlength attribute, the input field will not accept more than the allowed number of characters.</p>
+        <p>The maxlength attribute does not provide any feedback. If you want to alert the user, you must write JaveScript code.</p>
+        <p>Note: Input restrictions are not foolproof, and JaveScript provides many ways to add illegal input.
+            To safely restrict input, it must be checked by the receiver (the server) as well!</p>
+        <form action="">
+            First name:<br>
+            <input type="text" name="firstname" value="John" maxlength="10">
+        </form>
+
+        <h3>HTML5 Attributes</h3>
+        <p>HTML5 added the following attributes for &lt;input&gt;:</p>
+        <ul>
+            <li>autocomplete</li>
+            <li>autofocus</li>
+            <li>form</li>
+            <li>formaction</li>
+            <li>formenctype</li>
+            <li>formmethod</li>
+            <li>formnovalidate</li>
+            <li>formtarget</li>
+            <li>height and width</li>
+            <li>list</li>
+            <li>min and max</li>
+            <li>multiple</li>
+            <li>pattern (regexp)</li>
+            <li>placeholder</li>
+            <li>required</li>
+            <li>step</li>
+        </ul>
+        <p>and the following attributes for &lt;form&gt;:</p>
+        <ol>
+            <li>autocomplete</li>
+            <li>novalidate</li>
+        </ol>
+
+        <h3>The autocomplete Attribute</h3>
+        <p>This attribute specifies whether a form of input field should have autocomplete on or off.
+            When autocomplete is on, the browser automatically completes the input values based on values that the user has entered before.</p>
+        <p>Tip: It is possible to have autocomplet "on" for the form, and "off" for specific input fields, or vice versa.</p>
+        <p>The autocomplet attribute works with &lt;form&gt; and the following &lt;input&gt; types: text, search, 
+            url, tel, email, password, datapickers, range, and color.</p>
+        <p>Tip: In some browsers you may need to activate the autocomplete function for this to work.</p>
+        <form action="/action_page.php" autocomplete="on">
+            First name: <input type="text" name="fname"><br>
+            Last name: <input type="text" name="lname"><br>
+            E-mail: <input type="email" name="email" autocomplete="off"><br>
+            <input type="submit">
+        </form>
+
+        <h3>The novalidate Attribute</h3>
+        <p>This attribute is a &lt;form&gt; attribute.</p>
+        <p>When present, novalidate specifies that the form data should not be validated when submitted.</p>
+        <form action="/action_page.php" novalidate>
+            E-mail: <input type="email" name="user_email">
+            <input type="submit">
+        </form>
+
+        <h3>The autofocus Attribute</h3>
+        <p>This attribute specifies that the input field should automatically get focus when the page loads.</p>
+        <p>Let the "First Name" input field automatically get focus when the page loads.</p>
+        <form action="">
+            First name: <input type="text" name="fname" autofocus>
+            Last name: <input type="text" name="lname">
+        </form>
+
+        <h3>The form Attribute</h3>
+        <p>This attribute specifies one or more forms an &lt;input&gt; element belongs to.</p>
+        <p>Tip: To refer to more than one form, use a space-separated list of form ids.</p>
+        <p>Example: an input field located outside the HTML form (but still a part of the form)</p>
+        <form action="/action_page.php" id="form1" method="GET">
+            First name: <input type="text" name="fname"><br>
+            <input type="submit" value="Submit">
+        </form>
+        Last name: <input type="text" name="lname" form="form1">
+
+        <h3>The formaction Attribute</h3>
+        <p>The formaction attribute specifies the URL of a file that will process the input control when the form is submitted.</p>
+        <p>The formaction attribute overrides the action attribute of the &lt;form&gt; element.</p>
+        <p>The formaction attribute is used with type="submit" and type="image".</p>
+        <p>Example: an HTML form with two submit buttons, with different actions</p>
+        <form action="/action_page.php">
+            First name: <input type="text" name="fname"><br>
+            Last name: <input type="tezxt" name="lname"><br>
+            <input type="submit" value="Submit"><br>
+            <input type="submit" formaction="/action_page2.php" value="Submit as admin">
+        </form>
+
+        <h3>The formenctype Attribute</h3>
+        <p>This attribute specifies how the form data should be encoded when submitted (only for forms whith method="post").</p>
+        <p>It overrides the enctype attribute of the &lt;form&gt; element.</p>
+        <p>It is used with type="submit" and type="image".</p>
+        <form action="/action_page_binary.asp" method="POST">
+            First name: <input type="text" name="fname"><br>
+            <input type="submit" value="Submit">
+            <input type="submit" formenctype="multipart/form-data" value="Submit as Multipart/form-data">
+        </form>
+
+        <h3>The formmethod Attribute</h3>
+        <p>This attribute defines the HTTP method for sending form-data to the action URL.</p>
+        <p>It overrides the method attribute of the &lt;form&gt; element.</p>
+        <p>It can be used with type="submit" and type="image".</p>
+        <form action="/action_page.php" method="GET">
+            First name: <input type="text" name="fname"><br>
+            Last name: <input type="text" name="lname"><br>
+            <input type="submit" value="Submit">
+            <input type="submit" formmethod="POST" value="Submit using POST">
+        </form>
+
+        <h3>The formnovalidate Attribute</h3>
+        <p>This attribute overrides the novalidate attribute of the &lt;form&gt; element. It can be used with type="submit".</p>
+        <form action="/action_page.php">
+            E-mail: <input type="email" name="userid"><br>
+            <input type="submit" value="Submit"><br>
+            <input type="submit" formnovalidate value="Submit without validation">
+        </form>
+
+        <h3>The formtarget Attribute</h3>
+        <p>This attribute specifies a name of a keyword that indicates where to 
+            display the response that is received after submitting the form.</p>
+        <p>It overrides the target attribute of the &lt;form&gt; element.</p>
+        <p>It can be used with type="submit" and type="image".</p>
+        <form action="/action_page.php">
+            First name: <input type="text" name="fname"><br>
+            Last name: <input type="text" name="lname"><br>
+            <input type="submit" value="Submit as normal">
+            <input type="submit" formtarget="_blank" value="Submit to a new window">
+        </form>
+
+        <h3>The height and width Attribute</h3>
+        <p>The height and width attributes specify the height and width of an &lt;input type="image"&gt; element.</p>
+        <p>Tip: always specify the size of images. If the browser does not know the size, the page will flicker while images load.</p>
+        <form action="/action_page.php">
+            <input type="image" src="img_submit.gif" alt="Submit" width="48" height="48">
+        </form>
+        <p>Note: The input type="image" sends the X and Y coordinates of the click that activated the image button.</p>
+
+        <h3>The list Attribute</h3>
+        <p>This attribute refers to a &lt;datalist&gt; element that contains pre-defined options for an &lt;input&gt; element.</p>
+        <form action="/action_page.php">
+            <input list="browsers">
+            <datalist id="browsers">
+                <option value="Internet Explorer"></option>
+                <option value="Firefox"></option>
+                <option value="Chrome"></option>
+                <option value="Opera"></option>
+                <option value="Safari"></option>
+            </datalist>
+        </form>
+
+        <h3>The min and max Attribute</h3>
+        <p>The min and max attribute specify the minimum and maximum values for an &lt;input&gt; element.</p>
+        <p>They work with the following input types: number ,range, date, datetime-local, month, time and week.</p>
+        <form action="/action_page.php">
+            Enter a date before 1980-01-01:
+            <input type="date" name="bday" max="1979-12-31"><br>
+            Enter a date after 2000-01-01:
+            <input type="date" name="bday" min="2000-01-01"><br>
+            Quantity (between 1 and 5):
+            <input type="number" name="quantity" min="1" max="5">
+        </form>
+
+        <h3>The multiple Attribute</h3>
+        <p>This attribute specifies that the user is allowed to enter more than one value in the &lt;input&gt; element.</p>
+        <p>It works with the following input types: email, and file.</p>
+        <form action="/action_page.php">
+            Select images: <input type="file" name="img" multiple>
+        </form>
+
+        <h3>The pattern Attribute</h3>
+        <p>This attribute specifies a regular expression that the &lt;input&gt; element's value is checked against.</p>
+        <p>It works with the following input types: text, search, url, tel, email, and password.</p>
+        <p>Tip: Use the global title attribute to describe the pattern to help the user.</p>
+        <p>Example: an input field that can contain only three letters (no numbers or special characters)</p>
+        <form action="/action_page.php">
+            Country code: <input type="text" name="country_code" pattern="[A-Za-z]{3}" title="Three letter country code">
+        </form>
+
+        <h3>The placeholder Attribute</h3>
+        <p>This attribute specifies a hint that describes the expected value of an input field 
+            (a sample value or a short description of the format). </p>
+        <p>The hint is displayed in the input field before the user enters a value.</p>
+        <p>It works with the following input types: text, search, url, tel, email, and password.</p>
+        <form action="/action_page.php">
+            <input type="text" name="fname" placeholder="First name">
+        </form>
+
+        <h3>The required Attribute</h3>
+        <p>This attribute specifies that an input field must be filled out before submitting the form.</p>
+        <p>It works with the following input types: text, search, url, tel, email, password, date pickers, number, checkbox, radio, and file.</p>
+        <form action="/action_page.php">
+            Username: <input type="text" name="uname" required>
+        </form>
+
+        <h3>The step Attribute</h3>
+        <p>This attribute specifies the legal number intervals for an &lt;input&gt; element.</p>
+        <p>Example: if step="3", legal numbers could be -3, 0, 3, 6, etc.</p>
+        <p>Tip: The step attribute can be used together with the max and min attributes to create a range of legal values.</p>
+        <p>It works with the following input types: number, range, date, datetime-local, month, time, and week.</p>
+        <form action="/action_page.php">
+            <input type="number" name="points" step="3">
+        </form>
+
+        <!-- Exercises -->
+        <form action="/action_page.php">
+            First name: <input type="text" name="firstname" value="John">
+            <input type="submit">
+        </form>
+
+        <form action="/action_page.php">
+            First name: <input type="text" name="firstname" value="John" disabled>
+            <input type="submit">
+        </form>
+
+        <form action="/action_page.php">
+            First name: <input type="text" name="firstname" value="John" size="40">
+            <input type="submit">
+        </form>
+
+        <form action="/action_page.php">
+            <input type="text" name="fname" placeholder="First name">
+            <input type="submit">
+        </form>
+    </body>
+</html>
