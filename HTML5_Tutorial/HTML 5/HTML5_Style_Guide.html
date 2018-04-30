@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <h2>HTML Coding Conventions</h2>
+        <ul>
+            <li>
+                <h3>Be Smart and Future Proof</h3>
+                <p>HTML5 is a bit more sloppy when it comes to code validation.</p>
+                <p>Using a well-formed-"close to XHTML" syntax, can be smart.</p>
+                <p>Always keep your code tidy, clean, and well-formed.</p>
+            </li>
+            <li>
+                <h3>Use Correct Document Type</h3>
+                <p>Always declare the document type as the first line in your document:</p>
+                <p>&lt;!DOCTYPE html&gt;</p>
+                <p>If you want consistency with lower case tags, you can use:</p>
+                <p>&lt;!doctype html&gt;</p>
+            </li>
+            <li>
+                <h3>Use Lower Case Element Names</h3>
+                <p>HTML5 allows mixing uppercase and lowercase letters in element names.</p>
+                <p>W3Schools recommend using lowercase element names.</p>
+                <p>Good example:</p>
+                <pre>
+                    &lt;section&gt;
+                        &lt;p&gt;This is a paragraph.&lt;/p&gt;
+                    &lt;/section&gt; 
+                </pre>
+            </li>
+            <li>
+                <h3>Close All HTML Elements</h3>
+                <p>In HTML 5, you don't have to close all elements (for example the &lt;p&gt; element).</p>
+                <p>W3Schools recommend closing all HTML elements.</p>
+                <p>Good example:</p>
+                <pre>
+                    &lt;section&gt;
+                        &lt;p&gt;This is a paragraph.&lt;/p&gt;
+                        &lt;p&gt;This is a paragraph.&lt;/p&gt;
+                    &lt;/section&gt; 
+                </pre>
+            </li>
+            <li>
+                <h3>Close Empty HTML Elements</h3>
+                <p>In HTML 5, it is optional to close empty elements.</p>
+                <p>However, the closing slash is required in XHTML and XML.</p>
+                <p>If you expect XML software to access your page, it is a good idea to keep the closing slash!</p>
+                <p>Example:</p>
+                <pre>
+                    &lt;meta charset="utf-8" /&gt;
+                </pre>
+            </li>
+            <li>
+                <h3>Use Lower Case Attribute Names</h3>
+                <p>HTML 5 allows mixing uppercase and lowercase letters in attribute names.</p>
+                <p>W3Schools recommend using lowercase attribute names.</p>
+                <p>Good example:</p>
+                <pre>
+                    &lt;div class="menu"&gt;
+                </pre>
+            </li>
+            <li>
+                <h3>Quote Attribue Values</h3>
+                <p>HTML 5 allows attribue values without quotes.</p>
+                <p>W3Schools recommend quoting attribue values.</p>
+                <p>Good example:</p>
+                <pre>
+                    &lt;table class="striped"&gt;
+                </pre>
+            </li>
+            <li>
+                <h3>Image Attributes</h3>
+                <p>Always add the alt attribute to images. This attribute is important when the image for some 
+                    reason cannot be displayed. Also, always define image width and height. It reduces flickering 
+                    because the browser can reserve space for the image before loading. </p>
+                <p>Good example:</p>
+                <pre>
+                    &lt;img src="html5.gif" alt="HTML5" style="width: 128px; height: 128px"&gt;
+                </pre>
+            </li>
+            <li>
+                <h3>Spaces and Equal Signs</h3>
+                <p>HTML 5 allows spaces around equal signs. But space-less is easier to read, and 
+                    groups entities better together. </p>
+                <p>Good example:</p>
+                <pre>
+                    &lt;link rel="stylesheet" href="styles.css"&gt;
+                </pre>
+            </li>
+            <li>
+                <h3>Avoid Long Code Lines</h3>
+                <p>When using an HTML editor, it is inconvenient to scroll right and left to read the HTML code.</p>
+                <p>Try to avoid code lines longer than 80 characters.</p>
+            </li>
+            <li>
+                <h3>Blank Lines and Indentation</h3>
+                <p>Do not add blank lines without a reason.</p>
+                <p>For readability, add blank lines to separate large or logical code blocks.</p>
+                <p>For readability, add two spaces of indentation. Do not use the tab key.</p>
+                <p>Do not use unnecessary blank lines and indentation. It is not necessary to indent every element.</p>
+                <p>Good example:</p>
+                <pre>
+                    &lt;body&gt;
+
+                    &lt;h1&gt;Famous Cities&lt;/h1&gt;
+                    
+                    &lt;h2&gt;Tokyo&lt;/h2&gt;
+                    &lt;p&gt;Tokyo is the capital of Japan, the center of the Greater Tokyo Area,
+                    and the most populous metropolitan area in the world.
+                    It is the seat of the Japanese government and the Imperial Palace,
+                    and the home of the Japanese Imperial Family.&lt;/p&gt;
+                    
+                    &lt;/body&gt; 
+                </pre>
+            </li>
+            <li>
+                <h3>Omitting &lt;html&gt; and &lt;body&gt;?</h3>
+                <p>In the HTML5 standard, the &lt;html&gt; tag and the &lt;body&gt; tag can be omitted.</p>
+                <p>W3Schools do NOT recommend omitting the &lt;html&gt; and the &lt;body&gt; tag.</p>
+                <p>The &lt;html&gt; element is the document root. It is the recommended place for specifying the page language.</p>
+                <pre>
+                    &lt;html lang="en-US"&gt;
+                </pre>
+                <p>Declaring a language is important for accessibility applications (screen readers) and search engines.</p>
+                <p>Omitting &lt;html&gt; or &lt;body&gt; can crash DOM and XML software.</p>
+                <p>Omitting &lt;body&gt; can produce errors in older browsers (IE 9).</p>
+            </li>
+            <li>
+                <h3>Omitting &lt;head&gt;?</h3>
+                <p>In the HTML5 standard, the &lt;head&gt; tag can also be omitted.</p>
+                <p>By default, browsers will add all elements before &lt;body&gt;, to a default &lt;head&gt; element.</p>
+                <p>W3Schools do NOT recommend omitting the &lt;head&gt; tag.</p>
+            </li>
+            <li>
+                <h3>Meta Data</h3>
+                <p>The &lt;title&gt; element is required in HTML5. Make the title as meaningful as possible.</p>
+                <p>To ensure proper interpretation, and correct search engine indexing, both 
+                    the language and the character encoding should be defined as early as possible in a document.</p>
+                <pre>
+                &lt;!DOCTYPE html&gt;
+                &lt;html lang="en-US"&gt;
+                &lt;head&gt;
+                    &lt;meta charset="UTF-8"&gt;
+                    &lt;title&gt;HTML5 Syntax and Coding Style&lt;/title&gt;
+                &lt;/head&gt;                        
+                </pre>
+            </li>
+            <li>
+                <h3>Setting The Viewport</h3>
+                <p>HTML 5 introduced a method to let web designers take control over 
+                    the viewport, through the &lt;meta&gt; tag.</p>
+                <p>The viewport is the user's visible area of a web page. It avries with the device, 
+                    and will be smaller on a mobile phone than on a computer screen.</p>
+                <p>You should include the following &lt;meta&gt; viewport element in all your web page:</p>
+                <pre>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</pre>
+                <p>A &lt;meta&gt; viewport element gives the browser instructions on 
+                    how to control the page's dimensions and scaling.</p>
+                <p>The width=device-width part sets the width of the page to follow the 
+                    screen-width of the device (which will vary depending on the device).</p>
+                <p>The initial-scale=1.0 part sets the initial zoom level when the page is first loaded by the browser.</p>
+            </li>
+            <li>
+                <h3>HTML Comments</h3>
+                <p>Short comments should be written on one line, like this:</p>
+                <pre>&lt;!-- This is a comment --&gt;</pre>
+                <p>Comments that spans more than one line, should be written like this:</p>
+                <pre>
+                &lt;!--
+                  This is a long comment example. This is a long comment example.
+                  This is a long comment example. This is a long comment example.
+                --&gt;
+                </pre>
+            </li>
+            <li>
+                <h3>Style Sheets</h3>
+                <p>Use simple syntax for linking to style sheets (the type attribute is not necessary):</p>
+                <pre>&lt;link rel="stylesheet" href="styles.css"&gt;</pre>
+                <p>Short rules can be written compressed, on one line, like this:</p>
+                <pre>p.intro {font-family: Verdana; font-size: 16em;}</pre>
+                <p>Long rules should be written over multiple lines:</p>
+                <pre>
+                body {
+                  background-color: lightgrey;
+                  font-family: "Arial Black", Helvetica, sans-serif;
+                  font-size: 16em;
+                  color: black;
+                }
+                </pre>
+                <ul>
+                    <li>Place the opening bracket on the same line as the selector</li>
+                    <li>Use one space before the opening bracket</li>
+                    <li>Use two spaces of indentation</li>
+                    <li>Use semicolon after each property-value pair, including the last</li>
+                    <li>Only use quotes around values if the value contains spaces</li>
+                    <li>Place the closing bracket on a new line, without leading spaces</li>
+                    <li>Avoid lines over 80 characters</li>
+                </ul>
+            </li>
+            <li>
+                <h3>Loading JavaScript in HTML</h3>
+                <p>Use simply syntax for loading external scripts (the type attribute is not necessary):</p>
+                <pre>&lt;script src="myscript.js"&gt;</pre>
+            </li>
+            <li>
+                <h3>Accessing HTML Elements with JavaScript</h3>
+                <p>A consequence of using "untidy" HTML styles, might result in JavaScript errors.</p>
+                <p>Tese two JavaScript statements will produce different results:</p>
+                <pre>
+                var obj = getElementById("Demo")
+
+                var obj = getElementById("demo")
+                </pre>
+            </li>
+            <li>
+                <h3>Use Lower Case File Names</h3>
+                <p>Some web servers (Apache, Unix) are case sensitive about file names: "london.jpg" cannot be accessed as "London.jpg".</p>
+                <p>Other web servers (Microsoft, IIS) are not case sensitive: "london.jpg" can be accessed as "London.jpg" or "london.jpg".</p>
+                <p>If you use a mix of upper and lower case, you have to be extremely consistent.</p>
+                <p>If you move from a case insensitive to a case sensitive server, even small errors will break your web!</p>
+                <p>To avoid these problems, always use lower case file names.</p>
+            </li>
+            <li>
+                <h3>File Extensions</h3>
+                <p>HTML files should have a <b>.html</b> or <b>.htm</b> extension.</p>
+                <p>CSS files should have a <b>.css</b> extension.
+                <p>JavaScript files should have a <b>.js</b> extension.</p>
+            </li>
+            <li>
+                <h3>Differences Between .htm and .html</h3>
+                <p>There is no difference between the .htm and .html extensions. Both will be treated 
+                    as HTML by any web browser or web server.</p>
+                <p>The differences are cultural:</p>
+                <p>.htm "smells" of early DOS systems where the system limited the extensions to 3 characters.</p>
+                <p>.html "smells" of Unix operating systems that did not have this limitation.</p>
+            </li>
+            <li>
+                <h3>Technical Differences</h3>
+                <p>When a URL does not specify a filename (like https://www.w3schools.com/css/), 
+                    the server returns a default filename. Common default filenames are index.html, 
+                    index.htm, default.html, and default.htm.</p>
+                <p>If your server is configured only with "index.html" as default filename, 
+                    your file must be named "index.html", not "index.htm."</p>
+                <p>However, servers can be configured with more than one default filename, 
+                    and normally you can set up as many default filenames as needed.</p>
+                <p>Anyway, the full extension for HTML files is .html, and there's no reason it should not be used.</p>
+            </li>
+        </ul>
+    </body>
+</html>

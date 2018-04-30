@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <h3>What are Semantic Elements</h3>
+        <p>Semantic is the study of the meanings of words and phrases in a language.</p>
+        <p>Semantic elements = elements with a meaning.</p>
+        <p>A semantic element clearly describes its meaning to both the browser and the developer.</p>
+        <p>Examples of <b>non-semantic</b> elments: &lt;div&gt; and &lt;span&gt; - Tells nothing about its content.</p>
+        <p>Examples of <b>semantic</b> elements: &lt;form&gt;, &lt;table&gt;, and &lt;article&gt; - Clearly defines its content.</p>
+
+        <h3>Browser Support</h3>
+        <p>HTML5 semantic elements are supported in all modern browsers.</p>
+
+        <h3>Why Semantic Elements?</h3>
+        <p>With HTML4, developers used their own id/class names to style elements: 
+            header, top, bottom, footer, menu, navigation, manin, container, content, article, sidebar, topnav, etc.</p>
+        <p>This made it impossible for search engines to identify the correct web page content.</p>
+        <p>With the new HTML5 elements, this will become easier.</p>
+        <p>According to the W3C, a Semantic Web: "Allows data to be shared and reused across applications, 
+            enterprises, and communities."</p>
+
+        <h3>New Semantic Elements in HTML5</h3>
+        <p>Many web sites contain HTML code like: &lt;div id="nav"&gt; &lt;div class="header"&gt; &lt;div class="footer"&gt; 
+            to indicate navigation, header, and footer.</p>
+        <p>HTML5 offers new sementic elements to define different parts of a web page:</p>
+        <ul>
+            <li>&lt;article&gt; - Defines an article</li>
+            <li>&lt;aside&gt; - Defines content aside from the page content</li>
+            <li>&lt;details&gt; - Defines additional details that the user can view or hide</li>
+            <li>&lt;figcaption&gt; - Defines a caption for a &lt;figure&gt; element</li>
+            <li>&lt;figure&gt; - Specifies self-contained content, like illustrations, diagrams, photos, code listings, etc.</li>
+            <li>&lt;footer&gt; - Defines a footer for a document or section</li>
+            <li>&lt;header&gt; - Specifies a header for a document or section</li>
+            <li>&lt;main&gt; - Specifies the main content of a document</li>
+            <li>&lt;mark&gt; - Defines marked/highlighted text</li>
+            <li>&lt;nav&gt; - Defines navigation links</li>
+            <li>&lt;section&gt; - Defines a section in a document</li>
+            <li>&lt;summary&gt; - Defines a visible heading for a &lt;details&gt; element</li>
+            <li>&lt;time&gt; - Defines a date/time</li>
+        </ul>
+        <table border="1" width="250">
+            <tr>
+                <td colspan="2" align="center">&lt;header&gt;</td>
+            </tr>
+            <tr>
+                <td colspan="2" align="center">&lt;nav&gt;</td>
+            </tr>
+            <tr>
+                <td width="150" align="center"><p></p>&lt;section&gt;<p></p></td>
+                <td rowspan="2" align="center">&lt;aside&gt;</td>
+            </tr>
+            <tr>
+                <td align="center"><p></p>&lt;article&gt;<p></p></td>
+            </tr>
+            <tr>
+                <td colspan="2" align="center">&lt;footer&gt;</td>
+            </tr>
+        </table>
+
+        <h3>HTML5 &lt;section&gt; Element</h3>
+        <p>The &lt;section&gt; element defines a section in a document.</p>
+        <p>According to W3C's HTML5 documentation: 
+            "A section is a thematic grouping of content, typically with a heading."</p>
+        <p>A home page could normally be split into sections for introduction, content, and contact information.</p>
+        <pre>
+            &lt;section&gt;
+                &lt;h1&gt;WWF&lt;/h1&gt;
+                &lt;p&gt;The World Wide Fund for Nature (WWF) is....&lt;/p&gt;
+            &lt;/section&gt; =
+        </pre>
+
+        <h3>HTML5 &lt;article&gt; Element</h3>
+        <p>The &lt;article&gt; elment specifies independent, self-contained content.</p>
+        <p>An article should make sense on its own, and it should be possible to read it independently from the rest of the web site.</p>
+        <p>Examples of where an &lt;article&gt; element can be used:</p>
+        <ul>
+            <li>Forum post</li>
+            <li>Blog post</li>
+            <li>Newspaper article</li>
+        </ul>
+        <pre>
+            &lt;article&gt;
+                &lt;h1&gt;What Does WWF Do?&lt;/h1&gt;
+                &lt;p&gt;WWF's mission is to stop the degradation of our planet's natural environment,
+                    and build a future in which humans live in harmony with nature.&lt;/p&gt;
+            &lt;/article&gt;
+        </pre>
+
+        <h3>Nesting &lt;article&gt; in &lt;section&gt; or Vice Versa?</h3>
+        <p>The &lt;article&gt; element specifies independent, self-contained content.</p>
+        <p>The &lt;section&gt; element defines section in a document.</p>
+        <p>Can we use the definitions to decide how to nest those elements? No, we cannot!</p>
+        <p>So, on the Internet, you will find HTML pages with &lt;section&gt; elements containing 
+            &lt;article&gt; elements, and &lt;article&gt; elements containing &lt;section&gt; elements.</p>
+        <p>You will also find pages with &lt;section&gt; elements containing &lt;section&gt; elements, and 
+                &lt;article&gt; elements containing &lt;article&gt; elements.</p>
+        
+        <h3>HTML5 &lt;header&gt; Element</h3>
+        <p>The &lt;header&gt; element specifies a header for a document or section.</p>
+        <p>The &lt;header&gt; element should be used as a container for introductory content.</p>
+        <p>You can have several &lt;header&gt; elements in one document.</p>
+        <pre>
+            &lt;article&gt;
+                &lt;header&gt;
+                    &lt;h1&gt;What Does WWF Do?&lt;/h1&gt;
+                    &lt;p&gt;WWF's mission:&lt;/p&gt;
+                &lt;/header&gt;
+                &lt;p&gt;WWF's mission is to stop the degradation of our planet's natural environment,
+                    and build a future in which humans live in harmony with nature.&lt;/p&gt;
+            &lt;/article&gt;
+        </pre>
+
+        <h3>HTML5 &lt;footer&gt; Element</h3>
+        <p>The &lt;footer&gt; element specifies a footer for a document or section.</p>
+        <p>A &lt;footer&gt; element should contain information about its containing element.</p>
+        <p>A footer typically contains the author of the document, copyright information, 
+            links to terms of use, contact information, etc.</p>
+        <p>You may have several &lt;footer&gt; elements in one document.</p>
+        <pre>
+            &lt;footer&gt;
+                &lt;p&gt;Posted by: Hege Refsnes&lt;/p&gt;
+                &lt;p&gt;Contact information: &lt;a href="mailto:someone@example.com"&gt;
+                    someone@example.com&lt;/a&gt;.&lt;/p&gt;
+            &lt;/footer&gt;
+        </pre>
+
+        <h3>HTML5 &lt;nav&gt; Element</h3>
+        <p>The &lt;nav&gt; element defines a set of navigation links.</p>
+        <p>Notice that NOT all links of a document should be inside a &lt;nav&gt; element. 
+            The &lt;nav&gt; element is intended only for major block of navigation links.</p>
+        <pre>
+            &lt;nav&gt;
+                &lt;a href="/html/"&gt;HTML&lt;/a&gt; |
+                &lt;a href="/css/"&gt;CSS&lt;/a&gt; |
+                &lt;a href="/js/"&gt;JavaScript&lt;/a&gt; |
+                &lt;a href="/jquery/"&gt;jQuery&lt;/a&gt;
+            &lt;/nav&gt;
+        </pre>
+
+        <h3>HTML5 &lt;aside&gt; Element</h3>
+        <p>The &lt;aside&gt; element defines some content aside from the content it is placed in (like a sidebar).</p>
+        <p>The &lt;aside&gt; content should be related to the surrounding content.</p>
+        <pre>
+                &lt;p&gt;My family and I visited The Epcot center this summer.&lt;/p&gt;
+                &lt;aside&gt;
+                    &lt;h4&gt;Epcot Center&lt;/h4&gt;
+                    &lt;p&gt;The Epcot Center is a theme park in Disney World, Florida.&lt;/p&gt;
+                &lt;/aside&gt;
+        </pre>
+
+        <h3>HTML5 &lt;figure&gt; and &lt;figcaption&gt; Element</h3>
+        <p>The purpose of a figure caption is to add a visual explanation to an image.</p>
+        <p>In HTML5, an image and a caption can be grouped together in a &lt;figure&gt; element.</p>
+        <pre>
+            &lt;figure&gt;
+                &lt;img src="pic_mountain.jpg" alt="The Pulpit Rock" width="304" height="228"&gt;
+                &lt;figcaption&gt;Fig1. - The Pulpit Rock, Norway.&lt;/figcaption&gt;
+            &lt;/figure
+        </pre>
+        <p>The &lt;img&gt; element defines the image, the &lt;figcaption&gt; element defines the caption.</p>
+
+        <h3>HTML5 &lt;footer&gt; Element</h3>
+
+    </body>
+</html>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <h3>HTML5 Browser Support</h3>
+        <p>HTML5 is supported in all modern browsers.</p>
+        <p>In addition, all browsers, old and new, automatically handle unrecognized elements as inline elements.</p>
+        <p>Because of this, you can teach older browsers to handle unknown HTML elements.</p>
+
+        <h3>Define Semantic Elements as Block Elements</h3>
+        <p>HTML5 defines eight new semantic elements. All there are block-level elements.</p>
+        <p>To secure correct behavior in older browsers, you can set the CSS display property for these HTML elements to block:</p>
+        <pre>
+            header, section, footer, aside, nav, main, article, figure {
+                display: block;
+            }
+        </pre>
+
+        <h3>Add New Elements to HTML</h3>
+        <p>You can also add new elements to an HTML page with a browser trick.</p>
+        <p>This example adds a new element called &lt;myHero&gt; to an HTML page, and defines a style for it.</p>
+        <pre>
+            &lt;!DOCTYPE html&gt;
+            &lt;html&gt;
+            &lt;head&gt;
+            &lt;script&gt;document.createElement("myHero")&lt;/script&gt;
+            &lt;style&gt;
+            myHero {
+                display: block;
+                background-color: #dddddd;
+                padding: 50px;
+                font-size: 30px;
+            }
+            &lt;/style&gt;
+            &lt;/head&gt;
+            &lt;body&gt;
+            
+            &lt;h1&gt;A Heading&lt;/h1&gt;
+            &lt;myHero&gt;My Hero Element&lt;/myHero&gt;
+            
+            &lt;/body&gt;
+            &lt;/html
+        </pre>
+        <p>The JavaScript statement document.createElement("myHero") is needed to create a new element in IE9, and earlier.</p>
+
+        <h3>Problem With Internet Explorer 8</h3>
+        <p>You could use the solution described above for all new HTML5 elements.</p>
+        <p>However, IE8 (and earlier) does not allow styling of unknown elements!</p>
+        <p>Thankfully, Sjoerd Visscher created the HTML5Shiv! The HTML5Shiv is a JavaScript 
+            workaround to enable styling of HTML5 elements in versions of Internet Explorer prior to version 9.</p>
+
+        <h3>Syntax For HTML5Shiv</h3>
+        <p>The HTML5Shiv is placed within the &lt;head&gt; tag.</p>
+        <p>The HTML5Shiv is a javascript file that is referenced in a &lt;script&gt; tag.</p>
+        <p>You should use the HTML5Shiv when you are using the new HTML5 elements such as: 
+            &lt;article&gt;, &lt;section&gt;, &lt;aside&gt;, &lt;nav&gt;, &lt;footer&gt;.</p>
+        <pre>
+            &lt;head&gt;
+            &lt;!--[if lt IE 9]&gt;
+                &lt;script src="/js/html5shiv.js"&gt;&lt;/script&gt;
+            &lt;![endif]--&gt;
+            &lt;/head&gt;
+        </pre>
+
+        <h3>HTML5Shiv Example</h3>
+        <p>If you do not want to download and store the HTML5Shiv on your site, you could reference the version found on the CDN site.</p>
+        <p>The HTML5Shiv script must be placed in the &lt;head&gt; element, after any stylesheets.</p>
+        <pre>
+            &lt;!DOCTYPE html&gt;
+            &lt;html&gt;
+            &lt;head&gt;
+            &lt;meta charset="UTF-8"&gt;
+            &lt;!--[if lt IE 9]&gt;
+                &lt;script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"&gt;&lt;/script&gt;
+            &lt;![endif]--&gt;
+            &lt;/head&gt;
+            &lt;body&gt;
+            
+            &lt;section&gt;
+            
+            &lt;h1&gt;Famous Cities&lt;/h1&gt;
+            
+            &lt;article&gt;
+            &lt;h2&gt;London&lt;/h2&gt;
+            &lt;p&gt;London is the capital city of England. It is the most populous city in the United Kingdom, with a metropolitan area of over 13 million inhabitants.&lt;/p&gt;
+            &lt;/article&gt;
+            
+            &lt;article&gt;
+            &lt;h2&gt;Paris&lt;/h2&gt;
+            &lt;p&gt;Paris is the capital and most populous city of France.&lt;/p&gt;
+            &lt;/article&gt;
+            
+            &lt;article&gt;
+            &lt;h2&gt;Tokyo&lt;/h2&gt;
+            &lt;p&gt;Tokyo is the capital of Japan, the center of the Greater Tokyo Area, and the most populous metropolitan area in the world.&lt;/p&gt;
+            &lt;/article&gt;
+            
+            &lt;/section&gt;
+            
+            &lt;/body&gt;
+            &lt;/html&gt; 
+        </pre>
+    </body>
+</html>
