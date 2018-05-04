@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8">
+  <title>HTML Plug-ins</title>
+</head>
+<body>
+
+<h3>HTML Helpers (Plug-ins)</h3>
+<p>The purpose of a plug-in is to extend the functionality of a web browser.</p>
+<p>Helper applications (plug-ins) are computer programs that extend the standard functionality of a web browser.</p>
+<p>Examples of well-known plug-ins are Java applets.</p>
+<p>Plug-ins can be added to web pages with the &lt;object&gt; and &lt;embed&gt; tag.</p>
+<p>Plug-ins can be used for many purposes: display maps, scan for viruses, verify your bank id, etc.</p>
+
+<h3>The &lt;object&gt; Element</h3>
+<p>The &lt;object&gt; element is supported by all browsers.</p>
+<p>The &lt;object&gt; element defines an embedded object within an HTML document.</p>
+<p>It is used to embed plug-ins (like Java applets, PDF readers, Flash Players) in web pages.</p>
+
+<pre>
+&lt;object width="400" height="50" data="bookmark.swf"&gt;&lt;/object&gt;
+</pre>
+
+<p>The &lt;object&gt; can also be used to include HTML in HTML</p>
+<pre>
+&lt;object width="100%" height="500px" data="snippet.html"&gt;&lt;/object&gt;
+</pre>
+
+<p>The &lt;object&gt; elment can also be used to include images:</p>
+<pre>
+&lt;object data="audi.jpeg"&gt;&lt;/object&gt;
+</pre>
+
+
+<h3>The &lt;embed&gt; Element</h3>
+<p>The &lt;embed&gt; element is supported in all major browsers.</p>
+<p>The &lt;embed&gt; element also defines an embedded object within an HTML document.</p>
+<p>Web browsers has supported the &lt;embed&gt; element for a long time. However, it has not been a 
+  part of the HTML specification before HTML5.</p>
+<p>Note that the &lt;embed&gt; element does not have a closing tag. It can not contain alternative text.</p>
+
+<pre>
+&lt;embed width="400" height="50" src="bookmark.swf /&gt;
+</pre>
+
+<p>The &lt;embed&gt; can also be used to include HTML in HTML</p>
+<pre>
+&lt;embed width="100%" height="500px" data="snippet.html" /&gt;
+</pre>
+
+<p>The &lt;embed&gt; elment can also be used to include images:</p>
+<pre>
+&lt;embed data="audi.jpeg" /&gt;
+</pre>
+
+
+</body>
+</html>

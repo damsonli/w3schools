@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8">
+  <title>HTML Audio</title>
+</head>
+<body>
+<h3>Audio on the Web</h3>
+<p>Before HTML5, audio files could only be played in a browser with a plug-in (like flash).</p>
+<p>The HTML5 &lt;audio&gt; element specifies a standard way to embed audio in a web page.</p>
+
+<h3>The HTML &lt;audio&gt; Element</h3>
+<p>To play an audio file in HTML, use the &lt;audio&gt; element:</p>
+<pre>
+&lt;audio controls&gt;
+  &lt;source src="horse.ogg" type="audio/ogg"&gt;
+  &lt;source src="horse.mp3" type="audio/mpeg"&gt;
+Your browser does not support the audio element.
+&lt;/audio&gt; 
+</pre>
+
+<h3>HTML Audio - How It Works</h3>
+<p>The controls attribute adds audio controls, like play, pause, and volume.</p>
+<p>The &lt;source&gt; element allows you to specify alternative audio files which the 
+  browser may choose from. The browser will use the first recognized format.</p>
+<p>The text between the &lt;audio&gt; and &lt;/audio&gt; tags will only be displayed 
+  in browsers that do not support the &lt;audio&gt; element.</p>
+
+<h3>HTML Audio - Media Types</h3>
+<p>In HTML5, there are 3 supported audio formats: MP3, Wav, and Ogg.</p>
+<p>The corresponding media types: audio/mpeg, audio/wav, and audio/ogg.</p>
+
+<h3>HTML Audio - Methods, Properties, and Events</h3>
+<p>HTML5 defines DOM methods, properties, and events for the &lt;audio&gt; element.</p>
+<p>This allows you to load, play, and pause audios, as well as set duration and volume.</p>
+<p>There are also DOM events that can notify you when an audio begins to play, is paused, etc.</p>
+
+</body>
+</html>
