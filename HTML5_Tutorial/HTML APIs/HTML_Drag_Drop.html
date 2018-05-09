@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+<meta charset="UTF-8">
+<title>HTML Drag Drop</title>
+
+<style>
+#div1 {
+  width: 350px;
+  height: 70px;
+  padding: 10px;
+  border: 1px solid #aaaaaa;
+}
+</style>
+
+<script>
+  function allowDrop(ev) {
+      ev.preventDefault();
+  }
+  
+  function drag(ev) {
+      ev.dataTransfer.setData("text", ev.target.id);
+  }
+  
+  function drop(ev) {
+      ev.preventDefault();
+      var data = ev.dataTransfer.getData("text");
+      ev.target.appendChild(document.getElementById(data));
+  }
+</script>
+</head>
+
+<body>
+
+<h3>Drag and Drop</h3>  
+<p>Drag and drop is a very common featuer. It is when you "grab" an object and drag it to a different location.</p>
+<p>In HTML5, drag and drop is part of the standard: Any element can be draggable.</p>
+
+<p>Drag the W3Schools image into the rectangle:</p>
+
+<div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+<br>
+<img id="drag1" src="https://www.w3schools.com/html/img_logo.gif" draggable="true" 
+ondragstart="drag(event)" width="336" height="69">
+
+<h3>Make an Element Draggable</h3>
+<p>First of all: To make an element draggable, set the draggable attribute to true:</p>
+<pre>&lt;img draggable="true"&gt;</pre>
+
+<h3>What to Drag - ondragstart and setData()</h3>
+<p>Then, specify what should happen when the element is dragged.</p>
+<p>In the example above, the ondragstart attribute calls a function, drag(event), 
+    that specifies what data to be dragged.</p>
+<p>The dataTransfer.setData() method sets the data type and the value of the dragged data:</p>
+<pre>
+function drag(ev) {
+  ev.dataTransfer.setData("text", ev.target.id);
+}
+</pre>
+<p>In this case, the data type is "text" and the value is the id of the draggable element ("drag1").</p>
+
+<h3>Where to Drop - ondragover</h3>
+<p>The ondragover event specifies where the dragged data can be dropped.</p>
+<p>By default, data/elements cannot be dropped in other elements. To allow a drop, 
+    we must prevent the default handling of the element.</p>
+<p>This is done by calling the event.preventDefault() method for the ondragove event:</p>
+<pre>event.preventDefault()</pre>
+
+<h3>Do the Drop - ondrop</h3>
+<p>When the dragged data is dropped, a drop event occurs.</p>
+<p>In the example above, the ondrop attibute calls a function, drop(event):</p>
+<pre>
+function drop(ev) {
+  ev.preventDefault();
+  var data = ev.dataTrnasfer.getData("text");
+  ev.target.appendChild(document.getElementById(data));
+}
+</pre>
+<p>Code explained:</p>
+<ul>
+  <li>
+    Call preventDefault() to prevent the browser default handling of the data (default is open as link on drop)
+  </li>
+  <li>
+    Get the dragged data with the dataTrnafer.getData() method. This method will return any data that was set to the 
+    same type in the setData() method
+  </li>
+  <li>
+    The dragged data is the id of the dragged element ("drag1")
+  </li>
+  <li>
+    Append the dragged element into the drop element
+  </li>
+</ul>
+
+</body>
+</html>

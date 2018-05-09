@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8">
+  <title>HTML Web Storagr</title>
+</head>
+<body>
+
+<h3>What is HTML Web Storage?</h3>
+<p>With web storage, web applications can store data locally within the user's browser.</p>
+<p>Before HTML5, application data had to be stored in cookies, included in every server request. 
+    Web storage is more secure, and large amounts of data can be stored locally, without affecting website performance.</p>
+<p>Unlike cookies, the storage limit is far larger (at least 5MB) and information is never transferred to the server.</p>
+<p>Web storage is per login (per domain and protocol). All pages, from one origin, can store and access the same data.</p>
+
+<div id="result"></div>
+<script>
+// Check browser support
+if (typeof(Storage) !== "undefined") {
+  // Store
+  localStorage.setItem("lastname", "Smith");
+  // Retrieve
+  document.getElementById("result").innerHTML = localStorage.getItem("lastname");
+} else {
+  document.getElementById("result").innerHTML = "Sorry, your browser does not support Web Storage...";
+}
+</script>
+
+<button onclick="clickCounter()" type="button">Click me!</button>
+<div id="result1"></div>
+<p>Click the button to see the counter increase.</p>
+<p>Close the browser tab (or window), and try again, and the counter will continue to count (is not reset).</p>
+
+<button onclick="clickCounter2()" type="button">Click me!</button>
+<div id="result2"></div>
+<p>Click the button to see the counter increase.</p>
+<p>Close the browser tab (or window), and try again, and the counter is reset.</p>
+<script>
+function clickCounter() {
+    if(typeof(Storage) !== "undefined") {
+        if (localStorage.clickcount) {
+            localStorage.clickcount = Number(localStorage.clickcount) + 1;
+        } else {
+            localStorage.clickcount = 1;
+        }
+        document.getElementById("result1").innerHTML = "You have clicked the button " + localStorage.clickcount + " time(s).";
+    } else {
+        document.getElementById("result1").innerHTML = "Sorry, your browser does not support web storage...";
+    }
+}
+
+function clickCounter2() {
+  if(typeof(Storage) !== "undefined") {
+      if (sessionStorage.clickcount) {
+          sessionStorage.clickcount = Number(sessionStorage.clickcount)+1;
+      } else {
+          sessionStorage.clickcount = 1;
+      }
+      document.getElementById("result2").innerHTML = "You have clicked the button " + sessionStorage.clickcount + " time(s) in this session.";
+  } else {
+      document.getElementById("result2").innerHTML = "Sorry, your browser does not support web storage...";
+  }
+}
+</script>
+
+<h3>HTML Web Storage Objects</h3>
+<p>HTML web storage provides two objects for storing data one the client:</p>
+<ul>
+  <li>window.localStorage - stores data with no expiration date</li>
+  <li>window.sessionStorage - stores data for one session (data is lost when the browser tab is closed)</li>
+</ul>
+
+<p>Before using web storage, check browser support for localStorage and sessionStorage:</p>
+<pre>
+if (typeof(Storage) !== "undefined") {
+  // Code for localStorage/sessionStorage.
+} else {
+  // Sorry! No Web Storage support..
+}
+</pre>
+
+<h3>The localStorage Object</h3>
+<p>The localStorage object stores data with no expiration date. The data will not be deleted when the 
+    browser is closed, and will be available the next day, week, or year.</p>
+
+<p>Example:</p>
+<pre>
+// Store
+localStorage.setItem("lastname", "Smith");
+// Retrieve
+document.getElementById("result").innerHTML = localStorage.getItem("lastname");
+</pre>
+
+<p>The example above could also be written like this:</p>
+<pre>
+// Store
+localStorage.lastname = "Smith";
+// Retrieve
+document.getElementById("result").innerHTML = localStorage.lastname;
+</pre>
+
+<p>The syntax for removing the "lastname" localStorage item is as following:</p>
+<pre>
+// Remove
+localStorage.removeItem("lastname");
+</pre>
+
+<p>Note: Name/Value pairs are always stored as strings. Remember to convert them to another format when needed!</p>
+
+<p>The following example counts the number of times a user has clicked a button. 
+    In this code the value string is converted to a number to be able to increase the counter:</p>
+<pre>
+if (localStorage.clickcount) {
+  localStorage.clickcount = Number(localStorage.clickcount) + 1;
+} else {
+  localStorage.clickcount = 1;
+}
+
+document.getElementById("result").innerHTML = "You have clicked the button " + 
+localStorage.clickcount + " time(s).";
+</pre>
+
+<h3>The sessionStorage Object</h3>
+<p>The sessionStorage object is equal to the localStorage object, except that it stores 
+    the data for only one session. The data is deleted when the user closes the specific browser tab.</p>
+<p>The following example counts the number of times a user has clicked a button, in the current session:</p>
+<pre>
+if (sessionStorage.clickcount) {
+  sessionStorage.clickcount = Number(sessionStorage.clickcount) + 1;
+} else {
+  sessionStorage.clickcount = 1;
+}
+document.getElementById("result").innerHTML = "You have clicked the button " +
+sessionStorage.clickcount + " time(s) in this session.";
+</pre>
+
+</body>
+</html>
