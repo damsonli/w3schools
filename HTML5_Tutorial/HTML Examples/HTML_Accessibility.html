@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en-US">
+
+<head>
+<meta charset="UTF-8">
+<title>HTML Accessibility</title>
+</head>
+
+<body>
+<h3>HTML Accessibility</h3>
+<p>Write HTML with accessibility in mind. Provide the user a good way to navigate and interact 
+    with your site. Make your HTML code as semantic as possible, so that the code is easy to 
+    understand for visitors and screen readers.</p>
+
+<h3>Semantic HTML</h3>
+<p>Semantic HTML means using correct HTML elements for their correct purpose as much as possible. 
+    Semantic elements are elements with a meaning; if you need a button, use the &lt;button&gt; 
+    element, and not a &ltdiv&gt;</p>
+<p>Semantic HTML gives context to screen readers, which read the contents of a web page out loud.</p>
+<p>Examples of non-semantic elements: &lt;div&gt; and &lt;span&gt; - Tells nothing about its content.</p>
+<p>Examples of semantic elements: &lt;form&gt;, &lt;table&gt;, and &lt;article&gt; - Clearly defines its content.</p>
+
+<h3>Headings Are Important</h3>
+<p>Headings are defined with the &lt;h1&gt; to &lt;h6&gt; tags.</p>
+<p>Search engines use the headings to index the structure and content of your web pages.</p>
+<p>Users skim your pages by its headings. It is important to use headings to show the document 
+    structure and the relationships between different sections.</p>
+<p>&lt;h1&gt; headings should be used for main headings, followed by &lt;h2&gt; headings, then 
+    the less important &lt;h3&gt;, and so on.</p>
+<p>Note: Use HTML headings for headings only. Don't use headings to make text BIG or bold.</p>
+
+<h3>Alternative Text</h3>
+<p>The alt attribute provides an alternate text for an image, if the user for some reason cannot 
+    view it (because of slow connection, an error in the src attribute, or if the user uses a screen reader).</p>
+<p>The value of the alt attribute should describe the image.</p>
+<p>If a browser cannot find an image, it will display the value of the alt attribute.</p>
+
+<h3>Declare the Language</h3>
+<p>Declaring a language is important for screen readers and search engines, and is declared with the lang 
+    attribute. Use the following to show a web page in English.</p>
+
+<h3>Use Clear Language</h3>
+<p>Use clear language that is easy to understand, and try to avoid characters that cannot be read clearly 
+    by a screen reader. For example:</p>
+<ul>
+  <li>Keep sentences as short as possible.</li>
+  <li>Avoid dashes. Instead of writing 1-3, write 1 to 3</li>
+  <li>Avoid abbreviations. Instead of writing Feb, write February</li>
+  <li>Avoid slang words</li>
+</ul>
+
+<h3>Write Good Links</h3>
+<p>A link should explain clearly what information the reader will get by clicking on that link.</p>
+
+<h3>Link Titles</h3>
+<p>The title attribute specifies extra information about an element. The information is most often 
+    shown as a tooltip text when the mouse moves over the element.</p>
+<a href="https://www.w3schools.com/html/" title="Go to W3Schools HTML section">Visit our HTML Tutorial</a> 
+
+</body>
+</html>
