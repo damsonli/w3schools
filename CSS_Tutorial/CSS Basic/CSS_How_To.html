@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+<meta charset="UTF-8">
+<title>CSS How To</title>
+</head>
+
+<body>
+<h3>CSS How To...</h3>
+<p>When a browser reads a style sheet, it will format the HTML document according to the information in the style sheet.</p>
+
+<h3>Three Ways to Insert CSS</h3>
+<p>There are three ways of inserting a style sheet:</p>
+<ul>
+  <li>External style sheet</li>
+  <li>Internal style sheet</li>
+  <li>Inline style</li>
+</ul>
+
+<h3>External Style Sheet</h3>
+<p>With an external style sheet, you can change the look of an entire website by changing just one file!<br/>
+    Each page must include a reference to the external style sheet file inside the &lt;link&gt; element.<br/>
+    The &lt;link&gt; element goes inside the &lt;head&gt; section:</p>
+<pre>
+&lt;head&gt;
+&lt;link rel="stylesheet" type="text/css" href="mystyle.css"&gt;
+&lt;/head&gt;
+</pre>
+
+<p>An external style sheet can be written in any text editor. The file should not contain any html tags. 
+    The style sheet file must be saved with a .css extension.<br />
+    Here is how the "mystyle.css" looks:</p>
+<pre>
+body {
+  background-color: lightblue;
+}
+
+h1 {
+  color: navy;
+  margin-left: 20px;
+}
+</pre>
+<p>Note: Do not add a space between the property value and the unit (such as margin-left: 20 px;). 
+    The correct way is: margin-left: 20px;</p>
+
+<h3>Internal Style Sheet</h3>
+<p>An internal style sheet may be used if one single page has a unique style.<br />
+    Internal styles are defined within the &lt;style&gt; element, inside the &lt;head&gt; section of an HTML page:</p>
+<pre>
+&lt;head&gt;
+&lt;style&gt;
+body {
+  background-color: linen;
+}
+
+h1 {
+  color: maroon;
+  margin-left: 40px;
+}
+&lt;/style&gt;
+&lt;/head&gt; 
+</pre>
+
+<h3>Inline Styles</h3>
+<p>An inline style may be used to apply a unique style for a single element.<br />
+    To use inline styles, add the style attribute to the relevant element. The style attribute can contain any CSS property.<br />    
+    The example below shows how to change the color and the left margin of a &lt;h1&gt; element:</p>
+<pre>
+&lt;h1 style="color:blue;margin-left:30px;"&gt;This is a heading&lt;/h1&gt;
+</pre>
+<p>Tip: An inline style loses many of the advantages of a style sheet (by mixing content with 
+    presentation). Use this method sparingly.</p>
+
+<h3>Multiple Style Sheets</h3>
+<p>If some properties have been defined for the same selector (element) in different style sheets, 
+    the value from the last read style sheet will be used. </p>
+<p><b>Example</b></p>
+<p>Assume that an external style sheet has the following style for the &lt;h1&gt; element:</p>
+<pre>
+h1 {
+  color: navy;
+}
+</pre>
+
+<p>then, assume that an internal style sheet also has the following style for the &lt;h1&gt; element:</p>
+<pre>
+h1 {
+  color: orange;   
+}
+</pre>
+
+<p>If the internal style is defined after the link to the external style sheet, the &lt;h1&gt; 
+    elements will be "orange":</p>
+<pre>
+&lt;head&gt;
+&lt;link rel="stylesheet" type="text/css" href="mystyle.css"&gt;
+&lt;style&gt;
+h1 {
+  color: orange;
+}
+&lt;/style&gt;
+&lt;/head&gt;
+</pre>
+
+<p>However, if the internal style is defined before the link to the external style sheet, 
+    the &lt;h1&gt; elements will be "navy":</p>
+<pre>
+&lt;head&gt;
+&lt;style&gt;
+h1 {
+  color: orange;
+}
+&lt;/style&gt;
+&lt;link rel="stylesheet" type="text/css" href="mystyle.css"&gt;
+&lt;/head&gt; 
+</pre>
+
+<h3>Cascading Order</h3>
+<p>What style will be used when there is more than one style specified for an HTML element?</p>
+<p>Generally speaking we can say that all the styles will "cascade" into a new "virtual" style 
+    sheet by the following rules, where number one has the highest priority:</p>
+<ol>
+  <li>Inline style (inside an HTML element)</li>
+  <li>External and internal style sheets (in the head section)</li>
+  <li>Browser default</li>
+</ol>
+<p>So, an inline style (inside a specific HTML element) has the highest priority, which 
+    means that it will override a style defined inside the &lt;head&gt; tag, or in an 
+    external style sheet, or a browser default value.</p>
+
+<h3>Exercises</h3>
+<p><b>Exercise 1</b></p>
+<p>Add an external style sheet with the URL: "mystyle.css".</p>
+<pre>
+&lt;link rel="stylesheet" type="text/css" href="mystyle.css"&gt;
+</pre>
+
+<p><b>Exercise 2</b></p>
+<p>Set "background-color: linen" for the page, using an internal style sheet.</p>
+<pre>
+&lt;style&gt;
+  body {
+    background-color: linen;
+  }
+&lt;/style&gt;
+</pre>
+
+<p><b>Exercise 3</b></p>
+<p>Set "background-color: linen" for the page, using an inline style.</p>
+<pre>
+&lt;body style="background-color: linen;"&gt;
+</pre>
+
+<p><b>Exercise 4</b></p>
+<p>Remove all styles, except the external style sheet "mystyle.css".</p>
+<pre>
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;link rel="stylesheet" type="text/css" href="mystyle.css"&gt;
+&lt;style&gt;
+p {
+    color: red;
+}
+&lt;/style&gt;
+&lt;/head&gt;
+&lt;body style="background-color: lightcyan"&gt;
+
+&lt;h1&gt;This is a Heading&lt;/h1&gt;
+&lt;p&gt;This is a paragraph.&lt;/p&gt;
+&lt;p&gt;This is another paragraph.&lt;/p&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</pre>
+<p>Answer:</p>
+<pre>
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;link rel="stylesheet" type="text/css" href="mystyle.css"&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;h1&gt;This is a Heading&lt;/h1&gt;
+&lt;p&gt;This is a paragraph.&lt;/p&gt;
+&lt;p&gt;This is another paragraph.&lt;/p&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</pre>
+
+
+</body>
+</html>

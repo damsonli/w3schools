@@ -1,0 +1,520 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+<meta charset="UTF-8">
+<title>CSS Pseudo-classes</title>
+<style>
+/* unvisited link */
+a#anchor:link {
+  color: red;
+}
+
+/* visited link */
+a#anchor:visited {
+  color: green;
+}
+
+/* mouse over link */
+a#anchor:hover {
+  color: hotpink;
+}
+
+/* selected link */
+a#anchor:active {
+  color: blue;
+}
+
+a.highlight:hover {
+  color: #ff0000;
+}
+
+div#hover {
+  background-color: green;
+  color: white;
+  padding: 25px;
+  text-align: center;
+}
+
+div#hover:hover {
+  background-color: blue;
+}
+
+div#tooltip p {
+  display: none;
+  background-color: yellow;
+  padding: 20px;
+}
+
+div#tooltip:hover p {
+  display: block;
+}
+
+div#first p:first-child {
+  color: blue;
+}
+
+div#firsti p i:first-child {
+  color: blue;
+}
+
+div#firsta p:first-child i {
+  color: blue;
+}
+
+q:lang(no) {
+  quotes: "~" "~";
+}
+
+a.one:link {color:#ff0000;}
+a.one:visited {color:#0000ff;}
+a.one:hover {color:#ffcc00;}
+
+a.two:link {color:#ff0000;}
+a.two:visited {color:#0000ff;}
+a.two:hover {font-size:150%;}
+
+a.three:link {color:#ff0000;}
+a.three:visited {color:#0000ff;}
+a.three:hover {background:#66ff66;}
+
+a.four:link {color:#ff0000;}
+a.four:visited {color:#0000ff;}
+a.four:hover {font-family:monospace;}
+
+a.five:link {color:#ff0000;text-decoration:none;}
+a.five:visited {color:#0000ff;text-decoration:none;}
+a.five:hover {text-decoration:underline;}
+
+input:focus {
+  background-color: yellow;
+}
+</style>
+</head>
+
+<body>
+<h3>What are Pseudo-classes</h3>
+<p>A pseudo-class is used to define a special state of an element.</p>
+<p>For example, it can be used to:</p>
+<ul>
+  <li>Style an element when a user mouses over it</li>
+  <li>Style visited and unvisited links differently</li>
+  <li>Style an element when it gets focus</li>
+</ul>
+<hr />
+
+<h3>Syntax</h3>
+<p>The syntax of pseudo-classes</p>
+<pre>
+selector:pseudo-class {
+  property:value;
+}
+</pre>
+<p>Pseudo-class names are not case-sensitive.</p>
+<hr />
+
+<h3>Anchor Pseudo-classes</h3>
+<p>Links can be displayed in different ways:</p>
+<p><b><a id="anchor" href="default.asp" target="_blank">This is a link</a></b></p>
+
+<pre>
+ /* unvisited link */
+a:link {
+  color: #FF0000;
+}
+
+/* visited link */
+a:visited {
+  color: #00FF00;
+}
+
+/* mouse over link */
+a:hover {
+  color: #FF00FF;
+}
+
+/* selected link */
+a:active {
+  color: #0000FF;
+} 
+</pre>
+<p><b>Note:</b> a:hover MUST come after a:link and a:visited in the CSS definition in order to be 
+  effective.</p>
+<p><b>Note:</b> a:active MUST come after a:hover in the CSS definition in order to be effective.</p>
+<hr />
+
+<h3>Pseudo-classes and CSS Classes</h3>
+<p>Pseudo-classes can be combined with CSS classes:</p>
+<p>When you hover over the link in the example, it will change color:</p>
+<p><a class="highlight" href="css_syntax.asp">CSS Syntax</a></p>
+<p><a href="default.asp">CSS Tutorial</a></p>
+
+<pre>
+a.highlight:hover {
+  color: #ff0000;
+}
+</pre>
+<hr />
+
+<h3>Hover on &lt;div&gt;</h3>
+<p>An example of using the :hover pseudo-class on a &lt;div&gt; element:</p>
+<p>Mouse over the div element below to change its background color:</p>
+<div id="hover">Mouse Over Me</div>
+
+<pre>
+div:hover {
+  background-color: blue;
+}
+</pre>
+<hr />
+
+<h3>Simple Tooltip Hover</h3>
+<p>Hover over a &lt;div&gt; element to show a &lt;p&gt; element (like a tooltip):</p>
+<div id="tooltip">Hover over me to show the p element
+  <p>Tada! Here I am!</p>
+</div>
+
+<pre>
+p {
+  display: none;
+  background-color: yellow;
+  padding: 20px;
+}
+
+div:hover p {
+  display: block;
+}
+</pre>
+<hr />
+
+<h3>CSS - The :first-child Pseudo-class</h3>
+<p>The :first-child pseudo-class matches a specified element that is the first child of another 
+  element.</p>
+<p><b>Match the first &lt;p&gt; element</b></p>
+<p>In the following example, the selector matches any &lt;p&gt; element that is the first child of 
+  any element:</p>
+<div id="first">
+  <p>This is the first child, color is blue.</p>
+  <p>This is the second child, color is default black.</p>
+</div>
+
+<pre>
+p:first-child {
+  color: blue;
+}
+</pre>
+<p><b>Note:</b> For :first-child to work in IE8 and earlier, a DOCTYPE must be declared.</p>
+
+<p><b>Match the first &lt;i&gt; element in all &lt;p&gt; elements</b></p>
+<p>In the following example, the selector matches the first &lt;i&gt; element in all &lt;p&gt; 
+  elements:</p>
+<div id="firsti">
+  <p>I am a <i>strong</i> person. I am a <i>strong</i> person.</p>
+  <p>I am a <i>strong</i> person. I am a <i>strong</i> person.</p>
+</div>
+
+<pre>
+p i:first-child {
+  color: blue;
+}
+</pre>
+
+<p><b>Match all &lt;i&gt; elements in all first child &lt;p&gt; elements</b></p>
+<p>In the following example, the selector matches all &lt;i&gt; elements in &lt;p&gt; elements that 
+  are the first child of another element:</p>
+<div id="firsta">
+  <p>I am a <i>strong</i> person. I am a <i>strong</i> person.</p>
+  <p>I am a <i>strong</i> person. I am a <i>strong</i> person.</p>
+</div>
+
+<pre>
+p:first-child i {
+  color: blue;
+}
+</pre>
+<hr />
+
+<h3>CSS - The :lang Pseudo-class</h3>
+<p>The :lang pseudo-class allows you to define special rules for different languages.</p>
+<p>In the example below, :lang defines the quotation marks for &lt;q&gt; elements with lang="no":</p>
+
+<p>Some text <q lang="no">A quote in a paragraph</q> Some text.</p>
+<p>In this example, :lang defines the quotation marks for q elements with lang="no":</p>
+
+<pre>
+q:lang(no) {
+  quotes: "~" "~";
+}
+</pre>
+<hr />
+
+<h3>More Examples</h3>
+<p><b>Add different styles to hyperlinks</b></p>
+<p>This example demonstrates how to add other styles to hyperlinks.</p>
+
+<p>Mouse over the links and watch them change layout:</p>
+<p><b><a class="one" href="default.asp" target="_blank">This link changes color</a></b></p>
+<p><b><a class="two" href="default.asp" target="_blank">This link changes font-size</a></b></p>
+<p><b><a class="three" href="default.asp" target="_blank">This link changes background-color</a></b></p>
+<p><b><a class="four" href="default.asp" target="_blank">This link changes font-family</a></b></p>
+<p><b><a class="five" href="default.asp" target="_blank">This link changes text-decoration</a></b></p>
+
+<pre>
+a.one:link {color:#ff0000;}
+a.one:visited {color:#0000ff;}
+a.one:hover {color:#ffcc00;}
+
+a.two:link {color:#ff0000;}
+a.two:visited {color:#0000ff;}
+a.two:hover {font-size:150%;}
+
+a.three:link {color:#ff0000;}
+a.three:visited {color:#0000ff;}
+a.three:hover {background:#66ff66;}
+
+a.four:link {color:#ff0000;}
+a.four:visited {color:#0000ff;}
+a.four:hover {font-family:monospace;}
+
+a.five:link {color:#ff0000;text-decoration:none;}
+a.five:visited {color:#0000ff;text-decoration:none;}
+a.five:hover {text-decoration:underline;}
+</pre>
+
+<p><b>Use of :focus</b></p>
+<p>This example demonstrates how to use the :focus pseudo-class.</p>
+<form action="/action_page.php" method="get">
+  First name: <input type="text" name="fname"><br>
+  Last name: <input type="text" name="lname"><br>
+  <input type="submit" value="Submit">
+</form>
+
+<pre>
+input:focus {
+  background-color: yellow;
+}
+</pre>
+<hr />
+
+<h3>All CSS Pseudo Classes</h3>
+<table>
+  <tr>
+    <th>Selector</th>
+    <th>Example</th>
+    <th>Example Description</th>
+  </tr>
+  <tr>
+    <td>:active</td>
+    <td>a:active</td>
+    <td>Selects the active link</td>
+  </tr>
+  <tr>
+    <td>:checked</td>
+    <td>input:checked</td>
+    <td>Selects every checked &lt;input&gt; element</td>
+  </tr>
+  <tr>
+    <td>:disabled</td>
+    <td>input:disabled</td>
+    <td>Selects every disabled &lt;input&gt; element</td>
+  </tr>
+  <tr>
+    <td>:empty</td>
+    <td>p:empty</td>
+    <td>Selects every &lt;p&gt; element that has no children</td>
+  </tr>
+  <tr>
+    <td>:enabled</td>
+    <td>input:enabled</td>
+    <td>Selects every enabled &lt;input&gt; element</td>
+  </tr>
+  <tr>
+    <td>:first-child</td>
+    <td>p:first-child</td>
+    <td>Selects every &lt;p&gt; element that is the first child of its parent</td>
+  </tr>
+  <tr>
+    <td>:first-of-type</td>
+    <td>p:first-of-type</td>
+    <td>Selects every &lt;p&gt; element that is the first &lt;p&gt; element of its parent</td>
+  </tr>
+  <tr>
+    <td>:focus</td>
+    <td>input:focus</td>
+    <td>Selects the &lt;input&gt; element that has focus</td>
+  </tr>
+  <tr>
+    <td>:hover</td>
+    <td>a:hover</td>
+    <td>Selects links on mouse over</td>
+  </tr>
+  <tr>
+    <td>:in-range</td>
+    <td>input:in-range</td>
+    <td>Selects &lt;input&gt; elements with a value within a specified range</td>
+  </tr>
+  <tr>
+    <td>:invalid</td>
+    <td>input:invalid</td>
+    <td>Selects all &lt;input&gt; elements with an invalid value</td>
+  </tr>
+  <tr>
+    <td>:lang(language)</td>
+    <td>p:lang(it)</td>
+    <td>Selects every &lt;p&gt; element with a lang attribute value starting with "it"</td>
+  </tr>
+  <tr>
+    <td>:last-child</td>
+    <td>p:last-child</td>
+    <td>Selects every &lt;p&gt; element that is the last child of its parent</td>
+  </tr>
+  <tr>
+    <td>:last-of-type</td>
+    <td>p:last-of-type</td>
+    <td>Selects every &lt;p&gt; element that is the last &lt;p&gt; element of its parent</td>
+  </tr>
+  <tr>
+    <td>:link</td>
+    <td>a:link</td>
+    <td>Selects all unvisited links</td>
+  </tr>
+  <tr>
+    <td>:not(selector)</td>
+    <td>:not(p)</td>
+    <td>Selects every element that is not a &lt;p&gt; element</td>
+  </tr>
+  <tr>
+    <td>:nth-child(n)</td>
+    <td>p:nth-child(2)</td>
+    <td>Selects every &lt;p&gt; element that is the second child of its parent</td>
+  </tr>
+  <tr>
+    <td>:nth-last-child(n)</td>
+    <td>p:nth-last-child(2)</td>
+    <td>Selects every &lt;p&gt; element that is the second child of its parent, counting from the 
+      last child</td>
+  </tr>
+  <tr>
+    <td>:nth-last-of-type(n)</td>
+    <td>p:nth-last-of-type(2)</td>
+    <td>Selects every &lt;p&gt; element that is the second &lt;p&gt; element of its parent, 
+      counting from the last child</td>
+  </tr>
+  <tr>
+    <td>:nth-of-type(n)</td>
+    <td>p:nth-of-type(2)</td>
+    <td>Selects every &lt;p&gt; element that is the second  &lt;p&gt; element of its parent</td>
+  </tr>
+  <tr>
+    <td>:only-of-type</td>
+    <td>p:only-of-type</td>
+    <td>Selects every &lt;p&gt; element that is the only &lt;p&gt; element of its parent</td>
+  </tr>
+  <tr>
+    <td>:only-child</td>
+    <td>p:only-child</td>
+    <td>Selects every &lt;p&gt; element that is the only child of its parent</td>
+  </tr>
+  <tr>
+    <td>:optional</td>
+    <td>input:optional</td>
+    <td>Selects &lt;input&gt; elements with no "required" attribute</td>
+  </tr>
+  <tr>
+    <td>:out-of-range</td>
+    <td>input:out-of-range</td>
+    <td>Selects &lt;input&gt; elements with a value outside a specified range</td>
+  </tr>
+  <tr>
+    <td>:read-only</td>
+    <td>input:read-only</td>
+    <td>Selects &lt;input&gt; elements with a "readonly" attribute specified</td>
+  </tr>
+  <tr>
+    <td>:read-write</td>
+    <td>input:read-write</td>
+    <td>Selects &lt;input&gt; elements with no "readonly" attribute</td>
+  </tr>
+  <tr>
+    <td>:required</td>
+    <td>input:required</td>
+    <td>Selects &lt;input&gt; elements with a "required" attribute specified</td>
+  </tr>
+  <tr>
+    <td>:root</td>
+    <td>root</td>
+    <td>Selects the document's root element</td>
+  </tr>
+  <tr>
+    <td>:target</td>
+    <td>#news:target</td>
+    <td>Selects the current active #news element (clicked on a URL containing that anchor name)</td>
+  </tr>
+  <tr>
+    <td>:valid</td>
+    <td>input:valid</td>
+    <td>Selects all &lt;input&gt; elements with a valid value</td>
+  </tr>
+  <tr>
+    <td>:visited</td>
+    <td>a:visited</td>
+    <td>Selects all visited links</td>
+  </tr>
+</table>
+<hr />
+
+<h3>Exercises</h3>
+<p><b>Exercise 1</b></p>
+<p>Set the background color for visited and unvisited links to "lightblue", and the background color 
+  for the hover and active link states to "yellow".</p>
+<pre>
+/* unvisited link */
+a:link {
+  background-color: lightblue;
+}
+
+/* visited link */
+a:visited {
+  background-color: lightblue;
+}
+
+/* mouse over link */
+a:hover {
+  background-color: yellow;
+}
+
+/* selected link */
+a:active {
+  background-color: yellow;
+}
+</pre>
+
+<p><b>Exercise 2</b></p>
+<p>Change the background color, when a user hovers over p elements, with the class "highlight", to 
+  "lightblue".</p>
+<pre>
+p.highlight:hover {
+  background-color: lightblue;
+}
+</pre>
+
+<p><b>Exercise 3</b></p>
+<p>Set the background color of &lt;p&gt; elements, that are the first child of any element, to 
+  "lightblue".</p>
+<pre>
+p:first-child {
+  background-color: lightblue;
+}
+</pre>
+
+<p><b>Exercise 4</b></p>
+<p>Set the background color of &lt;input&gt; elements that are in focus (clicked or active), to 
+  "lightblue".</p>
+<pre>
+input:focus {
+  background-color: lightblue;
+}
+</pre>
+
+
+</body>
+</html>

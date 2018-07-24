@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+<meta charset="UTF-8">
+<title>CSS Max-width</title>
+
+<style>
+div.ex1 {
+  width: 500px;
+  margin: auto;
+  border: 3px solid #73AD21;
+}
+
+div.ex2 {
+  max-width: 500px;
+  margin: auto;
+  border: 3px solid #73AD21;
+}
+</style>
+</head>
+
+<body>
+<h3>Using width, max-width and margin: auto;</h3>
+<p>As mentioned in the previous chapter; a block-level element always takes up the full width 
+  available (stretches out to the left and right as far as it can).</p>
+<p>Setting the width of a block-level element will prevent it from stretching out to the edges of 
+  its container. Then, you can set the margins to auto, to horizontally center the element within 
+  its container. The element will take up the specified width, and the remaining space will be 
+  split equally between the two margins:</p>
+<pre>
+div.ex1 {
+  width: 500px;
+  margin: auto;
+  border: 3px solid #73AD21;
+}
+</pre>
+
+<div class="ex1">This &lt;div&gt; element has a width of 500px, and margin set to auto.</div>
+
+<p><strong>Note:</strong> The problem with the &lt;div&gt; above occurs when the browser window is 
+  smaller than the width of the element. The browser then adds a horizontal scrollbar to the page.</p>
+<p>Using max-width instead, in this situation, will improve the browser's handling of small windows. 
+  This is important when making a site usable on small devices:</p>
+<pre>
+div.ex2 {
+  max-width: 500px;
+  margin: auto;
+  border: 3px solid #73AD21;
+}
+</pre>
+
+<div class="ex2">This &lt;div&gt; element has a max-width of 500px, and margin set to auto.</div>
+
+<p><b>Tip:</b> Resize the browser window to less than 500px wide, to see the difference between the 
+  two divs!</p>
+
+</body>
+</html>

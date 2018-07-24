@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+<meta charset="UTF-8">
+<title>CSS Inline-block</title>
+
+<style>
+span.a {
+  display: inline; /* the default for span */
+  width: 100px;
+  height: 100px;
+  padding: 5px;
+  border: 1px solid blue;    
+  background-color: yellow; 
+}
+
+span.b {
+  display: inline-block;
+  width: 100px;
+  height: 100px;
+  padding: 5px;
+  border: 1px solid blue;        
+  background-color: yellow; 
+}
+
+span.c {
+  display: block;
+  width: 100px;
+  height: 100px;
+  padding: 5px;
+  border: 1px solid blue;        
+  background-color: yellow; 
+}
+
+.nav {
+  background-color: yellow;
+  list-style-type: none;
+  text-align: center; 
+  padding: 0;
+  margin: 0;
+}
+
+.nav li {
+  display: inline-block;
+  font-size: 20px;
+  padding: 20px;
+}
+</style>
+</head>
+
+<body>
+<h3>The display: inline-block Value</h3>
+<p>Compared to display: inline, the major difference is that display: inline-block allows to set a 
+  width and height on the element.</p>
+<p>Also, with display: inline-block, the top and bottom margins/paddings are respected, but with 
+  display: inline they are not.</p>
+<p>Compared to display: block, the major difference is that display: inline-block does not add a 
+  line-break after the element, so the element can sit next to other elements.</p>
+
+<p>The following example shows the different behavior of display: inline, display: inline-block and 
+  display: block:</p>
+
+<p><b>display: inline</b></p>
+<div>
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum consequat scelerisque elit sit 
+amet consequat. Aliquam erat volutpat. 
+<span class="a">Aliquam</span> 
+<span class="a">venenatis</span> 
+gravida nisl sit amet facilisis. Nullam cursus fermentum velit sed laoreet. 
+</div>
+
+<p><b>display: inline-block</b></p>
+<div>
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum consequat scelerisque elit sit 
+amet consequat. Aliquam erat volutpat. 
+<span class="b">Aliquam</span> 
+<span class="b">venenatis</span> 
+gravida nisl sit amet facilisis. Nullam cursus fermentum velit sed laoreet. 
+</div>
+
+<p><b>display: block</b></p>
+<div>
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum consequat scelerisque elit sit 
+amet consequat. Aliquam erat volutpat. 
+<span class="c">Aliquam</span> 
+<span class="c">venenatis</span> 
+gravida nisl sit amet facilisis. Nullam cursus fermentum velit sed laoreet. 
+</div>
+
+<pre>
+span.a {
+  display: inline; /* the default for span */
+  width: 100px;
+  height: 100px;
+  padding: 5px;
+  border: 1px solid blue;
+  background-color: yellow;
+}
+
+span.b {
+  display: inline-block;
+  width: 100px;
+  height: 100px;
+  padding: 5px;
+  border: 1px solid blue;
+  background-color: yellow;
+}
+
+span.c {
+  display: block;
+  width: 100px;
+  height: 100px;
+  padding: 5px;
+  border: 1px solid blue;
+  background-color: yellow;
+}
+</pre>
+<hr />
+
+<h3>Using inline-block to Create Navigation Links</h3>
+<p>One common use for display: inline-block is to display list items horizontally instead of 
+  vertically. The following example creates horizontal navigation links:</p>
+
+<p>By default, list items are displayed vertically. In this example we use display: inline-block to 
+  display them horizontally (side by side).</p>
+<p>Note: If you resize the browser window, the links will automatically break when it becomes too 
+  crowded.</p>
+
+<ul class="nav">
+  <li><a href="#home">Home</a></li>
+  <li><a href="#about">About Us</a></li>
+  <li><a href="#clients">Our Clients</a></li>    
+  <li><a href="#contact">Contact Us</a></li>
+</ul>
+
+<pre>
+.nav {
+  background-color: yellow;
+  list-style-type: none;
+  text-align: center; 
+  padding: 0;
+  margin: 0;
+}
+
+.nav li {
+  display: inline-block;
+  font-size: 20px;
+  padding: 20px;
+}
+</pre>
+
+
+</body>
+</html>

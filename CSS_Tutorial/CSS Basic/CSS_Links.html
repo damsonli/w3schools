@@ -1,0 +1,312 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+<meta charset="UTF-8">
+<title>CSS Links</title>
+
+<style>
+a.one:link {color:#ff0000;}
+a.one:visited {color:#0000ff;}
+a.one:hover {color:#ffcc00;}
+
+a.two:link {color:#ff0000;}
+a.two:visited {color:#0000ff;}
+a.two:hover {font-size:150%;}
+
+a.three:link {color:#ff0000;}
+a.three:visited {color:#0000ff;}
+a.three:hover {background:#66ff66;}
+
+a.four:link {color:#ff0000;}
+a.four:visited {color:#0000ff;}
+a.four:hover {font-family:monospace;}
+
+a.five:link {color:#ff0000;text-decoration:none;}
+a.five:visited {color:#0000ff;text-decoration:none;}
+a.five:hover {text-decoration:underline;}
+
+a.six:link, a:visited {
+  background-color: white;
+  color: black;
+  border: 2px solid green;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}
+
+a.six:hover, a:active {
+  background-color: green;
+  color: white;
+}
+</style>
+</head>
+
+<body>
+<h3>Styling Links</h3>
+<p>Links can be styled with any CSS property (e.g. color, font-family, background, etc.).</p>
+<pre>
+a {
+  color: hotpink;
+}
+</pre>
+
+<p>In addition, links can be styled differently depending on what state they are in.</p>
+<p>The four links states are:</p>
+<ul>
+  <li>a:link - a normal, unvisited link</li>
+  <li>a:visited - a link the user has visited</li>
+  <li>a:hover - a link when the user mouses over it</li>
+  <li>a:active - a link the moment it is clicked</li>
+</ul>
+
+<pre>
+ /* unvisited link */
+a:link {
+  color: red;
+}
+
+/* visited link */
+a:visited {
+  color: green;
+}
+
+/* mouse over link */
+a:hover {
+  color: hotpink;
+}
+
+/* selected link */
+a:active {
+  color: blue;
+} 
+</pre>
+
+<p>When setting the style for several link states, there are some order rules:</p>
+<ul>
+  <li>a:hover MUST come after a:link and a:visited</li>
+  <li>a:active MUST come after a:hover</li>
+</ul>
+
+<h3>Text Decoration</h3>
+<p>The text-decoration property is mostly used to remove underlines from links:</p>
+<pre>
+a:link {
+  text-decoration: none;
+}
+
+a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+a:active {
+  text-decoration: underline;
+}
+</pre>
+
+<h3>Background Color</h3>
+<p>The background-color property can be used to specify a background color for links:</p>
+<pre>
+a:link {
+  background-color: yellow;
+}
+
+a:visited {
+  background-color: cyan;
+}
+
+a:hover {
+  background-color: lightgreen;
+}
+
+a:active {
+  background-color: hotpink;
+}  
+</pre>
+
+<h3>Advanced - Link Buttons</h3>
+<p>This example demonstrates a more advanced example where we combine several CSS properties to 
+  display links as boxes/buttons:</p>
+<pre>
+a:link, a:visited {
+  background-color: #f44336;
+  color: white;
+  padding: 14px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}
+
+a:hover, a:active {
+  background-color: red;
+}
+</pre>
+
+<h3>More Examples</h3>
+<p><b>Add different styles to hyperlinks</b></p>
+<p>This example demonstrates how to add other styles to hyperlinks.</p>
+<pre>
+a.one:link {color:#ff0000;}
+a.one:visited {color:#0000ff;}
+a.one:hover {color:#ffcc00;}
+
+a.two:link {color:#ff0000;}
+a.two:visited {color:#0000ff;}
+a.two:hover {font-size:150%;}
+
+a.three:link {color:#ff0000;}
+a.three:visited {color:#0000ff;}
+a.three:hover {background:#66ff66;}
+
+a.four:link {color:#ff0000;}
+a.four:visited {color:#0000ff;}
+a.four:hover {font-family:monospace;}
+
+a.five:link {color:#ff0000;text-decoration:none;}
+a.five:visited {color:#0000ff;text-decoration:none;}
+a.five:hover {text-decoration:underline;}
+</pre>
+<a class="one" href="default.asp" target="_blank">This link changes color</a><br />
+<a class="two" href="default.asp" target="_blank">This link changes font-size</a><br />
+<a class="three" href="default.asp" target="_blank">This link changes background-color</a><br />
+<a class="four" href="default.asp" target="_blank">This link changes font-family</a><br />
+<a class="five" href="default.asp" target="_blank">This link changes text-decoration</a>
+
+<p><b>Advanced - Create a link button with borders</b></p>
+<p>Another example of how to create link boxes/buttons.</p>
+<pre>
+a.six:link, a:visited {
+  background-color: white;
+  color: black;
+  border: 2px solid green;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}
+
+a.six:hover, a:active {
+  background-color: green;
+  color: white;
+}
+</pre>
+<a class="six" href="default.asp" target="_blank">This is a link</a>
+
+<p><b>Change the cursor</b></p>
+<p>The cursor property specifies the type of cursor to display. This example demonstrates the 
+  different types of cursors (can be useful for links).</p>
+<pre>
+&lt;span style="cursor:auto"&gt;auto&lt;/span&gt;&lt;br&gt;
+&lt;span style="cursor:crosshair"&gt;crosshair&lt;/span&gt;&lt;br&gt;
+&lt;span style="cursor:default"&gt;default&lt;/span&gt;&lt;br&gt;
+&lt;span style="cursor:e-resize"&gt;e-resize&lt;/span&gt;&lt;br&gt;
+&lt;span style="cursor:help"&gt;help&lt;/span&gt;&lt;br&gt;
+&lt;span style="cursor:move"&gt;move&lt;/span&gt;&lt;br&gt;
+&lt;span style="cursor:n-resize"&gt;n-resize&lt;/span&gt;&lt;br&gt;
+&lt;span style="cursor:ne-resize"&gt;ne-resize&lt;/span&gt;&lt;br&gt;
+&lt;span style="cursor:nw-resize"&gt;nw-resize&lt;/span&gt;&lt;br&gt;
+&lt;span style="cursor:pointer"&gt;pointer&lt;/span&gt;&lt;br&gt;
+&lt;span style="cursor:progress"&gt;progress&lt;/span&gt;&lt;br&gt;
+&lt;span style="cursor:s-resize"&gt;s-resize&lt;/span&gt;&lt;br&gt;
+&lt;span style="cursor:se-resize"&gt;se-resize&lt;/span&gt;&lt;br&gt;
+&lt;span style="cursor:sw-resize"&gt;sw-resize&lt;/span&gt;&lt;br&gt;
+&lt;span style="cursor:text"&gt;text&lt;/span&gt;&lt;br&gt;
+&lt;span style="cursor:w-resize"&gt;w-resize&lt;/span&gt;&lt;br&gt;
+&lt;span style="cursor:wait"&gt;wait&lt;/span&gt;&lt;br&gt;
+</pre>
+<p>Mouse over the words to change the cursor.</p>
+<span style="cursor:auto">auto</span><br />
+<span style="cursor:crosshair">crosshair</span><br />
+<span style="cursor:default">default</span><br />
+<span style="cursor:e-resize">e-resize</span><br />
+<span style="cursor:help">help</span><br />
+<span style="cursor:move">move</span><br />
+<span style="cursor:n-resize">n-resize</span><br />
+<span style="cursor:ne-resize">ne-resize</span><br />
+<span style="cursor:nw-resize">nw-resize</span><br />
+<span style="cursor:pointer">pointer</span><br />
+<span style="cursor:progress">progress</span><br />
+<span style="cursor:s-resize">s-resize</span><br />
+<span style="cursor:se-resize">se-resize</span><br />
+<span style="cursor:sw-resize">sw-resize</span><br />
+<span style="cursor:text">text</span><br />
+<span style="cursor:w-resize">w-resize</span><br />
+<span style="cursor:wait">wait</span>
+
+<h3>Exercises</h3>
+<p><b>Exercise 1</b></p>
+<p>Set the color for links to "green".</p>
+<pre>
+a {
+  color: green;
+}
+</pre>
+
+<p><b>Exercise 2</b></p>
+<p>Set the color for unvisited links to "red", and the color for visited links "blue".</p>
+<pre>
+a:link {
+  color: red;
+}
+
+a:visited {
+  color: blue;
+}
+</pre>
+
+<p><b>Exercise 3</b></p>
+<p>Remove underlines for visited and unvisited links, and specify "underline" for the hover and 
+  active link states.</p>
+<pre>
+/* unvisited link */
+a:link {
+  text-decoration: none;
+}
+
+/* visited link */
+a:visited {
+  text-decoration: none;
+}
+
+/* mouse over link */
+a:hover {
+  text-decoration: underline;
+}
+
+/* selected link */
+a:active {
+  text-decoration: underline;
+}
+</pre>
+
+<p><b>Exercise 4</b></p>
+<p>Set the background color for visited and unvisited links to "lightblue", and the background 
+  color for the hover and active link states to "yellow".</p>
+<pre>
+/* unvisited link */
+a:link {
+  background-color: lightblue;
+}
+
+/* visited link */
+a:visited {
+  background-color: lightblue;
+}
+
+/* mouse over link */
+a:hover {
+  background-color: yellow;
+}
+
+/* selected link */
+a:active {
+  background-color: yellow;
+}
+</pre>
+
+</body>
+</html>

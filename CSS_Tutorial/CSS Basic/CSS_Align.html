@@ -1,0 +1,316 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+<meta charset="UTF-8">
+<title>CSS Align</title>
+
+<style>
+div#center {
+  margin: auto;
+  width: 50%;
+  border: 3px solid green;
+  padding: 10px;
+}
+
+div#textcenter {
+  text-align: center;
+  border: 3px solid green;
+}
+
+img.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 40%;
+}
+
+div#right {
+  position: absolute;
+  right: 0px;
+  width: 300px;
+  border: 3px solid #73AD21;
+  padding: 10px;
+}
+
+div#floatright {
+  float: right;
+  width: 300px;
+  border: 3px solid #73AD21;
+  padding: 10px;
+}
+
+div.clearfix1 {
+  border: 3px solid #4CAF50;
+  padding: 5px;
+  overflow: auto;
+}
+
+div.clearfix2 {
+  border: 3px solid #4CAF50;
+  padding: 5px;
+}
+
+.img1 {
+  float: right;
+  width: 170px;
+  height: 170px;
+}
+
+.img2 {
+  float: right;
+  width: 170px;
+  height: 170px;
+}
+
+.vcenter {
+  padding: 70px 0;
+  border: 3px solid green;
+}
+
+.bcenter {
+  padding: 70px 0;
+  border: 3px solid green;
+  text-align: center;
+}
+
+.center1 {
+  line-height: 200px;
+  height: 200px;
+  border: 3px solid green;
+  text-align: center;
+}
+
+.center1 p {
+  line-height: 1.5;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.center2 {
+  height: 200px;
+  position: relative;
+  border: 3px solid green;
+}
+
+.center2 p {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+</style>
+</head>
+
+<body>
+<h3>Center Align Elements</h3>
+<p>To horizontally center a block element (like div), use margin: auto;</p>
+<p>Setting the width of the element will prevent it from stretching out to the edges of its 
+  container.</p>
+<p>The element will then take up the specified width, and the remaining space will be split equally 
+  between the two margins:</p>
+<div id="center">
+  <p>This div element is centered.</p>
+</div>
+
+<pre>
+.center {
+  margin: auto;
+  width: 50%;
+  border: 3px solid green;
+  padding: 10px;
+}
+</pre>
+<p><b>Note:</b> Center aligning has no effect if the width property is not set (or set to 100%).</p>
+<hr />
+
+<h3>Center Align Text</h3>
+<p>To just center the text inside an element, use text-align: center;</p>
+<div id="textcenter">
+  <p>This text is centered.</p>
+</div>
+
+<pre>
+.center {
+  text-align: center;
+  border: 3px solid green;
+}
+</pre>
+<hr />
+
+<h3>Center an Image</h3>
+<p>To center an image, set left and right margin to auto and make it into a block element:</p>
+<img class="center" src="https://www.w3schools.com/Css/paris.jpg" alt="Paris">
+
+<pre>
+img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 40%;
+}
+</pre>
+<hr />
+
+<h3>Left and Right Align - Using position</h3>
+<p>One method for aligning elements is to use position: absolute;:</p>
+<div id="right">
+  <p>In my younger and more vulnerable years my father gave me some advice that I've been turning 
+    over in my mind ever since.</p>
+</div>
+
+<pre>
+.right {
+  position: absolute;
+  right: 0px;
+  width: 300px;
+  border: 3px solid #73AD21;
+  padding: 10px;
+}
+</pre>
+<p><b>Note:</b> Absolute positioned elements are removed from the normal flow, and can overlap 
+  elements.</p>
+<hr />
+
+<h3>Left and Right Align - Using float</h3>
+<p>Another method for aligning elements is to use the float property:</p>
+<div id="floatright">
+  <p>In my younger and more vulnerable years my father gave me some advice that I've been turning 
+    over in my mind ever since.</p>
+</div>
+
+<pre style="clear: right">
+.right {
+  float: right;
+  width: 300px;
+  border: 3px solid #73AD21;
+  padding: 10px;
+}
+</pre>
+<p><b>Note:</b> If an element is taller than the element containing it, and it is floated, it will 
+  overflow outside of its container. You can use the "clearfix" hack to fix this (see example below)
+  .</p>
+<hr />
+
+<h3>The clearfix Hack</h3>
+<p>Then we can add overflow: auto; to the containing element to fix this problem:</p>
+<div class="clearfix2">
+  <img class="img1" src="https://www.w3schools.com/Css/pineapple.jpg" alt="Pineapple">
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus imperdiet, nulla et dictum 
+  interdum...
+</div>
+<br style="clear: right" /><br /><br />
+
+<div class="clearfix1">
+  <img class="img2" src="https://www.w3schools.com/Css/pineapple.jpg" alt="Pineapple">
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus imperdiet, nulla et dictum 
+  interdum...
+</div>
+
+<pre>
+.clearfix {
+  overflow: auto;
+}
+</pre>
+<hr />
+
+<h3>Center Vertically - Using padding</h3>
+<p>There are many ways to center an element vertically in CSS. A simple solution is to use top and 
+  bottom padding:</p>
+<div class="vcenter">
+  <p>I am vertically centered.</p>
+</div>
+
+<pre>
+.vcenter {
+  padding: 70px 0;
+  border: 3px solid green;
+}
+</pre>
+
+<p>To center both vertically and horizontally, use padding and text-align: center:</p>
+<div class="bcenter">
+  <p>I am vertically and horizontally centered.</p>
+</div>
+
+<pre>
+.bcenter {
+  padding: 70px 0;
+  border: 3px solid green;
+  text-align: center;
+}
+</pre>
+
+<h3>Center Vertically - Using line-height</h3>
+<p>Another trick is to use the line-height property with a value that is equal to the height 
+  property.</p>
+<div class="center1">
+  <p>I am vertically and horizontally centered.</p>
+</div>
+
+<pre>
+.center {
+  line-height: 200px;
+  height: 200px;
+  border: 3px solid green;
+  text-align: center;
+}
+
+/* If the text has multiple lines, add the following: */
+.center p {
+  line-height: 1.5;
+  display: inline-block;
+  vertical-align: middle;
+}
+</pre>
+<hr />
+
+<h3>Center Vertically - Using position & transform</h3>
+<p>If padding and line-height are not options, a third solution is to use positioning and the 
+  transform property:</p>
+<div class="center2">
+  <p>I am vertically and horizontally centered.</p>
+</div>
+
+<pre>
+.center {
+  height: 200px;
+  position: relative;
+  border: 3px solid green;
+}
+
+.center p {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+</pre>
+<hr />
+
+<h3>Exercises</h3>
+<p><b>Exercise 1</b></p>
+<p>Center align the div element using margins.</p>
+<pre>
+div {
+  width: 300px;
+  background-color: #b0e0e6;
+  margin: auto;
+}
+</pre>
+
+<p><b>Exercise 2</b></p>
+<p>Position the div element all the way to the right using absolute positioning.</p>
+<pre>
+div {
+  width: 300px;
+  background-color: #b0e0e6;
+  position: absolute;
+  right: 0px;
+}
+</pre>
+
+
+</body>
+</html>

@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+<meta charset="UTF-8">
+<title>CSS Backgrounds</title>
+</head>
+
+<body>
+<h3>CSS Backgrounds</h3>
+<p>The CSS background properties are used to define the background effects for elements.</p>
+<p>CSS background properties:</p>
+<ul>
+  <li>background: sets all the background properties in one declaration</li>
+  <li>background-color: sets the background color of an element</li>
+  <li>background-image: sets the background image for an element</li>
+  <li>background-repeat: sets how a background image will be repeated</li>
+  <li>background-attachment: sets weather a background image is fixed or scrolls with the rest of the page</li>
+  <li>background-position: sets the starting position of a background image</li>
+</ul>
+
+<p>Background Color</p>
+<p>The background-color property specifies the background color of an element.</p>
+<p>The background color of a page is set like this:</p>
+<pre>
+body {
+  background-color: lightblue;
+}
+</pre>
+
+<p>With CSS, a color is most often specified by:</p>
+<ol>
+  <li>a valid color name - like "red"</li>
+  <li>a HEX value - like "#ff0000"</li>
+  <li>an RBG value - like rgb(255,0,0)"</li>
+</ol>
+
+<p>In the example below, the &lt;h1&gt;, &lt;p&gt;, and &lt;div&gt; elements have different background colors:</p>
+<pre>
+h1 {
+  background-color: green;
+}
+
+div {
+  background-color: lightblue;
+}
+
+p {
+  background-color: yellow;
+}
+</pre>
+
+<h3>Background Image</h3>
+<p>The background-image property specifies an image to use as the background of an element.</p>
+<p>By default, the image is repeated so it covers the entire element.</p>
+<p>The background image for a page can be set like this:</p>
+<pre>
+body {
+  background-image: url("pager.gif");
+}
+</pre>
+<p>Note: When using a background image, use an image that does not disturb the text.</p>
+
+<h3>Background Image - Repeat Horizontally or Vertically</h3>
+<p>By default, the background-image property repeats an image both horizontally and vertically.</p>
+<p>Some images should be repeated on horizontally or vertically, or they will look strange.</p>
+<p>Below is an example to repeat image only horizontally:</p>
+<pre>
+body {
+  background-image: url("gradient_bg.png");
+  background-repeat: repeat-x;
+}
+</pre>
+<p>Note: To repeat an image vertically, set background-repeat: repeat-y;</p>
+
+<h3>Background Image - Set position and no-repeat</h3>
+<p>Showing the background image only once is also specified by the backgroud-repeat property:</p>
+<pre>
+body {
+  background-image: url("img_tree.png");
+  backgroud-repeat: no-repeat;
+}
+</pre>
+
+<p>The position of the image is apecified by the background-position property:</p>
+<pre>
+body {
+  background-image: url("img_tree.png");
+  backgroud-repeat: no-repeat;
+  background-position: right top;
+}
+</pre>
+
+<h3>Background Image - Fixed Position</h3>
+<p>To specify that the background image should be fixed (will not scroll with the rest of the page), 
+    use the background-attachment property:</p>
+<pre>
+body {
+  background-image: url("img_tree.png");
+  background-repeat: no-repeat;
+  background-position: right top;
+  background-attachment: fixed;
+}
+</pre>
+
+<h3>Background - Shorthand Property</h3>
+<p>To shorten the code, it is also possible to specify all the background properties in one single property. 
+    This is called a shorthand property.</p>
+<p>The shorthand property for background is background:</p>
+<pre>
+body {
+  background: #ffffff url("img_tree.png") no-repeat right top;
+}
+</pre>
+
+<p>When using the shorthand property, the order of the property values is:</p>
+<ol>
+  <li>background-color</li>
+  <li>background-image</li>
+  <li>background-repeat</li>
+  <li>background-attachment</li>
+  <li>background-position</li>
+</ol>
+<p>It does not matter if one of the property values is missing, as long as the other ones are in this order.</p>
+
+<hr />
+<h3>Exercises</h3>
+<b>Exercise 1</b>
+<p>Set the background color for the page to "linen" and the background color for <h1> to "lightblue".</p>
+<pre>
+body {
+  background-color: linen;
+}
+
+h1 {
+  background-color: lightblue;
+}
+</pre>
+
+<b>Exercise 2</b>
+<p>Set "paper.gif" as the background image of the page.</p>
+<pre>
+body {
+  background-image: url("paper.gif");
+}
+</pre>
+
+<b>Exercise 3</b>
+<p>Set "gradient_bg_vertical.png" as the background image of the page, and repeat it vertically only.</p>
+<pre>
+body {
+  background-image: url("gradient_bg_vertical.png");
+  background-repeat: repeat-y;
+}
+</pre>
+
+<b>Exercise 4</b>
+<p>Specify that the background image should be shown once, in the top right corner.</p>
+<pre>
+body {
+  background-image: url("img_tree.png");
+  background-repeat: no-repeat;
+  background-position: top right;
+}
+</pre>
+
+<b>Exercise 5</b>
+<p>Use the shorthand background property to set background image to "img_tree.png", show it once, 
+    in the top right corner.</p>
+<pre>
+body {
+  background: url("img_tree.png") no-repeat top right;
+}
+</pre>
+
+
+</body>
+</html>

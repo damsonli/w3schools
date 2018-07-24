@@ -1,0 +1,338 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+<meta charset="UTF-8">
+<title>CSS Fonts</title>
+</head>
+
+<body>
+<h3>CSS Fonts</h3>
+<p>The CSS font properties define the font family, boldness, size, and the style of a text.</p>
+
+<h3>Difference Between Serif and Sans-serif Fonts</h3>
+<img src="https://www.w3schools.com/css/serif.gif" alt="Serif vs. Sans-serif" width="398"
+  height="142" />
+
+<h3>CSS Font Families</h3>
+<p>In CSS, there are two types of font family names:</p>
+<ul>
+  <li>
+    <b>feneric family</b> - a group of font families with a similar look (like "Serif" or 
+    "Monospace")
+  </li>
+  <li>
+    <b>font family</b> - a specific font family (like "Times New Roman" or "Arial")
+  </li>
+</ul>
+
+<table>
+  <tr>
+    <th>Generic Family</th>
+    <th>Font Family</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td>Serif</td>
+    <td>
+      <span style="font-family: 'Times New Roman';">Times New Roman</span>
+      <br />
+      <span style="font-family: Georiga;">Georgia</span>
+    </td>
+    <td>Serif fonts have small lines at the ends on some characters</td>
+  </tr>
+  <tr>
+    <td>Sans-serif</td>
+    <td>
+      <span style="font-size: 100%; font-family: Arial;">Arial</span>
+      <br />
+      <span style="font-size: 100%; font-family: Verdana;">Verdana</span>
+    </td>
+    <td>"Sans" means without - these fonts do not have the lines at the ends of characters</td>
+  </tr>
+  <tr>
+    <td>Monospace</td>
+    <td>
+      <span style="font-size: 100%; font-family: 'Courier New';">Courier New</span>
+      <br />
+      <span style="font-size: 100%; font-family: 'Lucida Console';">Lucida Console</span>
+    </td>
+    <td>All monospace characters have the same width</td>
+  </tr>
+</table>
+<p><strong>Note:</strong> On computer screens, sans-serif fonts are considered easier to read than 
+  serif fonts.</p>
+
+<h3>Font Family</h3>
+<p>The font family of a text is set with the font-family proerty.</p>
+<p>The font-family property should hold several font names as a "fallback" system. If the browser 
+  does not support the first font, it tries the next font, and so on.</p>
+<p>Start with the font you want, and end with a generic family, to let the browser pick a similar 
+  font in the generic family, if no other fonts are available.</p>
+<p><strong>Note:</strong> If the name of a font family is more than one word, it must be in 
+  quotation marks, like: "Times New Roman".</p>
+<p>More than one font family is specified in a comma-separated list:</p>
+<pre>
+p {
+  font-family: "Times New Roman", Times, serif;
+}
+</pre>
+
+<p>For commonly used font combinations, look at our 
+  <a href="https://www.w3schools.com/cssref/css_websafe_fonts.asp">Web Safe Font Combinations.</a>
+</p>
+
+<h3>Font Style</h3>
+<p>The font-style property is mostly used to specify italic text.</p>
+<p>This property has three values:</p>
+<ul>
+  <li>normal - The text is shown normally</li>
+  <li>italic - The text is shown in italics</li>
+  <li>oblique - The text is "leaning" (oblique is very similar to italic, but less supported)</li>
+</ul>
+
+<pre>
+p.normal {
+  font-style: normal;
+}
+
+p.italic {
+  font-style: italic;
+}
+
+p.oblique {
+  font-style: oblique;
+}
+</pre>
+
+<h3>Font Size</h3>
+<p>The font-size property sets the size of the text.</p>
+<p>Being able to manage the text size is important in web design. However, you should not use font 
+  size adjustments to make paragraphs look like headings, or headings look like paragraphs.</p>
+<p>Always use the proper HTML tags, like &lt;h1&gt; - &lt;h6&gt; for headings and &lt;p&gt; for 
+  paragraphs.</p>
+<p>The font-size value can be an absolute, or relative size.</p>
+
+<p>Absolute size:</p>
+<ul>
+  <li>Sets the text to a specified size</li>
+  <li>Does not allow a user to change the text size in all browsers (bad for accessibility 
+    reasons)</li>
+  <li>Absolute size is useful when the physical size of the output is known</li>
+</ul>
+
+<p>Relative size:</p>
+<ul>
+  <li>Sets the size relative to surrounding elements</li>
+  <li>Allows a user to change the text size in browsers</li>
+</ul>
+
+<p><strong>Note:</strong> If you do not specify a font size, the default size for normal text, 
+  like paragraphs, is 16px (16px=1em).</p>    
+
+<h3>Set Font Size With Pixels</h3>
+<p>Setting the text size with pixels gives you full control over the text size:</p>
+<pre>
+h1 {
+  font-size: 40px;
+}
+
+h2 {
+  font-size: 30px;
+}
+
+p {
+  font-size: 14px;
+}
+</pre>
+<p>Tip: If you use pixels, you can still use the zoom tool to resize the entire page.</p>
+
+<h3>Set Font Size With Em</h3>
+<p>To allow users to resize the text (in the browser menu), many developers use em instead of 
+  pixels.</p>
+<p>The em size unit is recommended by the W3C.</p>
+<p>1em is equal to the current font size. The default text size in browsers is 16px. So, the 
+  default size of 1em is 16px.</p>
+<p>The size can be calculated from pixels to em using this formula: pixels/16=em</p>
+<pre>
+h1 {
+  font-size: 2.5em; /* 40px/16=2.5em */
+}
+
+h2 {
+  font-size: 1.875em; /* 30px/16=1.875em */
+}
+
+p {
+  font-size: 0.875em; /* 14px/16=0.875em */
+}
+</pre>
+
+<p>In the example above, the text size in em is the same as the previous example in pixels. 
+  However, with the em size, it is possible to adjust the text size in all browsers.</p>
+<p>Unfortunately, there is still a problem with older versions of IE. The text becomes larger than 
+  it should when made larger, and smaller than it should when made smaller.</p>
+
+<h3>Use a Combination of Percent and Em</h3>
+<p>The solution that works in all browsers, is to set a default font-size in percent for the 
+  &lt;body&gt; element:</p>
+<pre>
+body {
+  font-size: 100%;
+}
+
+h1 {
+  font-size: 2.5em;
+}
+
+h2 {
+  font-size: 1.875em;
+}
+
+p {
+  font-size: 0.875em;
+}
+</pre>
+
+<p>Our code now works great! It shows the same text size in all browsers, and allows all browsers 
+  to zoom or resize the text!</p>
+
+<h3>Font Weight</h3>
+<p>The font-weight property specifies the weight of a font:</p>
+<pre>
+p.normal {
+  font-weight: normal;
+}
+
+p.thick {
+  font-weight: bold;
+}
+</pre>
+
+<h3>Responsive Font Size</h3>
+<p>The text size can be set with a vw unit, which means the "viewport width".</p>
+<p>That way the text size will follow the size of the browser window:</p>
+<pre>
+  &lt;h1 style="font-size:10vw"&gt;Hello World&lt;/h1&gt; 
+</pre>
+<h1 style="font-size:10vw;">Responsive Text</h1>
+<p style="font-size:5vw;">Resize the browser window to see how the text size scales.</p>
+<p style="font-size:5vw;">Use the "vw" unit when sizing the text. 10vw will set the size to 10% of the viewport width.</p>
+<p>Viewport is the browser window size. 1vw = 1% of viewport width. If the viewport is 50cm wide, 
+  1vw is 0.5cm.</p>
+
+<h3>Font Variant</h3>
+<p>The font-variant property specifies whether or not a text should be displayed in a small-caps 
+  font.</p>
+<p>In a small-caps font, all lowercase letters are converted to uppercase letters. However, the 
+  converted uppercase letters appears in a smaller font size than the original uppercase letters in 
+  the text.</p>
+<pre>
+p.normal {
+  font-variant: normal;
+}
+
+p.small {
+  font-variant: small-caps;
+}
+</pre>
+<p style="font-variant: normal;">My name is Hege Refsnes.</p>
+<p style="font-variant: small;">My name is Hege Refsnes.</p>
+
+<h3>More Examples</h3>
+<p>All the font properties in one declaration</p>
+<p>This example demonstrates how to use the shorthand property for setting all of the font 
+  properties in one declaration.</p>
+<pre>
+p.ex1 {
+  font: 15px arial, sans-serif;
+}
+
+p.ex2 {
+  font:italic bold 12px/30px Georgia, serif;
+}
+</pre>
+
+<h3>All CSS Font Properties</h3>
+<table>
+  <tr>
+    <th>Property</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td>font</td>
+    <td>Sets all the font properties in one declaration</td>
+  </tr>
+  <tr>
+    <td>font-family</td>
+    <td>Sepcifies the font family for text</td>
+  </tr>
+  <tr>
+    <td>font-size</td>
+    <td>Specifies the font size of text</td>
+  </tr>
+  <tr>
+    <td>font-style</td>
+    <td>Specifies the font style for text</td>
+  </tr>
+  <tr>
+    <td>font-variant</td>
+    <td>Specifies whether or not a text should be displayed in a small-caps font</td>
+  </tr>
+  <tr>
+    <td>font-weight</td>
+    <td>Wpecifies the weight of a font</td>
+  </tr>
+</table>
+
+<h3>Exercises</h3>
+<p><b>Exercise 1</b></p>
+<p>Set the font family for the page to "Courier New", and the font family for &lt;h1&gt; to 
+  "Verdana".</p>
+<pre>
+body {
+  font-family: "Courier New";
+}
+
+h1 {
+  font-family: Verdana;
+}
+</pre>
+
+<p><b>Exercise 2</b></p>
+<p>Show &lt;p&gt; elements as "italic" text.</p>
+<pre>
+p {
+  font-style: italic;
+}
+</pre>
+
+<p><b>Exercise 3</b></p>
+<p>Set the font size for the page to "20px", and the font size for &lt;h1&gt; to "3em".</p>
+<pre>
+body {
+  font-size: 20px;
+}
+
+h1 {
+  font-size: 3em;
+}
+</pre>
+
+<p><b>Exercise 4</b></p>
+<p>Show &lt;p&gt; elements as "bold" text.</p>
+<pre>
+p {
+  font-weight: bold;
+}
+</pre>
+
+<p><b>Exercise 5</b></p>
+<p>With the font property: Set the &lt;p&gt; to "italic", "20px" and "Verdana".</p>
+<pre>
+p {
+  font: italic 20px Verdana;
+}
+</pre>
+
+</body>
+</html>

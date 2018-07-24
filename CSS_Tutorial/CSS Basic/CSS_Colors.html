@@ -1,0 +1,278 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+<meta charset="UTF-8">
+<title>CSS Colors</title>
+</head>
+
+<body>
+<h1>CSS Colors</h3>
+<p>Colors are specified using predefined color names, or RGB, HEX, HSL, RGBA, HSLA values.</p>
+
+<h3>Color Names</h3>
+<p>In HTML, a color can be specified by using a color name:</p>
+<p style="color:Tomato;">Tomato</p>
+<p style="color:Orange;">Orange</p>
+<p style="color:DodgerBlue;">DodgerBlue</p>
+<p style="color:MediumSeaGreen;">MediumSeaGreen</p>
+<p style="color:Gray;">Gray</p>
+<p style="color:SlateBlue;">SlateBlue</p>
+<p style="color:Violet;">Violet</p>
+<p style="color:LightGray;">LightGray</p>
+
+<p>HTML supports <a href="https://www.w3schools.com/colors/colors_names.asp">140 standard color names</a>.</p>
+
+<h3>Background Color</h3>
+<p>You can set the background color for HTML elements:</p>
+<pre>
+&lt;h1 style="background-color:DodgerBlue;"&gt;Hello World&lt;/h1&gt;
+&lt;p style="background-color:Tomato;"&gt;Lorem ipsum dolor sit amet, consectetuer adipiscing elit, 
+    sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. 
+    Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl 
+    ut aliquip ex ea commodo consequat.&lt;/p&gt; 
+</pre>
+<h1 style="background-color:DodgerBlue;">Hello World</h1>
+<p style="background-color:Tomato;">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, 
+		sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. 
+		Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl 
+		ut aliquip ex ea commodo consequat.</p>
+
+<h3>Text Color</h3>
+<p>You can set the color of text:</p>
+<pre>
+&lt;h1 style="color:Tomato;"&gt;Hello World&lt;/h1&gt;
+&lt;p style="color:DodgerBlue;"&gt;Lorem ipsum dolor sit amet, consectetuer adipiscing elit, 
+    sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.&lt;/p&gt;
+&lt;p style="color:MediumSeaGreen;"&gt;Ut wisi enim ad minim veniam, quis nostrud exerci tation 
+    ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.&lt;/p&gt; 
+</pre>
+<h1 style="color:Tomato;">Hello World</h1>
+<p style="color:DodgerBlue;">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, 
+		sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
+<p style="color:MediumSeaGreen;">Ut wisi enim ad minim veniam, quis nostrud exerci tation 
+		ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.</p> 
+
+<h3>Border Color</h3>
+<p>You can set the color of borders:</p>
+<pre>
+&lt;p style="border:2px solid Tomato;"&gt;Hello World&lt;/p&gt;
+&lt;p style="border:2px solid DodgerBlue;"&gt;Hello World&lt;/p&gt;
+&lt;p style="border:2px solid Violet;"&gt;Hello World&lt;/p&gt; 
+</pre>
+<p style="border:2px solid Tomato;">Hello World</p>
+<p style="border:2px solid DodgerBlue;">Hello World</p>
+<p style="border:2px solid Violet;">Hello World</p> 
+
+<h3>Color Values</h3>
+<p>In HTML, colors can also be specified using RBG values, HEX values, HSL values, RGBA values, and HSLA values:</p>
+<p>Same as color name "Tomato":</p>
+<p style="color:rgb(255,99,71);">rgb(255, 99, 71)</p>
+<p style="color:#ff6347;">#ff6347</p>
+<p style="color:hsl(9,100%,64%);">hsl(9, 100%, 64%)</p>
+
+<p>Same as color name "Tomato", but 50% transparent:</p>
+<p style="color:rgba(255,99,71,0.5);">rgba(255, 99, 71, 0.5)</p>
+<p style="color:hsla(9,100%,64%,0.5);">hsla(9, 100%, 64%, 0.5)</p>
+
+<h3>RGB Value</h3>
+<p>In HTML, a color can be specified as an RGB value, using this formula:</p>
+<p style="font-style: italic;font-weight: bold;">rgb(red, green, blue)</p>
+<p>
+  Each parameter (red, green, and blue) defines the intensity of the color between 0 and 255.<br />
+  For example, rgb(255, 0, 0) is displayed as red, because red is set to its highest value (255) 
+    and the others are set to 0.<br />    
+  To display the color black, all color parameters must be set to 0, like this: rgb(0, 0, 0).<br />    
+  To display the color white, all color parameters must be set to 255, like this: rgb(255, 255, 255).<br />
+  Shades of gray are often difined using equal values for all the 3 light sources, like this: rbg(120, 120, 120).</p>
+<pre>
+&lt;h1 style="background-color:rgb(255, 0, 0);"&gt;rgb(255, 0, 0)&lt;/h1&gt;
+&lt;h1 style="background-color:rgb(0, 0, 255);"&gt;rgb(0, 0, 255)&lt;/h1&gt;
+&lt;h1 style="background-color:rgb(60, 179, 113);"&gt;rgb(60, 179, 113)&lt;/h1&gt;
+&lt;h1 style="background-color:rgb(238, 130, 238);"&gt;rgb(238, 130, 238)&lt;/h1&gt;
+&lt;h1 style="background-color:rgb(255, 165, 0);"&gt;rgb(255, 165, 0)&lt;/h1&gt;
+&lt;h1 style="background-color:rgb(106, 90, 205);"&gt;rgb(106, 90, 205)&lt;/h1&gt;
+&lt;h1 style="background-color:rgb(0, 0, 0);"&gt;rgb(0, 0, 0)&lt;/h1&gt;
+&lt;h1 style="background-color:rgb(60, 60, 60);"&gt;rgb(60, 60, 60)&lt;/h1&gt;
+&lt;h1 style="background-color:rgb(120, 120, 120);"&gt;rgb(120, 120, 120)&lt;/h1&gt;
+&lt;h1 style="background-color:rgb(180, 180, 180);"&gt;rgb(180, 180, 180)&lt;/h1&gt;
+&lt;h1 style="background-color:rgb(240, 240, 240);"&gt;rgb(240, 240, 240)&lt;/h1&gt;
+&lt;h1 style="background-color:rgb(255, 255, 255);"&gt;rgb(255, 255, 255)&lt;/h1&gt;
+</pre>
+<h1 style="background-color:rgb(255, 0, 0);">rgb(255, 0, 0)</h1>
+<h1 style="background-color:rgb(0, 0, 255);">rgb(0, 0, 255)</h1>
+<h1 style="background-color:rgb(60, 179, 113);">rgb(60, 179, 113)</h1>
+<h1 style="background-color:rgb(238, 130, 238);">rgb(238, 130, 238)</h1>
+<h1 style="background-color:rgb(255, 165, 0);">rgb(255, 165, 0)</h1>
+<h1 style="background-color:rgb(106, 90, 205);">rgb(106, 90, 205)</h1>
+<h1 style="background-color:rgb(0, 0, 0);">rgb(0, 0, 0)</h1>
+<h1 style="background-color:rgb(60, 60, 60);">rgb(60, 60, 60)</h1>
+<h1 style="background-color:rgb(120, 120, 120);">rgb(120, 120, 120)</h1>
+<h1 style="background-color:rgb(180, 180, 180);">rgb(180, 180, 180)</h1>
+<h1 style="background-color:rgb(240, 240, 240);">rgb(240, 240, 240)</h1>
+<h1 style="background-color:rgb(255, 255, 255);">rgb(255, 255, 255)</h1>
+
+<h3>HEX Value</h3>
+<p>In HTML, a color can be specified using a hexadecimal value in the form:</p>
+<p style="font-style: italic;font-weight: bold;">#rrggbb</p>
+<p>
+  Where rr (red), gg (green) and bb (blue) are hexadecimal values between 00 and ff (same as decimal 0-255).<br />
+  For example, #ff0000 is displayed as red, because red is set to its highest value (ff) and the others are set 
+  to the lowest value (00).<br />
+  Shades of gray are often defined using equal values for all the 3 light sources: #787878.</p>
+<pre>
+&lt;h1 style="background-color:#ff0000;"&gt;#ff0000&lt;/h1&gt;
+&lt;h1 style="background-color:#0000ff;"&gt;#0000ff&lt;/h1&gt;
+&lt;h1 style="background-color:#3cb371;"&gt;#3cb371&lt;/h1&gt;
+&lt;h1 style="background-color:#ee82ee;"&gt;#ee82ee&lt;/h1&gt;
+&lt;h1 style="background-color:#ffa500;"&gt;#ffa500&lt;/h1&gt;
+&lt;h1 style="background-color:#6a5acd;"&gt;#6a5acd&lt;/h1&gt;
+&lt;h1 style="background-color:#000000;"&gt;#000000&lt;/h1&gt;
+&lt;h1 style="background-color:#3c3c3c;"&gt;#3c3c3c&lt;/h1&gt;
+&lt;h1 style="background-color:#787878;"&gt;#787878&lt;/h1&gt;
+&lt;h1 style="background-color:#b4b4b4;"&gt;#b4b4b4&lt;/h1&gt;
+&lt;h1 style="background-color:#f0f0f0;"&gt;#f0f0f0&lt;/h1&gt;
+&lt;h1 style="background-color:#ffffff;"&gt;#ffffff&lt;/h1&gt;
+</pre>
+<h1 style="background-color:#ff0000;">#ff0000</h1>
+<h1 style="background-color:#0000ff;">#0000ff</h1>
+<h1 style="background-color:#3cb371;">#3cb371</h1>
+<h1 style="background-color:#ee82ee;">#ee82ee</h1>
+<h1 style="background-color:#ffa500;">#ffa500</h1>
+<h1 style="background-color:#6a5acd;">#6a5acd</h1>
+<h1 style="background-color:#000000;">#000000</h1>
+<h1 style="background-color:#3c3c3c;">#3c3c3c</h1>
+<h1 style="background-color:#787878;">#787878</h1>
+<h1 style="background-color:#b4b4b4;">#b4b4b4</h1>
+<h1 style="background-color:#f0f0f0;">#f0f0f0</h1>
+<h1 style="background-color:#ffffff;">#ffffff</h1>
+
+<h3>HSL Value</h3>
+<p>In HTML, a color can be specified using hue, saturation, and lightness (HSL) in the form:</p>
+<p style="font-style: italic;font-weight: bold;">hsl(hue, saturation, lightness)</p>
+<p>
+  Hue is a degree on the color wheel from 0 to 360. 0 is red, 120 is green, and 240 is blue.<br />
+  Saturation is a percentage value, 0% means a shade of gray, and 100% is the full color.<br />
+  Lightness is also a percentage, 0% is black, 50% is neither light or dark, 100% is white.
+</p>
+<pre>
+&lt;h1 style="background-color:hsl(0, 100%, 50%);"&gt;hsl(0, 100%, 50%)&lt;/h1&gt;
+&lt;h1 style="background-color:hsl(240, 100%, 50%);"&gt;hsl(240, 100%, 50%)&lt;/h1&gt;
+&lt;h1 style="background-color:hsl(147, 50%, 47%);"&gt;hsl(147, 50%, 47%)&lt;/h1&gt;
+&lt;h1 style="background-color:hsl(300, 76%, 72%);"&gt;hsl(300, 76%, 72%)&lt;/h1&gt;
+&lt;h1 style="background-color:hsl(39, 100%, 50%);"&gt;hsl(39, 100%, 50%)&lt;/h1&gt;
+&lt;h1 style="background-color:hsl(248, 53%, 58%);"&gt;hsl(248, 53%, 58%)&lt;/h1&gt;
+</pre>
+<h1 style="background-color:hsl(0, 100%, 50%);">hsl(0, 100%, 50%)</h1>
+<h1 style="background-color:hsl(240, 100%, 50%);">hsl(240, 100%, 50%)</h1>
+<h1 style="background-color:hsl(147, 50%, 47%);">hsl(147, 50%, 47%)</h1>
+<h1 style="background-color:hsl(300, 76%, 72%);">hsl(300, 76%, 72%)</h1>
+<h1 style="background-color:hsl(39, 100%, 50%);">hsl(39, 100%, 50%)</h1>
+<h1 style="background-color:hsl(248, 53%, 58%);">hsl(248, 53%, 58%)</h1>
+
+<h4>Saturation</h4>
+<p>
+  Saturation can be describe as the intensity of a color.<br />
+  100% is pure color, no shades of gray.<br />
+  50% is 50% gray, but you can still see the color.<br />
+  0% is completely gray, you can no longer see the color.
+</p>
+<pre>
+&lt;h1 style="background-color:hsl(0, 100%, 50%);"&gt;hsl(0, 100%, 50%)&lt;/h1&gt;
+&lt;h1 style="background-color:hsl(0, 80%, 50%);"&gt;hsl(0, 80%, 50%)&lt;/h1&gt;
+&lt;h1 style="background-color:hsl(0, 60%, 50%);"&gt;hsl(0, 60%, 50%)&lt;/h1&gt;
+&lt;h1 style="background-color:hsl(0, 40%, 50%);"&gt;hsl(0, 40%, 50%)&lt;/h1&gt;
+&lt;h1 style="background-color:hsl(0, 20%, 50%);"&gt;hsl(0, 20%, 50%)&lt;/h1&gt;
+&lt;h1 style="background-color:hsl(0, 0%, 50%);"&gt;hsl(0, 0%, 50%)&lt;/h1&gt;
+</pre>
+<h1 style="background-color:hsl(0, 100%, 50%);">hsl(0, 100%, 50%)</h1>
+<h1 style="background-color:hsl(0, 80%, 50%);">hsl(0, 80%, 50%)</h1>
+<h1 style="background-color:hsl(0, 60%, 50%);">hsl(0, 60%, 50%)</h1>
+<h1 style="background-color:hsl(0, 40%, 50%);">hsl(0, 40%, 50%)</h1>
+<h1 style="background-color:hsl(0, 20%, 50%);">hsl(0, 20%, 50%)</h1>
+<h1 style="background-color:hsl(0, 0%, 50%);">hsl(0, 0%, 50%)</h1>
+
+<h4>Lightness</h4>
+<p>The lightness of a color can be described as how much light you want to give the color, where 
+    0% means no light (black), 50% means 50% light (neither dark nor light) 100% means full lightness (white).</p>
+<pre>
+&lt;h1 style="background-color:hsl(0, 100%, 0%);"&gt;hsl(0, 100%, 0%)&lt;/h1&gt;
+&lt;h1 style="background-color:hsl(0, 100%, 25%);"&gt;hsl(0, 100%, 25%)&lt;/h1&gt;
+&lt;h1 style="background-color:hsl(0, 100%, 50%);"&gt;hsl(0, 100%, 50%)&lt;/h1&gt;
+&lt;h1 style="background-color:hsl(0, 100%, 75%);"&gt;hsl(0, 100%, 75%)&lt;/h1&gt;
+&lt;h1 style="background-color:hsl(0, 100%, 90%);"&gt;hsl(0, 100%, 90%)&lt;/h1&gt;
+&lt;h1 style="background-color:hsl(0, 100%, 100%);"&gt;hsl(0, 100%, 100%)&lt;/h1&gt;
+</pre>
+<h1 style="background-color:hsl(0, 100%, 0%);">hsl(0, 100%, 0%)</h1>
+<h1 style="background-color:hsl(0, 100%, 25%);">hsl(0, 100%, 25%)</h1>
+<h1 style="background-color:hsl(0, 100%, 50%);">hsl(0, 100%, 50%)</h1>
+<h1 style="background-color:hsl(0, 100%, 75%);">hsl(0, 100%, 75%)</h1>
+<h1 style="background-color:hsl(0, 100%, 90%);">hsl(0, 100%, 90%)</h1>
+<h1 style="background-color:hsl(0, 100%, 100%);">hsl(0, 100%, 100%)</h1>
+
+<h4>Gray</h4>
+<p>Shades of gray are often defined by setting the hue and saturation to 0, and adjust the lightness from 0% 
+    to 100% to get darker/lighter shades:</p>
+<pre>
+&lt;h1 style="background-color:hsl(0, 0%, 0%);"&gt;hsl(0, 0%, 0%)&lt;/h1&gt;
+&lt;h1 style="background-color:hsl(0, 0%, 24%);"&gt;hsl(0, 0%, 24%)&lt;/h1&gt;
+&lt;h1 style="background-color:hsl(0, 0%, 47%);"&gt;hsl(0, 0%, 47%)&lt;/h1&gt;
+&lt;h1 style="background-color:hsl(0, 0%, 71%);"&gt;hsl(0, 0%, 71%)&lt;/h1&gt;
+&lt;h1 style="background-color:hsl(0, 0%, 94%);"&gt;hsl(0, 0%, 94%)&lt;/h1&gt;
+&lt;h1 style="background-color:hsl(0, 0%, 100%);"&gt;hsl(0, 0%, 100%)&lt;/h1&gt;    
+</pre>
+<h1 style="background-color:hsl(0, 0%, 0%);">hsl(0, 0%, 0%)</h1>
+<h1 style="background-color:hsl(0, 0%, 24%);">hsl(0, 0%, 24%)</h1>
+<h1 style="background-color:hsl(0, 0%, 47%);">hsl(0, 0%, 47%)</h1>
+<h1 style="background-color:hsl(0, 0%, 71%);">hsl(0, 0%, 71%)</h1>
+<h1 style="background-color:hsl(0, 0%, 94%);">hsl(0, 0%, 94%)</h1>
+<h1 style="background-color:hsl(0, 0%, 100%);">hsl(0, 0%, 100%)</h1>
+
+<h3>RGBA Value</h3>
+<p>
+  RGBA color values are an extension of RGB color values with an alpha channel - 
+    which specifies the opacity for a color.<br />
+  An RGBA color value is specified with:
+</p>
+<p style="font-style: italic;font-weight: bold;">rgba(red, green, blue, alpha)</p>
+<p>The alpha parameter is a number between 0.0 (fully transparent) and 1.0 (not transparent at all):</p>
+<pre>
+&lt;h1 style="background-color:rgba(255, 99, 71, 0);"&gt;rgba(255, 99, 71, 0)&lt;/h1&gt;
+&lt;h1 style="background-color:rgba(255, 99, 71, 0.2);"&gt;rgba(255, 99, 71, 0.2)&lt;/h1&gt;
+&lt;h1 style="background-color:rgba(255, 99, 71, 0.4);"&gt;rgba(255, 99, 71, 0.4)&lt;/h1&gt;
+&lt;h1 style="background-color:rgba(255, 99, 71, 0.6);"&gt;rgba(255, 99, 71, 0.6)&lt;/h1&gt;
+&lt;h1 style="background-color:rgba(255, 99, 71, 0.8);"&gt;rgba(255, 99, 71, 0.8)&lt;/h1&gt;
+&lt;h1 style="background-color:rgba(255, 99, 71, 1);"&gt;rgba(255, 99, 71, 1)&lt;/h1&gt;
+</pre>
+<h1 style="background-color:rgba(255, 99, 71, 0);">rgba(255, 99, 71, 0)</h1>
+<h1 style="background-color:rgba(255, 99, 71, 0.2);">rgba(255, 99, 71, 0.2)</h1>
+<h1 style="background-color:rgba(255, 99, 71, 0.4);">rgba(255, 99, 71, 0.4)</h1>
+<h1 style="background-color:rgba(255, 99, 71, 0.6);">rgba(255, 99, 71, 0.6)</h1>
+<h1 style="background-color:rgba(255, 99, 71, 0.8);">rgba(255, 99, 71, 0.8)</h1>
+<h1 style="background-color:rgba(255, 99, 71, 1);">rgba(255, 99, 71, 1)</h1>
+
+<h3>HSLA Value</h3>
+<p>
+  HSLA color values are an extension of HSL color values with an alpha channel - 
+    which specifies the opacity for a color.<br />
+  An HSLA color value is specified with:
+</p>
+<p style="font-style: italic;font-weight: bold;">hsla(hue, saturation, lightness, alpha)</p>
+<p>The alpha parameter is a number between 0.0 (fully transparent) and 1.0 (not transparent at all):</p>
+<pre>
+&lt;h1 style="background-color:hsla(9, 100%, 64%, 0);"&gt;hsla(9, 100%, 64%, 0)&lt;/h1&gt;
+&lt;h1 style="background-color:hsla(9, 100%, 64%, 0.2);"&gt;hsla(9, 100%, 64%, 0.2)&lt;/h1&gt;
+&lt;h1 style="background-color:hsla(9, 100%, 64%, 0.4);"&gt;hsla(9, 100%, 64%, 0.4)&lt;/h1&gt;
+&lt;h1 style="background-color:hsla(9, 100%, 64%, 0.6);"&gt;hsla(9, 100%, 64%, 0.6)&lt;/h1&gt;
+&lt;h1 style="background-color:hsla(9, 100%, 64%, 0.8);"&gt;hsla(9, 100%, 64%, 0.8)&lt;/h1&gt;
+&lt;h1 style="background-color:hsla(9, 100%, 64%, 1);"&gt;hsla(9, 100%, 64%, 1)&lt;/h1&gt;
+</pre>
+<h1 style="background-color:hsla(9, 100%, 64%, 0);">hsla(9, 100%, 64%, 0)</h1>
+<h1 style="background-color:hsla(9, 100%, 64%, 0.2);">hsla(9, 100%, 64%, 0.2)</h1>
+<h1 style="background-color:hsla(9, 100%, 64%, 0.4);">hsla(9, 100%, 64%, 0.4)</h1>
+<h1 style="background-color:hsla(9, 100%, 64%, 0.6);">hsla(9, 100%, 64%, 0.6)</h1>
+<h1 style="background-color:hsla(9, 100%, 64%, 0.8);">hsla(9, 100%, 64%, 0.8)</h1>
+<h1 style="background-color:hsla(9, 100%, 64%, 1);">hsla(9, 100%, 64%, 1)</h1>
+
+
+</body>
+</html>

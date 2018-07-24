@@ -1,0 +1,238 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+<meta charset="UTF-8">
+<title>CSS Overflow</title>
+
+<style>
+div#overflowTest {
+  background: #4CAF50;
+  color: white;
+  padding: 15px;
+  width: 50%;
+  height: 100px;
+  overflow: scroll;
+  border: 1px solid #ccc;
+}
+
+div#visible {
+  width: 200px;
+  height: 50px;
+  background-color: #eee;
+  overflow: visible;
+}
+
+div#hidden {
+  background-color: #eee;
+  width: 200px;
+  height: 50px;
+  border: 1px dotted black;
+  overflow: hidden;
+}
+
+div#scroll {
+  background-color: #eee;
+  width: 200px;
+  height: 100px;
+  border: 1px dotted black;
+  overflow: scroll;
+}
+
+div#auto {
+  background-color: #eee;
+  width: 200px;
+  height: 50px;
+  border: 1px dotted black;
+  overflow: auto;
+}
+
+div#xy {
+  background-color: #eee;
+  width: 200px;
+  height: 50px;
+  border: 1px dotted black;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+</style>
+</head>
+
+<body>
+<h3>CSS Overflow</h3>
+<p>The CSS overflow property controls what happens to content that is too big to fit into an area.</p>
+<pre>
+#overflowTest {
+  background: #4CAF50;
+  color: white;
+  padding: 15px;
+  width: 50%;
+  height: 100px;
+  overflow: scroll;
+  border: 1px solid #ccc;
+}
+</pre>
+<div id="overflowTest">
+  This text is really long and the height of its container is only 100 pixels. Therefore, a 
+  scrollbar is added to help the reader to scroll the content. Lorem ipsum dolor sit amet, 
+  consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna 
+  aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper 
+  suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in 
+  hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis 
+  at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit 
+  augue duis dolore te feugait nulla facilisi. Nam liber tempor cum soluta nobis eleifend option 
+  congue nihil imperdiet doming id quod mazim placerat facer possim assum. Typi non habent 
+  claritatem insitam; est usus legentis in iis qui facit eorum claritatem.
+</div>
+
+<p>The overflow property specifies whether to clip content or to add scrollbars when the content of 
+  an element is too big to fit in a specified area.</p>
+<p>The overflow property has the following values:</p>
+<ul>
+  <li>visible - Default. The overflow is not clipped. It renders outside the element's box</li>
+  <li>hidden - The overflow is clipped, and the rest of the content will be invisible</li>
+  <li>scroll - The overflow is clipped, but a scrollbar is added to see the rest of the content</li>
+  <li>auto - If overflow is clipped, a scrollbar should be added to see the rest of the content</li>
+</ul>
+
+<p><strong>Note:</strong> The overflow property only works for block elements with a specified height.</p>
+<p><strong>Note:</strong> In OS X Lion (on Mac), scrollbars are hidden by default and only shown 
+  when being used (even though "overflow:scroll" is set).</p>
+<hr />
+
+<h3>overflow: visible</h3>
+<p>By default, the overflow is visible, meaning that it is not clipped and it renders outside the 
+  element's box:</p>
+<pre>
+div {
+  width: 200px;
+  height: 50px;
+  background-color: #eee;
+  overflow: visible;
+}
+</pre>
+<div id="visible">
+  You can use the overflow property when you want to have better control of the layout. The overflow 
+  property specifies what happens if content overflows an element's box.
+</div>
+<br /><br /><br /><br /><hr />
+
+<h3>overflow: hidden</h3>
+<p>With the hidden value, the overflow is clipped, and the rest of the content is hidden:</p>
+<pre>
+div {
+  overflow: hidden;
+}
+</pre>
+<div id="hidden">
+  You can use the overflow property when you want to have better control of the layout. The overflow 
+  property specifies what happens if content overflows an element's box.
+</div>
+<hr />
+
+<h3>overflow: scroll</h3>
+<p>Setting the value to scroll, the overflow is clipped and a scrollbar is added to scroll inside 
+  the box. Note that this will add a scrollbar both horizontally and vertically (even if you do not 
+  need it):</p>
+<pre>
+div {
+  overflow: scroll;
+}
+</pre>
+<div id="scroll">
+  You can use the overflow property when you want to have better control of the layout. The overflow 
+  property specifies what happens if content overflows an element's box.
+</div>
+<hr />
+
+<h3>overflow: auto</h3>
+<p>The auto value is similar to scroll, only it add scrollbars when necessary:</p>
+<pre>
+div {
+  overflow: auto;
+}
+</pre>
+<div id="auto">
+  You can use the overflow property when you want to have better control of the layout. The overflow 
+  property specifies what happens if content overflows an element's box.
+</div>
+<hr />
+
+<h3>overflow-x and overflow-y</h3>
+<p>The overflow-x and overflow-y properties specifies whether to change the overflow of content just 
+  horizontally or vertically (or both):</p>
+<p>overflow-x specifies what to do with the left/right edges of the content.</p>
+<p>overflow-y specifies what to do with the top/bottom edges of the content.</p>
+<pre>
+div {
+  overflow-x: hidden; /* Hide horizontal scrollbar */
+  overflow-y: scroll; /* Add vertical scrollbar */
+}
+</pre>
+<div id="xy">
+  You can use the overflow property when you want to have better control of the layout. The overflow 
+  property specifies what happens if content overflows an element's box.
+</div>
+<hr />
+
+<h3>All CSS Overflow Properties</h3>
+<table>
+  <tr>
+    <th>Property</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td>overflow</td>
+    <td>Specifies what happens if content overflows an element's box</td>
+  </tr>
+  <tr>
+    <td>overflow-x</td>
+    <td>Specifies what to do with the left/right edges of the content if it overflows the element's 
+      content area</td>
+  </tr>
+  <tr>
+    <td>overflow-y</td>
+    <td>Specifies what to do with the top/bottom edges of the content if it overflows the element's 
+      content area</td>
+  </tr>
+</table>
+<hr />
+
+<h3>Exercises</h3>
+<p><b>Exercise 1</b></p>
+<p>Add a scrollbar to the <div> element.</p>
+<pre>
+div {
+  background-color: #eee;
+  width: 200px;
+  height: 70px;
+  border: 1px dotted black;
+  overflow: scroll;
+}
+</pre>
+
+<p><b>Exercise 2</b></p>
+<p>Specify that the overflowing text in the div element should not be visible, not even with scrolling.</p>
+<pre>
+div {
+  background-color: lightblue;
+  width: 200px;
+  height: 200px;
+  overflow: hidden;
+}
+</pre>
+
+<p><b>Exercise 3</b></p>
+<p>Add a horizontal scrollbar to &lt;div&gt;.</p>
+<pre>
+div {
+  background-color: #eee;
+  width: 150px;
+  height: 70px;
+  border: 1px dotted black;
+  white-space: nowrap;
+  overflow-x: scroll;
+}
+</pre>
+
+</body>
+</html>

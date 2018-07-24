@@ -1,0 +1,740 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+<meta charset="UTF-8">
+<title>CSS Float</title>
+
+<style>
+img#floatright {
+  float: right;
+  width: 170px;
+  height: 170px;
+  margin-left: 15px;
+}
+
+img#floatleft {
+  float: left;
+  width: 170px;
+  height: 170px;
+  margin-right: 15px;
+}
+
+img#floatnone {
+  float: none;
+  width: 170px;
+  height: 170px;
+}
+
+.div1 {
+  float: left;
+  width: 100px;
+  height: 50px;
+  margin: 10px;
+  border: 3px solid #73AD21;
+}
+
+.div2 {
+  border: 1px solid red;
+}
+
+.div3 {
+  float: left;
+  width: 100px;
+  height: 50px;
+  margin: 10px;
+  border: 3px solid #73AD21;
+}
+
+.div4 {
+  border: 1px solid red;
+  clear: left;
+}
+
+div#clearfix {
+  border: 3px solid #4CAF50;
+  padding: 5px;
+  overflow: auto;
+}
+
+div#clearfix2::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+div#woclearfix {
+  border: 3px solid #4CAF50;
+  padding: 5px;
+}
+
+img#clearfix {
+  float: right;
+  width: 170px;
+  height: 170px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+div#box {
+  float: left;
+  width: 33.33%;
+  padding: 50px;
+}
+
+div#box2 {
+  float: left;
+  width: 50%;
+  padding: 50px;
+  height: 300px;
+}
+
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+div#img-container {
+  float: left;
+  width: 33.33%;
+  padding: 5px;
+}
+
+.flex-container {
+  display: flex;
+  flex-wrap: nowrap;
+  background-color: DodgerBlue;
+}
+
+.flex-container .box {
+  background-color: #f1f1f1;
+  width: 50%;
+  margin: 10px;
+  text-align: center;
+  line-height: 75px;
+  font-size: 30px;
+}
+
+ul#nav {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+li#nav {
+  float: left;
+}
+
+li#nav a {
+  display: inline-block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li#nav a:hover {
+  background-color: #111;
+}
+
+#navactive {
+  background-color: red;
+}
+
+.header, .footer {
+  background-color: grey;
+  color: white;
+  padding: 15px;
+}
+.column {
+  float: left;
+  padding: 15px;
+}
+.menu {
+  width: 25%;
+}
+.content {
+  width: 75%;
+}
+.menu ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+.menu li {
+  padding: 8px;
+  margin-bottom: 8px;
+  background-color: #33b5e5;
+  color: #ffffff;
+}
+.menu li:hover {
+  background-color: #0099cc;
+}
+
+img#example1 {
+  float: right;
+  border: 1px dotted black;
+  margin: 0px 0px 15px 20px;
+  width: 100px;
+  height: 140px;
+}
+
+div#example2 {
+  float: right;
+  width: 120px;
+  margin: 0 0 15px 20px;
+  padding: 15px;
+  border: 1px solid black;
+  text-align: center;
+}
+
+span#example3 {
+  float: left;
+  width: 0.7em;
+  font-size: 400%;
+  font-family: algerian, courier;
+  line-height: 80%;
+}
+
+</style>
+</head>
+
+<body>
+<h3>CSS Layout - float and clear</h3>
+<p>The CSS float property specifies how an element should float.</p>
+<p>The CSS clear property specifies what elements can float beside the cleared element and on which 
+  side.</p>
+
+<h3>The float Property</h3>
+<p>The float property is used for positioning and layout on web pages.</p>
+<p>The float property can have one of the following values:</p>
+<ul>
+  <li>left - The element floats to the left of its container</li>
+  <li>right - The element floats to the right of its container</li>
+  <li>none - The element does not float (will be displayed just where it occurs in the text). 
+    This is default.</li>
+  <li>inheirt - The element inherits the float value of its parent</li>
+</ul>
+
+<p>In its simplest use, the float property can be used to wrap text around images.</p>
+<hr />
+
+<h3>Example - float: right;</h3>
+<p>The following example specifies that an image should float to the right in a text:</p>
+<p>
+  <img id="floatright" src="https://www.w3schools.com/Css/pineapple.jpg" alt="Pineapple" />
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus imperdiet, nulla et dictum 
+  interdum, nisi lorem egestas odio, vitae scelerisque enim ligula venenatis dolor. Maecenas nisl 
+  est, ultrices nec congue eget, auctor vitae massa. Fusce luctus vestibulum augue ut aliquet.
+  Mauris ante ligula, facilisis sed ornare eu, lobortis in odio. Praesent convallis urna a lacus 
+  interdum ut hendrerit risus congue. Nunc sagittis dictum nisi, sed ullamcorper ipsum dignissim 
+  ac. In at libero sed nunc venenatis imperdiet sed ornare turpis. Donec vitae dui eget tellus 
+  gravida venenatis. Integer fringilla congue eros non fermentum. Sed dapibus pulvinar nibh tempor 
+  porta. Cras ac leo purus. Mauris quis diam velit.
+</p>
+  
+<pre>
+img {
+  float: right;
+}
+</pre>
+
+<h3>Example - float: left;</h3>
+<p>The following example specifies that an image should float to the left in a text:</p>
+<p>
+  <img id="floatleft" src="https://www.w3schools.com/Css/pineapple.jpg" alt="Pineapple">
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus imperdiet, nulla et dictum 
+  interdum, nisi lorem egestas odio, vitae scelerisque enim ligula venenatis dolor. Maecenas nisl 
+  est, ultrices nec congue eget, auctor vitae massa. Fusce luctus vestibulum augue ut aliquet.
+  Mauris ante ligula, facilisis sed ornare eu, lobortis in odio. Praesent convallis urna a lacus 
+  interdum ut hendrerit risus congue. Nunc sagittis dictum nisi, sed ullamcorper ipsum dignissim 
+  ac. In at libero sed nunc venenatis imperdiet sed ornare turpis. Donec vitae dui eget tellus 
+  gravida venenatis. Integer fringilla congue eros non fermentum. Sed dapibus pulvinar nibh tempor 
+  porta. Cras ac leo purus. Mauris quis diam velit.
+</p>
+
+<pre>
+img {
+  float: left;
+}
+</pre>
+
+<br /><br />
+
+<h3>Example - No float</h3>
+<p>In the following example the image will be displayed just where it occurs in the text 
+  (float: none;):</p>
+<p>
+  <img id="floatnone" src="https://www.w3schools.com/Css/pineapple.jpg" alt="Pineapple">
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus imperdiet, nulla et dictum 
+  interdum, nisi lorem egestas odio, vitae scelerisque enim ligula venenatis dolor. Maecenas nisl 
+  est, ultrices nec congue eget, auctor vitae massa. Fusce luctus vestibulum augue ut aliquet.
+  Mauris ante ligula, facilisis sed ornare eu, lobortis in odio. Praesent convallis urna a lacus 
+  interdum ut hendrerit risus congue. Nunc sagittis dictum nisi, sed ullamcorper ipsum dignissim 
+  ac. In at libero sed nunc venenatis imperdiet sed ornare turpis. Donec vitae dui eget tellus 
+  gravida venenatis. Integer fringilla congue eros non fermentum. Sed dapibus pulvinar nibh tempor 
+  porta. Cras ac leo purus. Mauris quis diam velit.
+</p>
+
+<pre>
+img {
+  float: none;
+}
+</pre>
+<hr />
+
+<h3>The clear Property</h3>
+<p>The clear property specifies what elements can float beside the cleared element and on which 
+  side.</p>
+<p>The clear property can have one of the following values:</p>
+<ul>
+  <li>none - Allows floating elements on both sides. This is default</li>
+  <li>left - No floating elements allowed on the left side</li>
+  <li>right- No floating elements allowed on the right side</li>
+  <li>both - No floating elements allowed on either the left or the right side</li>
+  <li>inherit - The element inherits the clear value of its parent</li>
+</ul>
+
+<p>The most common way to use the clear property is after you have used a float property on an 
+  element.</p>
+<p>
+When clearing floats, you should match the clear to the float:<br />
+If an element is floated to the left, then you should clear to the left. 
+Your floated element will continue to float, but the cleared element will appear below it on the web 
+page.
+</p>
+<p>The following example clears the float to the left. Means that no floating elements are allowed 
+  on the left side (of the div):</p>
+
+<p><b>Without clear</b></p>
+<div class="div1">div1</div>
+<div class="div2">
+  div2 - Notice that div2 is after div1 in the HTML code. However, since div1 floats to the left, 
+  the text in div2 flows around div1.
+</div>
+<br /><br /><br />
+
+<p><b>With clear</b></p>
+<div class="div3">div3</div>
+<div class="div4">
+  div4 - Here, clear: left; moves div4 down below the floating div3. The value "left" clears 
+  elements floated to the left. You can also clear "right" and "both".
+</div>
+
+<pre>
+div {
+  clear: left;
+}
+</pre>
+<hr />
+
+<h3>The clearfix Hack</h3>
+<p>If an element is taller than the element containing it, and it is floated, it will "overflow"</p>
+<p>Then we can add overflow: auto; to the containing element to fix this problem:</p>
+<p><b>Without clearfix</b></p>
+<div id="woclearfix">
+  <img id="clearfix" src="https://www.w3schools.com/Css/pineapple.jpg" alt="Pineapple">
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus imperdiet, nulla et dictum 
+  interdum...
+</div>
+
+<p style="clear: right"><b>With clearfix</b></p>
+<div id="clearfix">
+  <img id="clearfix" src="https://www.w3schools.com/Css/pineapple.jpg" alt="Pineapple">
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus imperdiet, nulla et dictum 
+  interdum...
+</div>
+
+<pre>
+.clearfix {
+  overflow: auto;
+}
+</pre>
+
+<p>The overflow: auto clearfix works well as long as you are able to keep control of your margins 
+  and padding (else you might see scrollbars). The new, modern clearfix hack however, is safer to 
+  use, and the following code is used for most webpages:</p>
+<p><b>Without clearfix</b></p>
+<div id="woclearfix">
+  <img id="clearfix" src="https://www.w3schools.com/Css/pineapple.jpg" alt="Pineapple">
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus imperdiet, nulla et dictum 
+  interdum...
+</div>
+
+<p style="clear: right"><b>With clearfix</b></p>
+<div id="clearfix">
+  <img id="clearfix" src="https://www.w3schools.com/Css/pineapple.jpg" alt="Pineapple">
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus imperdiet, nulla et dictum 
+  interdum...
+</div>
+
+<pre>
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+</pre>
+<hr />
+
+<h3>Grid of Boxes / Equal Width Boxes</h3>
+<p>With the float property, it is easy to float boxes of content side by side:</p>
+
+<div class="clearfix">
+  <div id="box" style="background-color:#bbb">
+    <p>Some text inside the box.</p>
+  </div>
+  <div id="box" style="background-color:#ccc">
+    <p>Some text inside the box.</p>
+  </div>
+  <div id="box" style="background-color:#ddd">
+    <p>Some text inside the box.</p>
+  </div>
+</div>
+
+<pre>
+* {
+  box-sizing: border-box;
+}
+
+.box {
+  float: left;
+  width: 33.33%; /* three boxes (use 25% for four, and 50% for two, etc) */
+  padding: 50px; /* if you want space between the images */
+}
+</pre>
+
+<p>Note that we also use the clearfix hack to take care of the layout flow, and that add the 
+  box-sizing property to make sure that the box doesn't break due to extra padding.</p>
+
+<p><b>What is box-sizing?</b></p>
+<p>You can easily create three floating boxes side by side. However, when you add something that 
+  enlarges the width of each box (e.g. padding or borders), the box will break. The box-sizing 
+  property allows us to include the padding and border in the box's total width (and height), 
+  making sure that the padding stays inside of the box and that it does not break.</p>
+<hr />
+
+<h3>Images Side By Side</h3>
+<p>The grid of boxes can also be used to display images side by side:</p>
+
+<div class="clearfix">
+  <div id="img-container">
+    <img src="https://www.w3schools.com/Css/img_5terre.jpg" alt="Italy" style="width:100%">
+  </div>
+  <div id="img-container">
+    <img src="https://www.w3schools.com/Css/img_forest.jpg" alt="Forest" style="width:100%">
+  </div>
+  <div id="img-container">
+    <img src="https://www.w3schools.com/Css/img_mountains.jpg" alt="Mountains" style="width:100%">
+  </div>
+</div>
+
+<pre>
+.img-container {
+  float: left;
+  width: 33.33%; /* three containers (use 25% for four, and 50% for two, etc) */
+  padding: 5px; /* if you want space between the images */
+}
+</pre>
+<hr />
+
+<h3>Equal Height Boxes</h3>
+<p>In the previous example, you learned how to float boxes side by side with an equal width. 
+  However, it is not easy to create floating boxes with equal heights. A quick fix however, is to 
+  set a fixed height, like in the example below:</p>
+
+<div class="clearfix">
+  <div id="box2" style="background-color:#bbb">
+    <p><b>Box 1</b></p>
+    <p>Some content, some content, some content</p>
+  </div>
+  <div id="box2" style="background-color:#ccc">
+    <p><b>Box 2</b></p>
+    <p>Some content, some content, some content</p>
+    <p>Some content, some content, some content</p>
+    <p>Some content, some content, some content</p>
+  </div>
+</div>
+
+<pre>
+.box {
+  height: 500px;
+}
+</pre>
+
+<p>However, this is not very flexible. It is ok if you can guarantee that the boxes will always have 
+  the same amount of content in them. But many times, the content is not the same. If you try the 
+  example above on a mobile phone, you will see that the second box's content will be displayed 
+  outside of the box. This is where CSS3 Flexbox comes in handy - as it can automatically stretch 
+  boxes to be as long as the longest box:</p>
+
+<div class="flex-container">
+  <div class="box">Box 1 - This is some text to make sure that the content gets really tall. This is some text to make sure that the content gets really tall.</div>
+  <div class="box">Box 2 - My height will follow Box 1.</div>
+</div>
+
+<pre>
+.flex-container {
+  display: flex;
+  flex-wrap: nowrap;
+  background-color: DodgerBlue;
+}
+
+.flex-container .box {
+  background-color: #f1f1f1;
+  width: 50%;
+  margin: 10px;
+  text-align: center;
+  line-height: 75px;
+  font-size: 30px;
+}
+</pre>
+<hr />
+
+<h3>Navigation Menu</h3>
+<p>Use float with a list of hyperlinks to create a horizontal menu:</p>
+<ul id="nav">
+  <li id="nav"><a href="#home" id="navactive">Home</a></li>
+  <li id="nav"><a href="#news">News</a></li>
+  <li id="nav"><a href="#contact">Contact</a></li>
+  <li id="nav"><a href="#about">About</a></li>
+</ul>
+
+<pre>
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: inline-block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover {
+  background-color: #111;
+}
+
+.active {
+  background-color: red;
+}
+</pre>
+<hr />
+
+<h3>Web Layout Example</h3>
+<p>It is also common to do entire web layouts using the float property:</p>
+
+<div class="header">
+  <h1>Chania</h1>
+</div>
+
+<div class="clearfix">
+  <div class="column menu">
+    <ul>
+      <li>The Flight</li>
+      <li>The City</li>
+      <li>The Island</li>
+      <li>The Food</li>
+    </ul>
+  </div>
+
+  <div class="column content">
+    <h1>The City</h1>
+    <p>Chania is the capital of the Chania region on the island of Crete. The city can be divided in two parts, the old town and the modern city.</p>
+    <p>You will learn more about web layout and responsive web pages in a later chapter.</p>
+  </div>
+</div>
+
+<div class="footer">
+  <p>Footer Text</p>
+</div>
+
+<pre>
+.header, .footer {
+  background-color: grey;
+  color: white;
+  padding: 15px;
+}
+
+.column {
+  float: left;
+  padding: 15px;
+}
+
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.menu {
+  width: 25%;
+}
+
+.content {
+  width: 75%;
+}
+</pre>
+<hr />
+
+<h3>More Examples</h3>
+<p><b>An image with border and margins that floats to the right in a paragraph</b></p>
+<p>Let an image float to the right in a paragraph. Add border and margins to the image.</p>
+<p>In the paragraph below, the image will float to the right. A dotted black border is added to the 
+  image. We have also added margins to the image to push the text away from the image: 0 px margin 
+  on the top and right side, 15 px margin on the bottom, and 20 px margin on the left side of the 
+  image.</p>
+    
+<p>
+  <img id="example1" src="https://www.w3schools.com/Css/w3css.gif">
+  This is some text. This is some text. This is some text.
+  This is some text. This is some text. This is some text.
+  This is some text. This is some text. This is some text.
+  This is some text. This is some text. This is some text.
+  This is some text. This is some text. This is some text.
+  This is some text. This is some text. This is some text.
+  This is some text. This is some text. This is some text.
+  This is some text. This is some text. This is some text.
+  This is some text. This is some text. This is some text.
+  This is some text. This is some text. This is some text.
+  This is some text. This is some text. This is some text.
+  This is some text. This is some text. This is some text.
+  This is some text. This is some text. This is some text.
+</p>
+
+<pre>
+img {
+  float: right;
+  border: 1px dotted black;
+  margin: 0px 0px 15px 20px;
+}
+</pre>
+
+<p><b>An image with a caption that floats to the right</b></p>
+<p>Let an image with a caption float to the right.</p>
+
+<div id="example2">
+  <img src="https://www.w3schools.com/Css/w3css.gif" width="100" height="140"><br>CSS is fun!
+</div>
+
+<p>
+  This is some text. This is some text. This is some text.
+  This is some text. This is some text. This is some text.
+  This is some text. This is some text. This is some text.
+  This is some text. This is some text. This is some text.
+  This is some text. This is some text. This is some text.
+  This is some text. This is some text. This is some text.
+  This is some text. This is some text. This is some text.
+  This is some text. This is some text. This is some text.
+  This is some text. This is some text. This is some text.
+  This is some text. This is some text. This is some text.
+  This is some text. This is some text. This is some text.
+  This is some text. This is some text. This is some text.
+  This is some text. This is some text. This is some text.
+</p>
+  
+<p>
+  In the paragraph above, the div element is 120 pixels wide and it contains the image.
+  The div element will float to the right. Margins are added to the div to push the text away from the div.
+  Borders and padding are added to the div to frame in the picture and the caption.
+</p>
+
+<pre>
+div {
+  float: right;
+  width: 120px;
+  margin: 0 0 15px 20px;
+  padding: 15px;
+  border: 1px solid black;
+  text-align: center;
+}
+</pre>
+
+<p><b>Let the first letter of a paragraph float to the left</b></p>
+<p>Let the first letter of a paragraph float to the left and style the letter.</p>
+
+<p>
+  <span id="example3">T</span>his is some text.
+  This is some text. This is some text.
+  This is some text. This is some text. This is some text.
+  This is some text. This is some text. This is some text.
+  This is some text. This is some text. This is some text.
+  This is some text. This is some text. This is some text.
+  This is some text. This is some text. This is some text.
+  This is some text. This is some text. This is some text.
+</p>
+
+<p>
+  In the paragraph above, the first letter of the text is embedded in a span element.
+  The span element has a width that is 0.7 times the size of the current font.
+  The font-size of the span element is 400% (quite large) and the line-height is 80%.
+  The font of the letter in the span will be in "Algerian".
+</p>
+
+<pre>
+span {
+  float: left;
+  width: 0.7em;
+  font-size: 400%;
+  font-family: algerian, courier;
+  line-height: 80%;
+}
+</pre>
+
+<p><b>Creating a website with float</b></p>
+<p>Use float to create a homepage with a navbar, header, footer, left content and main content.</p>
+<p>See example early.</p>
+<hr />
+
+<h3>All CSS Float Properties</h3>
+<table>
+  <tr>
+    <th>Property</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td>box-sizing</td>
+    <td>Defines how the width and height of an element are calculated: should they include padding 
+      and borders, or not</td>
+  </tr>
+  <tr>
+    <td>clear</td>
+    <td>Specifies what elements can float beside the cleared element and on which side</td>
+  </tr>
+  <tr>
+    <td>float</td>
+    <td>Specifies how an element should float</td>
+  </tr>
+  <tr>
+    <td>overflow</td>
+    <td>Specifies what happens if content overflows an element's box</td>
+  </tr>
+  <tr>
+    <td>overflow-x</td>
+    <td>Specifies what to do with the left/right edges of the content if it overflows the element's 
+      content area</td>
+  </tr>
+  <tr>
+    <td>overflow-y</td>
+    <td>Specifies what to do with the top/bottom edges of the content if it overflows the element's 
+      content area</td>
+  </tr>
+</table>
+
+
+</body>
+</html>

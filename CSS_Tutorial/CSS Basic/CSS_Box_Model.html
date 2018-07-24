@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+<meta charset="UTF-8">
+<title>CSS Box Model</title>
+
+<style>
+div.example1 {
+  width: 300px;
+  border: 25px solid green;
+  padding: 25px;
+  margin: 25px;
+}
+</style>
+</head>
+
+<body>
+<h3>The CSS Box Model</h3>
+<p>All HTML elements can be considered as boxes. In CSS, the term "box model" is used when talking about design and layout.</p>
+<p>The CSS box model is essentially a box that wraps around every HTML element. It consists of: margins, borders, padding, 
+  and the actual content.</p>
+
+<p>Explanation of the different parts:</p>
+<ul>
+  <li><b>Content</b> - The content of the box, where text and images appear</li>
+  <li><b>Padding</b> - Clears an area around the content. The padding is transparent</li>
+  <li><b>Border</b> - A border that goes around the padding and content</li>
+  <li><b>Margin</b> - Clears an area outside the border. The margin is transparent</li>
+</ul>
+
+<p>The box model allows us to add a border around elements, and to define space between elements.</p>
+<p>Example:</p>
+<pre>
+div {
+  width: 300px;
+  border: 25px solid green;
+  padding: 25px;
+  margin: 25px;
+}
+</pre>
+<div class="example1">This text is the actual content of the box. We have added a 25px padding, 25px margin and a 25px green border. 
+  Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis 
+  aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint 
+  occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
+
+<h3>Width and Height of an Element</h3>
+<p>In order to set the width and height of an element correctly in all browsers, you need to know how the box model works.</p>
+<p><b>Important:</b> When you set the width and height properties of an elment with CSS, you just set the width and height 
+  of the <b>content area</b>. To calculate the full size of an element, you must also add padding, borders and margins.</p>
+
+<p>Assume we wat to style a &lt;div&gt; element to have a total width of 350px:</p>
+<p>Example:</p>
+<pre>
+div {
+  width: 320px;
+  padding: 10px;
+  border: 5px solid gray;
+  margin: 0;
+}
+</pre>
+
+<p>Here is the calculation:</p>
+<pre>
+320px (width)
++ 20px (left + right padding)
++ 10px (left + right border)
++ 0px (left + right margin)
+= 350px
+</pre>
+
+<p>The total width of an element should be calculated like this:</p>
+<p>Total element width = width + left padding + right padding + left border + right border + left margin + right margin</p>
+
+<p>The total height of an elment should be calculated like this:</p>
+<p>Total element height = height + top padding + bottom padding + top border + bottom border + top margin + bottom margin</p>
+
+<hr />
+<h3>Exercises</h3>
+<p><b>Exercise 1</b></p>
+<p>Set the width of the div to "200px".</p>
+<pre>
+div {
+  background-color: lightblue;
+  width: 200px;
+}
+</pre>
+
+<p><b>Exercise 2</b></p>
+<p>Set the padding of the div to "25px".</p>
+<pre>
+div {
+  background-color: lightblue;
+  width: 200px;
+  padding: 25px;
+}
+</pre>
+
+<p><b>Exercise 3</b></p>
+<p>Set the border of the div to "25px solid navy".</p>
+<pre>
+div {
+  background-color: lightblue;
+  width: 200px;
+  padding: 25px;
+  border: 25px solid navy;
+}
+</pre>
+
+<p><b>Exercise 4</b></p>
+<p>Set the margin of the div to "25px".</p>
+<pre>
+div {
+  background-color: lightblue;
+  width: 200px;
+  padding: 25px;
+  border: 25px solid navy;
+  margin: 25px;
+}
+</pre>
+
+</body>
+</html>

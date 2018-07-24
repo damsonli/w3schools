@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+<meta charset="UTF-8">
+<title>CSS Units</title>
+</head>
+
+<body>
+<h3>CSS Units</h3>
+<p>CSS has several different units for expressing a length.</p>
+<p>Many CSS properties take "length" values, such as width, margin, padding, font-size, 
+  border-width, etc.</p>
+<p>Length is a number followed by a length unit, such as 10px, 2em, etc.</p>
+<p>A whitespace cannot appear between the number and the unit. However, if the value is 0, the unit 
+  can be omitted.</p>
+<p>For some CSS properties, negative lengths are allowed.</p>
+<p></p>There are two types of length units: absolute and relative.</p>
+<hr />
+
+<h3>Absolute Lengths</h3>
+<p>The absolute length units are fixed and a length expressed in any of these will appear as exactly 
+  that size.</p>
+<p>Absolute length units are not recommneded for use on screen, because screen sizes vary so much. 
+  However, they can be used if the output medium is known, such as for print layout.</p>
+<table>
+  <tr>
+    <th>Unit</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td>cm</td>
+    <td>centimeters</td>
+  </tr>
+  <tr>
+    <td>mm</td>
+    <td>millimeters</td>
+  </tr>
+  <tr>
+    <td>in</td>
+    <td>inches (1in = 96px = 2.54cm)</td>
+  </tr>
+  <tr>
+    <td>px *</td>
+    <td>pixels (1px = 1/96 of 1in)</td>
+  </tr>
+  <tr>
+    <td>pt</td>
+    <td>points (1pt = 1/72 of 1in)</td>
+  </tr>
+  <tr>
+    <td>pc</td>
+    <td>picas (1pc = 12pt)</td>
+  </tr>
+</table>
+<p>* Pixels (px) are relative to the viewing device. For low-dpi devices, 1px is one device pixel 
+  (dot) of the display. For printers and high resolution screens 1px implies multiple device 
+  pixels.</p>
+<hr />
+
+<h3>Relative Lengths</h3>
+<p>Relative length units specify a length relative to another length property. Relative length units 
+  scales better between different rendering mediums.</p>
+<table>
+  <tr>
+    <th>Unit</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td>em</td>
+    <td>Relative to the font-size of the element (2em means 2 times the size of the current font)</td>
+  </tr>
+  <tr>
+    <td>ex</td>
+    <td>Relative to the x-height of the current font (rarely used)</td>
+  </tr>
+  <tr>
+    <td>ch</td>
+    <td>Relative to width of the "0" (zero)</td>
+  </tr>
+  <tr>
+    <td>rem</td>
+    <td>Relative to font-size of the root element</td>
+  </tr>
+  <tr>
+    <td>vw</td>
+    <td>Relative to 1% of the width of the viewport *</td>
+  </tr>
+  <tr>
+    <td>vh</td>
+    <td>Relative to 1% of the height of the viewport *</td>
+  </tr>
+  <tr>
+    <td>vmin</td>
+    <td>Relative to 1% of viewport's* smaller dimension</td>
+  </tr>
+  <tr>
+    <td>vmax</td>
+    <td>Relative to 1% of viewport's* larger dimension</td>
+  </tr>
+  <tr>
+    <td>%</td>
+    <td>Relative to the parent element</td>
+  </tr>
+</table>
+
+<p><b>Tip:</b> The em and rem units are practical in creating perfectly scalable layout!</p>
+<p>* Viewport = the browser window size. If the viewport is 50cm wide, 1vw = 0.5cm.</p>
+<hr />
+
+<h3>Browser Support</h3>
+<p>The numbers in the table specify the first browser version that fully supports the length unit.</p>
+<table>
+  <tr>
+    <th>Length Unit</th>
+    <th>Chrome</th>
+    <th>Internet Explorer</th>
+    <th>Firefox</th>
+    <th>Safari</th>
+    <th>Opera</th>
+  </tr>
+  <tr>
+    <td>em, ex, %, px, cm, mm, in, pt, pc</td>
+    <td>1.0</td>
+    <td>3.0</td>
+    <td>1.0</td>
+    <td>1.0</td>
+    <td>3.5</td>
+  </tr>
+  <tr>
+    <td>ch</td>
+    <td>27.0</td>
+    <td>9.0</td>
+    <td>1.0</td>
+    <td>7.0</td>
+    <td>20.0</td>
+  </tr>
+  <tr>
+    <td>rem</td>
+    <td>4.0</td>
+    <td>9.0</td>
+    <td>3.6</td>
+    <td>4.1</td>
+    <td>11.6</td>
+  </tr>
+  <tr>
+    <td>vh, vw</td>
+    <td>20.0</td>
+    <td>9.0</td>
+    <td>3.6</td>
+    <td>4.1</td>
+    <td>11.6</td>
+  </tr>
+  <tr>
+    <td>vmin</td>
+    <td>20.0</td>
+    <td>9.0*</td>
+    <td>19.0</td>
+    <td>6.0</td>
+    <td>20.0</td>
+  </tr>
+  <tr>
+    <td>vmax</td>
+    <td>26.0</td>
+    <td>Not supported</td>
+    <td>19.0</td>
+    <td>7.0</td>
+    <td>20.0</td>
+  </tr>
+</table>
+
+<p><strong>Note:</strong> Internet Explorer 9 supports vmin with the non-standard name: vm.</p>
+
+
+</body>
+</html>

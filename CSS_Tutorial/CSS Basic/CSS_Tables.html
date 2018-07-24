@@ -1,0 +1,843 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+<meta charset="UTF-8">
+<title>CSS Tables</title>
+
+<style>
+#customers {
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#customers td, #customers th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#customers tr:nth-child(even){background-color: #f2f2f2;}
+
+#customers tr:hover {background-color: #ddd;}
+
+#customers th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #4CAF50;
+  color: white;
+}
+
+#borders, #borders th, #borders td{
+  border: 1px solid black;
+}
+
+#collapse {
+  border-collapse: collapse;
+}
+
+#collapse th, #collapse td {
+  border: 1px solid black;
+}
+
+#singleBorder {
+    border-collapse: collapse;
+    border: 1px solid black;
+}
+
+#width, #width td, #width th {
+  border: 1px solid black;
+}
+
+#width {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#width th {
+  height: 50px;
+}
+
+#caption, #caption td, #caption th {
+  border: 1px solid black;
+}
+
+#caption caption {
+  caption-side: bottom;
+}
+
+#h-align, #h-align td, #h-align th {
+  border: 1px solid black;
+}
+
+#h-align {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#h-align th {
+  text-align: left;
+}
+
+#v-align, #v-align td, #v-align th {
+  border: 1px solid black;
+}
+
+#v-align {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#v-align td {
+  height: 50px;
+  vertical-align: bottom;
+}
+
+#padding, #padding td, #padding th {    
+  border: 1px solid #ddd;
+  text-align: left;
+}
+
+#padding {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#padding th, #padding td {
+  padding: 15px;
+}
+
+#h-div {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#h-div th, #h-div td {
+  padding: 8px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+#hoverable {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#hoverable th, #hoverable td {
+  padding: 8px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+#hoverable tr:hover {background-color:#f5f5f5;}
+
+#striped {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#striped th, #striped td {
+  text-align: left;
+  padding: 8px;
+}
+
+#striped tr:nth-child(even) {background-color: #f2f2f2;}
+
+#color {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#color th, #color td {
+  text-align: left;
+  padding: 8px;
+}
+
+#color tr:nth-child(even) {background-color: #f2f2f2}
+
+#color th {
+  background-color: #4CAF50;
+  color: white;
+}
+
+#responsive {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#responsive th, #responsive td {
+  text-align: left;
+  padding: 8px;
+}
+
+#responsive tr:nth-child(even) {background-color: #f2f2f2}
+</style>
+</head>
+
+<body>
+<h3>CSS Tables</h3>
+<p>The look of an HTML table can be greatly improved with CSS.</p>
+
+<h3>Table Borders</h3>
+<p>To specify table borders in CSS, use the border property.</p>
+<p>The example below specifies a black border for &lt;table&gt;, &lt;th&gt;, and &lt;td&gt; 
+  elements:</p>
+<pre>
+table, th, td {
+  border: 1px solid black;
+}
+</pre>
+<table id="borders">
+  <tr>
+    <th>Firstname</th>
+    <th>Lastname</th>
+  </tr>
+  <tr>
+    <td>Peter</td>
+    <td>Griffin</td>
+  </tr>
+  <tr>
+    <td>Lois</td>
+    <td>Griffin</td>
+  </tr>
+</table>
+
+<p>Notice that the table in the example above has double borders. This is because both the table 
+  and the &lt;th&gt; and &lt;td&gt; elements have separate borders.</p>
+
+<h3>Collapse Table Borders</h3>
+<p>The border-collapse property sets whether the table borders should be collapsed into a single 
+  border:</p>
+<pre>
+table {
+  border-collapse: collapse;
+}
+
+table, th, td {
+  border: 1px solid black;
+}
+</pre>
+
+<table id="collapse">
+  <tr>
+    <th>Firstname</th>
+    <th>Lastname</th>
+  </tr>
+  <tr>
+    <td>Peter</td>
+    <td>Griffin</td>
+  </tr>
+  <tr>
+    <td>Lois</td>
+    <td>Griffin</td>
+  </tr>
+</table>
+<p><b>Note:</b> If a !DOCTYPE is not specified, the border-collapse property can produce unexpected 
+  results in IE8 and earlier versions.</p>
+
+<p>If you only want a border around the table, only specify the border property for &lt;table&gt;</p>
+<pre>
+table {
+  border: 1px solid black;
+}
+</pre>
+<table id="singleBorder">
+  <tr>
+    <th>Firstname</th>
+    <th>Lastname</th>
+  </tr>
+  <tr>
+    <td>Peter</td>
+    <td>Griffin</td>
+  </tr>
+  <tr>
+    <td>Lois</td>
+    <td>Griffin</td>
+  </tr>
+</table>
+
+<h3>Table Width and Height</h3>
+<p>Width and height of a table are defined by the width and height properties.</p>
+<p>The example below sets the width of the table to 100%, and the height of the &lt;th&gt; elements 
+  to 50px:</p>
+<pre>
+table {
+  width: 100%;
+}
+
+th {
+  height: 50px;
+}
+</pre>
+
+<table id="width">
+  <tr>
+    <th>Firstname</th>
+    <th>Lastname</th>
+    <th>Savings</th>
+  </tr>
+  <tr>
+    <td>Peter</td>
+    <td>Griffin</td>
+    <td>$100</td>
+  </tr>
+  <tr>
+    <td>Lois</td>
+    <td>Griffin</td>
+    <td>$150</td>
+  </tr>
+</table>
+
+<h3>Horizontal Alignment</h3>
+<p>The text-align property sets the horizontal alignment (like left, right, or center) of the 
+  content in &lt;th&gt; or &lt;td&gt;</p>
+<p>By default, the content of &lt;th&gt; elements are center-aligned and the content of &lt;td&gt; 
+  elements are left-aligned.</p>
+<p>The following example left-aligns the text in &lt;th&gt; elements:</p>
+<pre>
+th {
+  text-align: left;
+}
+</pre>
+
+<table id="h-align">
+  <tr>
+    <th>Firstname</th>
+    <th>Lastname</th>
+    <th>Savings</th>
+  </tr>
+  <tr>
+    <td>Peter</td>
+    <td>Griffin</td>
+    <td>$100</td>
+  </tr>
+  <tr>
+    <td>Lois</td>
+    <td>Griffin</td>
+    <td>$150</td>
+  </tr>
+  <tr>
+    <td>Joe</td>
+    <td>Swanson</td>
+    <td>$300</td>
+  </tr>
+  <tr>
+    <td>Cleveland</td>
+    <td>Brown</td>
+    <td>$250</td>
+</tr>
+</table>
+
+
+<h3>Vertical Alignment</h3>
+<p>The vertical-align property sets the vertical alignment (like top, bottom, or middle) of the 
+  content in &lt;th&gt; or &lt;td&gt;</p>
+<p>By default, the vertical alignment of the content in a table is middle (for both &lt;th&gt; and 
+  &lt;td&gt; elements).</p>
+<p>The following example sets the vertical text alignment to bottom for &lt;td&gt; elements:</p>
+<pre>
+td {
+  height: 50px;
+  vertical-align: bottom;
+}
+</pre>
+
+<table id="v-align">
+  <tr>
+    <th>Firstname</th>
+    <th>Lastname</th>
+    <th>Savings</th>
+  </tr>
+  <tr>
+    <td>Peter</td>
+    <td>Griffin</td>
+    <td>$100</td>
+  </tr>
+  <tr>
+    <td>Lois</td>
+    <td>Griffin</td>
+    <td>$150</td>
+  </tr>
+  <tr>
+    <td>Joe</td>
+    <td>Swanson</td>
+    <td>$300</td>
+  </tr>
+  <tr>
+    <td>Cleveland</td>
+    <td>Brown</td>
+    <td>$250</td>
+</tr>
+</table>
+
+<h3>Table Padding</h3>
+<p>To control the space between the border and the content in a table, use the padding property on 
+  &lt;td&gt; and &lt;th&gt; elements:</p>
+<pre>
+th, td {
+  padding: 15px;
+  text-align: left;
+}
+</pre>
+
+<table id="padding">
+  <tr>
+    <th>Firstname</th>
+    <th>Lastname</th>
+    <th>Savings</th>
+  </tr>
+  <tr>
+    <td>Peter</td>
+    <td>Griffin</td>
+    <td>$100</td>
+  </tr>
+  <tr>
+    <td>Lois</td>
+    <td>Griffin</td>
+    <td>$150</td>
+  </tr>
+  <tr>
+    <td>Joe</td>
+    <td>Swanson</td>
+    <td>$300</td>
+  </tr>
+  <tr>
+    <td>Cleveland</td>
+    <td>Brown</td>
+    <td>$250</td>
+  </tr>
+</table>
+
+
+<h3>Horizontal Dividers</h3>
+<p>Add the border-bottom property to &lt;th&gt; and &lt;td&gt; for horizontal dividers:</p>
+<pre>
+th, td {
+  border-bottom: 1px solid #ddd;
+}
+</pre>
+
+<table id="h-div">
+  <tr>
+    <th>Firstname</th>
+    <th>Lastname</th>
+    <th>Savings</th>
+  </tr>
+  <tr>
+    <td>Peter</td>
+    <td>Griffin</td>
+    <td>$100</td>
+  </tr>
+  <tr>
+    <td>Lois</td>
+    <td>Griffin</td>
+    <td>$150</td>
+  </tr>
+  <tr>
+    <td>Joe</td>
+    <td>Swanson</td>
+    <td>$300</td>
+  </tr>
+  <tr>
+    <td>Cleveland</td>
+    <td>Brown</td>
+    <td>$250</td>
+  </tr>
+</table>
+
+<h3>Hoverable Table</h3>
+<p>Use the :hover selector on &lt;tr&gt; to highlight table rows on mouse over:</p>
+<pre>
+tr:hover {background-color: #f5f5f5;}
+</pre>
+
+<table id="hoverable">
+  <tr>
+    <th>First Name</th>
+    <th>Last Name</th>
+    <th>Points</th>
+  </tr>
+  <tr>
+    <td>Peter</td>
+    <td>Griffin</td>
+    <td>$100</td>
+  </tr>
+  <tr>
+    <td>Lois</td>
+    <td>Griffin</td>
+    <td>$150</td>
+  </tr>
+  <tr>
+    <td>Joe</td>
+    <td>Swanson</td>
+    <td>$300</td>
+  </tr>
+  <tr>
+    <td>Cleveland</td>
+    <td>Brown</td>
+    <td>$250</td>
+  </tr>
+</table>
+
+<h3>Striped Tables</h3>
+<p>For zebra-striped tables, use the nth-child() selector and add a background-color to all even 
+  (or odd) table rows:</p>
+<pre>
+tr:nth-child(even) {background-color: #f2f2f2;}
+</pre>
+
+<table id="striped">
+  <tr>
+    <th>First Name</th>
+    <th>Last Name</th>
+    <th>Points</th>
+  </tr>
+  <tr>
+    <td>Peter</td>
+    <td>Griffin</td>
+    <td>$100</td>
+  </tr>
+  <tr>
+    <td>Lois</td>
+    <td>Griffin</td>
+    <td>$150</td>
+  </tr>
+  <tr>
+    <td>Joe</td>
+    <td>Swanson</td>
+    <td>$300</td>
+  </tr>
+  <tr>
+    <td>Cleveland</td>
+    <td>Brown</td>
+    <td>$250</td>
+  </tr>
+</table>
+
+<h3>Table Color</h3>
+<p>The example below specifies the background color and text color of &lt;th&gt; elements:</p>
+<pre>
+th {
+  background-color: #4CAF50;
+  color: white;
+}
+</pre>
+
+<table id="color">
+  <tr>
+    <th>Firstname</th>
+    <th>Lastname</th>
+    <th>Savings</th>
+  </tr>
+  <tr>
+    <td>Peter</td>
+    <td>Griffin</td>
+    <td>$100</td>
+  </tr>
+  <tr>
+    <td>Lois</td>
+    <td>Griffin</td>
+    <td>$150</td>
+  </tr>
+  <tr>
+    <td>Joe</td>
+    <td>Swanson</td>
+    <td>$300</td>
+  </tr>
+  <tr>
+    <td>Cleveland</td>
+    <td>Brown</td>
+    <td>$250</td>
+</tr>
+</table>
+
+
+<h3>Responsive Table</h3>
+<p>A responsive table will display a horizontal scroll bar if the screen is too small to display 
+  the full content:</p>
+<p>Add a container element (like &lt;div&gt;) with overflow-x:auto around the &lt;table&gt; element 
+  to make it responsive:</p>
+<pre>
+&lt;div style="overflow-x:auto;"&gt;
+
+&lt;table&gt;
+... table content ...
+&lt;/table&gt;
+
+&lt;/div&gt; 
+</pre>
+
+<div style="overflow-x:auto;">
+  <table id="responsive">
+    <tr>
+      <th>First Name</th>
+      <th>Last Name</th>
+      <th>Points</th>
+      <th>Points</th>
+      <th>Points</th>
+      <th>Points</th>
+      <th>Points</th>
+      <th>Points</th>
+      <th>Points</th>
+      <th>Points</th>
+      <th>Points</th>
+      <th>Points</th>
+    </tr>
+    <tr>
+      <td>Jill</td>
+      <td>Smith</td>
+      <td>50</td>
+      <td>50</td>
+      <td>50</td>
+      <td>50</td>
+      <td>50</td>
+      <td>50</td>
+      <td>50</td>
+      <td>50</td>
+      <td>50</td>
+      <td>50</td>
+    </tr>
+    <tr>
+      <td>Eve</td>
+      <td>Jackson</td>
+      <td>94</td>
+      <td>94</td>
+      <td>94</td>
+      <td>94</td>
+      <td>94</td>
+      <td>94</td>
+      <td>94</td>
+      <td>94</td>
+      <td>94</td>
+      <td>94</td>
+    </tr>
+    <tr>
+      <td>Adam</td>
+      <td>Johnson</td>
+      <td>67</td>
+      <td>67</td>
+      <td>67</td>
+      <td>67</td>
+      <td>67</td>
+      <td>67</td>
+      <td>67</td>
+      <td>67</td>
+      <td>67</td>
+      <td>67</td>
+    </tr>
+  </table>
+</div>
+
+<p><strong>Note:</strong> In OS X Lion (on Mac), scrollbars are hidden by default and only shown 
+  when being used (even though "overflow:scroll" is set).</p>
+
+<h3>More Examples</h3>
+<p><b>Make a fancy table</b></p>
+<p>This example demonstrates how to create a fancy table.</p>
+<pre>
+#customers {
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#customers td, #customers th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#customers tr:nth-child(even){background-color: #f2f2f2;}
+
+#customers tr:hover {background-color: #ddd;}
+
+#customers th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #4CAF50;
+  color: white;
+}
+</pre>
+<table id="customers">
+  <tr>
+    <th>Company</th>
+    <th>Contact</th>
+    <th>Country</th>
+  </tr>
+  <tr>
+    <td>Alfreds Futterkiste</td>
+    <td>Maria Anders</td>
+    <td>Germany</td>
+  </tr>
+  <tr>
+    <td>Berglunds snabbköp</td>
+    <td>Christina Berglund</td>
+    <td>Sweden</td>
+  </tr>
+  <tr>
+    <td>Centro comercial Moctezuma</td>
+    <td>Francisco Chang</td>
+    <td>Mexico</td>
+  </tr>
+  <tr>
+    <td>Ernst Handel</td>
+    <td>Roland Mendel</td>
+    <td>Austria</td>
+  </tr>
+  <tr>
+    <td>Island Trading</td>
+    <td>Helen Bennett</td>
+    <td>UK</td>
+  </tr>
+  <tr>
+    <td>Königlich Essen</td>
+    <td>Philip Cramer</td>
+    <td>Germany</td>
+  </tr>
+  <tr>
+    <td>Laughing Bacchus Winecellars</td>
+    <td>Yoshi Tannamuri</td>
+    <td>Canada</td>
+  </tr>
+  <tr>
+    <td>Magazzini Alimentari Riuniti</td>
+    <td>Giovanni Rovelli</td>
+    <td>Italy</td>
+  </tr>
+  <tr>
+    <td>North/South</td>
+    <td>Simon Crowther</td>
+    <td>UK</td>
+  </tr>
+  <tr>
+    <td>Paris spécialités</td>
+    <td>Marie Bertrand</td>
+    <td>France</td>
+  </tr>
+</table>
+
+<p><b>Set the position of the table caption</b></p>
+<p>This example demonstrates how to position the table caption.</p>
+<pre>
+table, td, th {
+  border: 1px solid black;
+}
+
+caption {
+  caption-side: bottom;
+}
+</pre>
+<table id="caption">
+<caption>Table 1.1 Customers</caption>
+  <tr>
+    <th>Company</th>
+    <th>Contact</th>
+    <th>Country</th>
+  </tr>
+  <tr>
+    <td>Alfreds Futterkiste</td>
+    <td>Maria Anders</td>
+    <td>Germany</td>
+  </tr>
+  <tr>
+    <td>Island Trading</td>
+    <td>Helen Bennett</td>
+    <td>UK</td>
+  </tr>
+</table>
+<p><b>Note:</b> IE8 supports the caption-side property if a !DOCTYPE is specified.</p>
+
+<h3>CSS Table Properties</h3>
+<table style="border: 1px solid black; border-collapse: collapse; width: 75%;">
+  <tr>
+    <th style="border: 1px solid black;">Property</th>
+    <th style="border: 1px solid black;">Description</th>
+  </tr>
+  <tr>
+    <td style="border: 1px solid black;">border</td>
+    <td style="border: 1px solid black;">Sets all the border properties in one declaration</td>
+  </tr>
+  <tr>
+    <td style="border: 1px solid black;">border-collapse</td>
+    <td style="border: 1px solid black;">
+      Specifies whether or not table borders should be collapsed
+    </td>
+  </tr>
+  <tr>
+    <td style="border: 1px solid black;">border-spacing</td>
+    <td style="border: 1px solid black;">
+      Specifies the distance between the borders of adjacent cells
+    </td>
+  </tr>
+  <tr>
+    <td style="border: 1px solid black;">caption-side</td>
+    <td style="border: 1px solid black;">Specifies the placement of a table caption</td>
+  </tr>
+  <tr>
+    <td style="border: 1px solid black;">empty-cells</td>
+    <td style="border: 1px solid black;">
+      Specifies whether or not to dispaly borders and background on empty cells in a table
+    </td>
+  </tr>
+  <tr>
+    <td style="border: 1px solid black;">table-layout</td>
+    <td style="border: 1px solid black;">Sets the layout algorithm to be used for a table</td>
+  </tr>
+</table>
+
+<hr />
+<h3>Exercises</h3>
+<p><b>Exercise 1</b></p>
+<p>Set the border to "2px solid green" for table, th and td elements.</p>
+<pre>
+table, th, td {
+  border: 2px solid green;
+}
+</pre>
+
+<p><b>Exercise 2</b></p>
+<p>Collapse the table borders into a single border.</p>
+<pre>
+table, td, th {
+  border: 1px solid black;
+}
+
+table {
+  border-collapse: collapse;
+}
+</pre>
+
+<p><b>Exercise 3</b></p>
+<p>Set the width of the table to "100%".</p>
+<pre>
+table {
+  width: 100%;
+}
+</pre>
+
+<p><b>Exercise 4</b></p>
+<p>Set the text alignment in td elements to "right".</p>
+<pre>
+td {
+  text-align: right;
+}
+</pre>
+
+<p><b>Exercise 5</b></p>
+<p>Set the padding in th elements to "15px".</p>
+<pre>
+th {
+  padding: 15px;
+}
+</pre>
+
+<p><b>Exercise 6</b></p>
+<p>Set the background color of th elements to "lightblue".</p>
+<pre>
+th {
+  background-color: lightblue;
+}
+</pre>
+
+</body>
+</html>

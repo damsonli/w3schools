@@ -1,0 +1,601 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+<meta charset="UTF-8">
+<title>CSS Forms</title>
+
+<style>
+#example input[type=text], select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+#example input[type=submit] {
+  width: 100%;
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+#example input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+div#example {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+
+input.a {
+  width: 100%;
+}
+
+input.b[type=text] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+}
+
+input.c[type=text] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: 2px solid red;
+  border-radius: 4px;
+}
+
+input.d[type=text] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: none;
+  border-bottom: 2px solid red;
+}
+
+input.e[type=text] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: none;
+  background-color: #3CBC8D;
+  color: white;
+}
+
+input.f[type=text] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: 1px solid #555;
+  outline: none;
+}
+
+input.f[type=text]:focus {
+  background-color: lightblue;
+}
+
+input.g[type=text] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: 3px solid #ccc;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  outline: none;
+}
+
+input.g[type=text]:focus {
+  border: 3px solid #555;
+}
+
+input.h[type=text] {
+  width: 100%;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  background-color: white;
+  background-image: url('https://www.w3schools.com/Css/searchicon.png');
+  background-position: 10px 10px; 
+  background-repeat: no-repeat;
+  padding: 12px 20px 12px 40px;
+}
+
+input.i[type=text] {
+  width: 130px;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  background-color: white;
+  background-image: url('https://www.w3schools.com/Css/searchicon.png');
+  background-position: 10px 10px; 
+  background-repeat: no-repeat;
+  padding: 12px 20px 12px 40px;
+  -webkit-transition: width 0.4s ease-in-out;
+  transition: width 0.4s ease-in-out;
+}
+
+input.i[type=text]:focus {
+  width: 100%;
+}
+
+textarea.j {
+  width: 100%;
+  height: 150px;
+  padding: 12px 20px;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  background-color: #f8f8f8;
+  font-size: 16px;
+  resize: none;
+}
+
+select.k {
+  width: 100%;
+  padding: 16px 20px;
+  border: none;
+  border-radius: 4px;
+  background-color: #f1f1f1;
+}
+
+input.l[type=button], input.l[type=submit], input.l[type=reset] {
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 16px 32px;
+  text-decoration: none;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+.container input[type=text], .container select, .container textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: vertical;
+  box-sizing: border-box;
+}
+
+.container label {
+  padding: 12px 12px 12px 0;
+  display: inline-block;
+  box-sizing: border-box;
+}
+
+.container input[type=submit] {
+  background-color: #4CAF50;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  float: right;
+  box-sizing: border-box;
+}
+
+.container input[type=submit]:hover {
+  background-color: #45a049;
+  box-sizing: border-box;
+}
+
+.container {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.col-25 {
+  float: left;
+  width: 25%;
+  margin-top: 6px;
+  box-sizing: border-box;
+}
+
+.col-75 {
+  float: left;
+  width: 75%;
+  margin-top: 6px;
+  box-sizing: border-box;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+  box-sizing: border-box;
+}
+
+/* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .col-25, .col-75, input[type=submit] {
+    width: 100%;
+    margin-top: 0;
+    box-sizing: border-box;
+  }
+}
+</style>
+</head>
+
+<body>
+<h3>An Example</h3>
+<p>The look of an HTML form can be greately improved with CSS:</p>
+<div id="example">
+  <form action="/action_page.php">
+    <label for="fname">First Name</label>
+    <input type="text" id="fname" name="firstname" placeholder="Your name..">
+
+    <label for="lname">Last Name</label>
+    <input type="text" id="lname" name="lastname" placeholder="Your last name..">
+
+    <label for="country">Country</label>
+    <select id="country" name="country">
+      <option value="australia">Australia</option>
+      <option value="canada">Canada</option>
+      <option value="usa">USA</option>
+    </select>
+  
+    <input type="submit" value="Submit">
+  </form>
+</div>
+<hr />
+
+<h3>Styling Input Fields</h3>
+<p>Use the width property to determine the width of the input field:</p>
+<form>
+  <label for="fname">First Name</label>
+  <input class="a" type="text" id="fname" name="fname">
+</form>
+
+<pre>
+input {
+  width: 100%;
+}
+</pre>
+<p>The example above applies to all &lt;input&gt; elements. If you only want to style a specific 
+  input type, you can use attribute selectors:</p>
+<ul>
+  <li>input[type=text] - will only select text fields</li>
+  <li>input[type=password] - will only select password fields</li>
+  <li>input[type=number] - will only select numbe fields</li>
+  <li>etc..</li>
+</ul>
+<hr />
+
+<h3>Padded Inputs</h3>
+<p>Use the padding property to add space inside the text field.</p>
+<p><b>Tip:</b> When you have many inputs after each other, you might also want to add some margin, 
+  to add more space outside of them:</p>
+<form>
+  <label for="fname">First Name</label>
+  <input class="b" type="text" id="fname" name="fname">
+</form>
+
+<pre>
+input[type=text] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+}
+</pre>
+<p>Note that we have set the box-sizing property to border-box. This makes sure that the padding and 
+  eventually borders are included in the total width and height of the elements.</p>
+<hr />
+
+<h3>Bordered Inputs</h3>
+<p>Use the border property to change the corde size and color, and use the border-radius property to 
+  add rounded corners:</p>
+<form>
+  <label for="fname">First Name</label>
+  <input class="c" type="text" id="fname" name="fname">
+</form>
+
+<pre>
+input[type=text] {
+  border: 2px solid red;
+  border-radius: 4px;
+}
+</pre>
+
+<p>If you only want a bottom border, use the border-bottom property:</p>
+<form>
+  <label for="fname">First Name</label>
+  <input class="d" type="text" id="fname" name="fname">
+</form>
+
+<pre>
+input[type=text] {
+  border: none;
+  border-bottom: 2px solid red;
+}
+</pre>
+<hr />
+
+<h3>Colored Inputs</h3>
+<p>Use the background-color property to add a background color to the input, and the color property 
+  to change the text color:</p>
+<form>
+  <label for="fname">First Name</label>
+  <input class="e" type="text" id="fname" name="fname" value="John">
+</form>
+
+<pre>
+input[type=text] {
+  background-color: #3CBC8D;
+  color: white;
+}
+</pre>
+<hr />
+
+<h3>Focused Inputs</h3>
+<p>By default, some browsers will add a blue outline around the input when it gets focus (clicked 
+  on). You can remove this behavior by adding outline: none; to the input.</p>
+<p>Use the :focus selector to do something with the input field when it gets focus:</p>
+<p>In this example, we use the :focus selector to add a background color to the text field when it 
+  gets focused (clicked on):</p>
+
+<form>
+  <label for="fname">First Name</label>
+  <input class="f" type="text" id="fname" name="fname" value="John">
+</form>
+
+<p>In this example, we use the :focus selector to add a black border color to the text field when it 
+  gets focused (clicked on):</p>
+<p>Note that we have added the CSS transition property to animate the border color (takes 0.5 seconds 
+  to change the color on focus).</p>
+
+<form>
+  <label for="fname">First Name</label>
+  <input class="g" type="text" id="fname" name="fname" value="John">
+</form>
+
+<pre>
+input[type=text]:focus {
+  background-color: lightblue;
+}
+
+input[type=text]:focus {
+  border: 3px solid #555;
+}
+</pre>
+<hr />
+
+<h3>Input with icon/image</h3>
+<p>If you want an icon inside the input, use the background-image property and position it with the 
+  background-position property. Also notice that we add a large left padding to reserve the space of 
+  the icon:</p>
+<p>Input with icon:</p>
+<form>
+  <input class="h" type="text" name="search" placeholder="Search..">
+</form>
+
+<pre>
+input[type=text] {
+  background-color: white;
+  background-image: url('searchicon.png');
+  background-position: 10px 10px;
+  background-repeat: no-repeat;
+  padding-left: 40px;
+}
+</pre>
+<hr />
+
+<h3>Animated Search Input</h3>
+<p>In this example we use the CSS transition property to animate the width of the search input when 
+  it gets focus.</p>
+<p>Animated search input:</p>
+<form>
+  <input class="i" type="text" name="search" placeholder="Search..">
+</form>
+
+<pre>
+input[type=text] {
+  -webkit-transition: width 0.4s ease-in-out;
+  transition: width 0.4s ease-in-out;
+}
+
+input[type=text]:focus {
+  width: 100%;
+}
+</pre>
+<hr />
+
+<h3>Styling Textareas</h3>
+<p><b>Tip:</b> Use the resize property to prevent textareas from being resized (disable the 
+  "grabber" in the bottom right corner):</p>
+<form>
+  <textarea class="j">Some text...</textarea>
+</form>
+
+<pre>
+textarea {
+  width: 100%;
+  height: 150px;
+  padding: 12px 20px;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  background-color: #f8f8f8;
+  resize: none;
+}
+</pre>
+<hr />
+
+<h3>Styling Select Menus</h3>
+<form>
+  <select class="k" id="country" name="country">
+    <option value="au">Australia</option>
+    <option value="ca">Canada</option>
+    <option value="usa">USA</option>
+  </select>
+</form>
+
+<pre>
+select {
+  width: 100%;
+  padding: 16px 20px;
+  border: none;
+  border-radius: 4px;
+  background-color: #f1f1f1;
+}
+</pre>
+<hr />
+
+<h3>Styling Input Buttons</h3>
+<p>Styled input buttons.</p>
+
+<input class="l" type="button" value="Button">
+<input class="l" type="reset" value="Reset">
+<input class="l" type="submit" value="Submit">
+
+<pre>
+input[type=button], input[type=submit], input[type=reset] {
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 16px 32px;
+  text-decoration: none;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+/* Tip: use width: 100% for full-width buttons */
+</pre>
+<hr />
+
+<h3>Responsive Form</h3>
+<p>Resize the browser window to see the effect. When the screen is less than 600px wide, make the 
+  two columns stack on top of each other instead of next to each other.</p>
+<div class="container">
+  <form action="/action_page.php">
+    <div class="row">
+      <div class="col-25">
+        <label for="fname">First Name</label>
+      </div>
+      <div class="col-75">
+        <input type="text" id="fname" name="firstname" placeholder="Your name..">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-25">
+        <label for="lname">Last Name</label>
+      </div>
+      <div class="col-75">
+        <input type="text" id="lname" name="lastname" placeholder="Your last name..">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-25">
+        <label for="country">Country</label>
+      </div>
+      <div class="col-75">
+        <select id="country" name="country">
+          <option value="australia">Australia</option>
+          <option value="canada">Canada</option>
+          <option value="usa">USA</option>
+        </select>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-25">
+        <label for="subject">Subject</label>
+      </div>
+      <div class="col-75">
+        <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
+      </div>
+    </div>
+    <div class="row">
+      <input type="submit" value="Submit">
+    </div>
+  </form>
+</div>
+
+<pre>
+* {
+  box-sizing: border-box;
+}
+
+input[type=text], select, textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: vertical;
+}
+
+label {
+  padding: 12px 12px 12px 0;
+  display: inline-block;
+}
+
+input[type=submit] {
+  background-color: #4CAF50;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  float: right;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+.container {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+
+.col-25 {
+  float: left;
+  width: 25%;
+  margin-top: 6px;
+}
+
+.col-75 {
+  float: left;
+  width: 75%;
+  margin-top: 6px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .col-25, .col-75, input[type=submit] {
+    width: 100%;
+    margin-top: 0;
+  }
+}
+</pre>
+
+
+</body>
+</html>
