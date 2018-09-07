@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+<meta charset="UTF-8">
+<title>CSS Border Images</title>
+
+<style>
+#borderimg1 { 
+  border: 10px solid transparent;
+  padding: 15px;
+  border-image: url(https://www.w3schools.com/Css/border.png) 30 round;
+}
+
+#borderimg2 { 
+  border: 10px solid transparent;
+  padding: 15px;
+  border-image: url(https://www.w3schools.com/Css/border.png) 30 stretch;
+}
+
+#borderimg3 {
+  border: 10px solid transparent;
+  padding: 15px;
+  border-image: url(https://www.w3schools.com/Css/border.png) 50 round;
+}
+
+#borderimg4 {
+  border: 10px solid transparent;
+  padding: 15px;
+  border-image: url(https://www.w3schools.com/Css/border.png) 20% round;
+}
+
+#borderimg5 {
+  border: 10px solid transparent;
+  padding: 15px;
+  border-image: url(https://www.w3schools.com/Css/border.png) 30% round;
+}
+</style>
+</head>
+
+<body>
+<h3>CSS Border Images</h3>
+<p>With the CSS border-image property, you can set an image to be used as the border around an 
+  element.</p>
+<hr />
+
+<h3>CSS border-image Property</h3>
+<p>The CSS border-image property allows you to specify an image to be used instead of the normal 
+  border around an element.</p>
+<p>The property has three parts:</p>
+<ol>
+  <li>The image to use as the border</li>
+  <li>Where to slice the image</li>
+  <li>Define whether the middle sections should be repeated or stretched</li>
+</ol>
+
+<p>We will use the following image (called "border.png"):</p>
+<img src="https://www.w3schools.com/Css/border.png" alt="CSS Border Image" style="width: 81px; height: 81px;" />
+
+<p>The border-image property takes the image and slices it into nine sections, like a tic-tac-toe 
+  board. It then places the corners at the corners, and the middle sections are repeated or 
+  stretched as you specify.</p>
+<p><b>Note:</b> For border-image to work, the element also needs the border property set!</p>
+<p>Here, the middle sections of the image are repeated to create the border:</p>
+<p id="borderimg1">border-image: url(border.png) 30 round;</p>
+
+<p>Here is the code:</p>
+<pre>
+#borderimg {
+  border: 10px solid transparent;
+  padding: 15px;
+  border-image: url(border.png) 30 round;
+}
+</pre>
+
+<p>Here, the middle sections of the image are stretched to create the border:</p>
+<p id="borderimg2">border-image: url(border.png) 30 stretch;</p>
+
+<p>Here is the code:</p>
+<pre>
+#borderimg {
+  border: 10px solid transparent;
+  padding: 15px;
+  border-image: url(border.png) 30 stretch;
+}
+</pre>
+<p><b>Tip:</b> The border-image property is actually a shorthand property for the 
+  border-image-source, border-image-slice, border-image-width, border-image-outset and 
+  border-image-repeat properties.</p>
+<hr />
+
+<h3>CSS border-image - Different Slice Values</h3>
+<p>Different slice values completely changes the look of the border:</p>
+<p>Example 1:</p>
+<p id="borderimg3">border-image: url(border.png) 50 round;</p>
+
+<p>Example 2:</p>
+<p id="borderimg4">border-image: url(border.png) 20% round;</p>
+
+<p>Example 3:</p>
+<p id="borderimg5">border-image: url(border.png) 30% round;</p>
+
+<p>Here is the code:</p>
+<pre>
+#borderimg1 {
+  border: 10px solid transparent;
+  padding: 15px;
+  border-image: url(border.png) 50 round;
+}
+
+#borderimg2 {
+  border: 10px solid transparent;
+  padding: 15px;
+  border-image: url(border.png) 20% round;
+}
+
+#borderimg3 {
+  border: 10px solid transparent;
+  padding: 15px;
+  border-image: url(border.png) 30% round;
+}
+</pre>
+<hr />
+
+<h3>CSS Border Image Properties</h3>
+<table>
+  <tr>
+    <th>Property</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td>border-image</td>
+    <td>A shorthand property for setting all the border-image-* properties</td>
+  </tr>
+  <tr>
+    <td>border-image-source</td>
+    <td>Specifies the path to the image to be used as a border</td>
+  </tr>
+  <tr>
+    <td>border-image-slice</td>
+    <td>Specifies how to slice the border image</td>
+  </tr>
+  <tr>
+    <td>border-image-width</td>
+    <td>Specifies the widths of the border image</td>
+  </tr>
+  <tr>
+    <td>border-image-outside</td>
+    <td>Specifies the amount by which the border image area extends beyond the border box</td>
+  </tr>
+  <tr>
+    <td>border-image-repeat</td>
+    <td>Specifies whether the border image should be repeated, rounded or stretched</td>
+  </tr>
+</table>
+<hr />
+
+<h3>Exercises</h3>
+<p><b>Exercise 1</b></p>
+<p>Give the &lt;div&gt; element an image border using the image "border.png". Slice the image at 
+  30px and repeat it.</p>
+<pre>
+div {
+  border: 10px solid transparent;
+  border-image: url("border.png") 30 round;
+}
+</pre>
+
+<p><b>Exercise 2</b></p>
+<p>Give the &lt;div&gt; element an image border using the image "border.png". Slice the image at 
+  30px and stretch it.</p>
+<pre>
+div {
+  border: 10px solid transparent;
+  border-image: url("border.png") 30 stretch;
+}
+</pre>
+
+
+</body>
+</html>

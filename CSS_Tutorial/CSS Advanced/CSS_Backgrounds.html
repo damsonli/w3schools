@@ -1,0 +1,440 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+<meta charset="UTF-8">
+<title>CSS Backgrounds</title>
+
+<style>
+#example1 {
+  background-image: url(https://www.w3schools.com/Css/img_flwr.gif), url(https://www.w3schools.com/Css/paper.gif);
+  background-position: right bottom, left top;
+  background-repeat: no-repeat, repeat;
+  padding: 15px;
+}
+
+#example2 {
+  border: 1px solid black;
+  background:url(https://www.w3schools.com/Css/img_flwr.gif);
+  background-size: 100px 80px;
+  background-repeat: no-repeat;
+  padding:15px;
+}
+
+#example3 {
+  border: 1px solid black;
+  background:url(https://www.w3schools.com/Css/img_flwr.gif);
+  background-repeat: no-repeat;
+  padding:15px;
+}
+
+.div1 {
+  border: 1px solid black;
+  height:120px;
+  width:150px;
+  background:url(https://www.w3schools.com/Css/img_flwr.gif);
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.div2 {
+  border: 1px solid black;
+  height:120px;
+  width:150px;
+  background:url(https://www.w3schools.com/Css/img_flwr.gif);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.div3 {
+  border: 1px solid black;
+  height:120px;
+  width:150px;
+  background:url(https://www.w3schools.com/Css/img_flwr.gif);
+  background-repeat: no-repeat;
+}
+
+#example4 {
+  background: url(https://www.w3schools.com/Css/img_tree.gif) left top no-repeat, 
+              url(https://www.w3schools.com/Css/img_flwr.gif) right bottom no-repeat, 
+              url(https://www.w3schools.com/Css/paper.gif) left top repeat;
+  padding: 15px;
+  background-size: 50px, 130px, auto;
+}
+
+#example5 {
+  border: 10px solid black;
+  padding: 35px;
+  background: url(https://www.w3schools.com/Css/img_flwr.gif);
+  background-repeat: no-repeat;
+}
+
+#example6 {
+  border: 10px solid black;
+  padding: 35px;
+  background: url(https://www.w3schools.com/Css/img_flwr.gif);
+  background-repeat: no-repeat;
+  background-origin: border-box;
+}
+
+#example7 {
+  border: 10px solid black;
+  padding: 35px;
+  background: url(https://www.w3schools.com/Css/img_flwr.gif);
+  background-repeat: no-repeat;
+  background-origin: content-box;
+}
+
+#example8 {
+  border: 10px dotted black;
+  padding:35px;
+  background: yellow;
+}
+
+#example9 {
+  border: 10px dotted black;
+  padding:35px;
+  background: yellow;
+  background-clip: padding-box;
+}
+
+#example10 {
+  border: 10px dotted black;
+  padding:35px;
+  background: yellow;
+  background-clip: content-box;
+}
+</style>
+</head>
+
+<body>
+<h3>CSS Multiple Backgrounds</h3>
+<p>In this chapter you will learn how to add multiple background images to one element.</p>
+<p>You will also learn about the following properties:</p>
+<ul>
+  <li>background-size</li>
+  <li>background-origin</li>
+  <li>background-clip</li>
+</ul>
+
+<p>CSS allows you to add multiple background images for an element, through the background-image 
+  property.</p>
+<p>The different background images are separated by commas, and the images are stacked on top of 
+  each other, where the first image is closest to the viewer.</p>
+<p>The following example has two background images, the first image is a flower (aligned to the 
+  bottom and right) and the second image is a paper background (aligned to the top-left corner):</p>
+<div id="example1">
+  <h1>Lorem Ipsum Dolor</h1>
+  <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod 
+    tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
+  <p>Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut 
+    aliquip ex ea commodo consequat.</p>
+</div>
+
+<pre>
+#example1 {
+  background-image: url(img_flwr.gif), url(paper.gif);
+  background-position: right bottom, left top;
+  background-repeat: no-repeat, repeat;
+}
+</pre>
+
+<p>Multiple background images can be specified using either the individual background properties 
+  (as above) or the background shorthand property.
+<p>The following example uses the background shorthand property (same result as example above):</p>
+<pre>
+#example1 {
+  background: url(img_flwr.gif) right bottom no-repeat, url(paper.gif) left top repeat;
+}
+</pre>
+<hr />
+
+<h3>CSS Background Size</h3>
+<p>The CSS background-size property allows you to specify the size of background images.</p>
+<p>The size can be specified in lengths, percentages, or by using one of the two keywords: contain 
+  or cover.</p>
+<p>The following example resizes a background image to much smaller than the original image (using 
+  pixels):</p>
+<p>Resized background-image:</p>
+<div id="example2">
+  <h2>Lorem Ipsum Dolor</h2>
+  <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod 
+    tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
+  <p>Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut 
+    aliquip ex ea commodo consequat.</p>
+</div>
+
+<p>Original size of the background-image:</p>
+<div id="example3">
+  <h2>Lorem Ipsum Dolor</h2>
+  <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod 
+    tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
+  <p>Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut 
+    aliquip ex ea commodo consequat.</p>
+</div>
+
+<p>Here is the code:</p>
+<pre>
+#div1 {
+  background: url(img_flower.jpg);
+  background-size: 100px 80px;
+  background-repeat: no-repeat;
+}
+</pre>
+
+<p>The two other possible values for background-size are contain and cover.</p>
+<p>The contain keyword scales the background image to be as large as possible (but both its width 
+  and its height must fit inside the content area). As such, depending on the proportions of the 
+  background image and the background positioning area, there may be some areas of the background 
+  which are not covered by the background image.</p>
+<p>The cover keyword scales the background image so that the content area is completely covered by 
+  the background image (both its width and height are equal to or exceed the content area). As such, 
+  some parts of the background image may not be visible in the background positioning area.</p>
+<p>The following example illustrates the use of contain and cover:</p>
+<h2>background-size: contain:</h2>
+<div class="div1">
+  <p>Lorem ipsum dolor sit amet.</p>
+</div>
+
+<h2>background-size: cover:</h2>
+<div class="div2">
+  <p>Lorem ipsum dolor sit amet.</p>
+</div>
+
+<h2>No background-size defined:</h2>
+<div class="div3">
+  <p>Lorem ipsum dolor sit amet.</p>
+</div>
+
+<h2>Original image:</h2>
+<img src="https://www.w3schools.com/Css/img_flwr.gif" alt="Flowers" width="224" height="162">
+
+<pre>
+#div1 {
+  background: url(img_flower.jpg);
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+#div2 {
+  background: url(img_flower.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+</pre>
+<hr />
+
+<h3>Define Sizes of Multiple Background Images</h3>
+<p>The background-size property also accepts multiple values for background size (using a 
+  comma-separated list), when working with multiple backgrounds.</p>
+<p>The following example has three background images specified, with different background-size value 
+  for each image:</p>
+<div id="example4">
+  <h1>Lorem Ipsum Dolor</h1>
+  <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod 
+    tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
+  <p>Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut 
+    aliquip ex ea commodo consequat.</p>
+</div>
+
+<pre>
+#example1 {
+  background-image: url(img_tree.gif) left top no-repeat, url(img_flwr.gif) right bottom no-repeat, 
+  url(paper.gif) left top repeat;
+  background-size: 50px, 130px, auto;
+}
+</pre>
+<hr />
+
+<h3>Full Size Background Image</h3>
+<p>Now we want to have a background image on a website that covers the entire browser window at all 
+  times.</p>
+<p>The requirements are as follows:</p>
+<ul>
+  <li>Fill the entire page with the image (no white space)</li>
+  <li>Scale image as needed</li>
+  <li>Center image on page</li>
+  <li>Do not cause scrollbars</li>
+</ul>
+<p>The following example shows how to do it; Use the html element (the html element is always at 
+  least the height of the browser window). Then set a fixed and centered background on it. Then 
+  adjust its size with the background-size property:</p>
+
+<pre>
+html {
+  background: url(img_flower.jpg) no-repeat center fixed;
+  background-size: cover;
+}
+</pre>
+<hr />
+
+<h3>CSS background-origin Property</h3>
+<p>The CSS background-origin property specifies where the background image is positioned.</p>
+<p>The property takes three different values:</p>
+<ul>
+  <li>border-box - the background image starts from the upper left corner of the border</li>
+  <li>padding-box - (default) the background image starts from the upper left corner of the padding edge</li>
+  <li>content-box - the background image starts from the upper left corner of the content</li>
+</ul>
+<p>The following example illustrates the background-origin property:</p>
+<p>No background-origin (padding-box is default):</p>
+<div id="example5">
+  <h2>Lorem Ipsum Dolor</h2>
+  <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod 
+    tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
+  <p>Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut 
+    aliquip ex ea commodo consequat.</p>
+</div>
+
+<p>background-origin: border-box:</p>
+<div id="example6">
+  <h2>Lorem Ipsum Dolor</h2>
+  <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod 
+    tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
+  <p>Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut 
+    aliquip ex ea commodo consequat.</p>
+</div>
+
+<p>background-origin: content-box:</p>
+<div id="example7">
+  <h2>Lorem Ipsum Dolor</h2>
+  <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod 
+    tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
+  <p>Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut 
+    aliquip ex ea commodo consequat.</p>
+</div>
+
+<pre>
+#example1 {
+  border: 10px solid black;
+  padding: 35px;
+  background: url(img_flwr.gif);
+  background-repeat: no-repeat;
+  background-origin: content-box;
+}
+</pre>
+<hr />
+
+<h3>CSS background-clip Property</h3>
+<p>The CSS background-clip property specifies the painting area of the background.</p>
+<p>The property takes three different values:</p>
+<ul>
+  <li>border-box - (default) the background is painted to the outside edge of the border</li>
+  <li>padding-box - the background is painted to the outside edge of the padding</li>
+  <li>content-box - the background is painted within the content box</li>
+</ul>
+<p>The following example illustrates the background-clip property:</p>
+<p>No background-clip (border-box is default):</p>
+<div id="example8">
+  <h2>Lorem Ipsum Dolor</h2>
+  <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod 
+    tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
+</div>
+
+<p>background-clip: padding-box:</p>
+<div id="example9">
+  <h2>Lorem Ipsum Dolor</h2>
+  <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod 
+    tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
+</div>
+
+<p>background-clip: content-box:</p>
+<div id="example10">
+  <h2>Lorem Ipsum Dolor</h2>
+  <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod 
+    tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
+</div>
+
+<pre>
+#example1 {
+  border: 10px dotted black;
+  padding: 35px;
+  background: yellow;
+  background-clip: content-box;
+}
+</pre>
+<hr />
+
+<h3>CSS Advanced Background Properties</h3>
+<table>
+  <tr>
+    <th>Property</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td>background</td>
+    <td>A shorthand property for setting all the background properties in one declaration</td>
+  </tr>
+  <tr>
+    <td>background-clip</td>
+    <td>Specifies the painting area of the background</td>
+  </tr>
+  <tr>
+    <td>background-image</td>
+    <td>Specifies one or more background images for an element</td>
+  </tr>
+  <tr>
+    <td>background-origin</td>
+    <td>Specifies where the background image(s) is/are positioned</td>
+  </tr>
+  <tr>
+    <td>background-size</td>
+    <td>Specifies the size of the background image(s)</td>
+  </tr>
+</table>
+<hr />
+
+<h3>Exercises</h3>
+<p><b>Exercise 1</b></p>
+<p>Add a second background image ("img_flwr.gif") to the &lt;body&gt; element. Make sure that 
+  "img_flwr.gif" is displayed on top of the current background image.</p>
+<pre>
+body {
+  background-image: url(img_flwr.gif), url(paper.gif);
+}
+</pre>
+
+<p><b>Exercise 2</b></p>
+<p>Change the size of the background image to: width 100px, height 80px.</p>
+<pre>
+body {
+  background:url(img_flwr.gif);
+  background-repeat: no-repeat;
+  background-size: 100px 80px;
+}
+</pre>
+
+<p><b>Exercise 3</b></p>
+<p>Change the size of the background image so it always fits the entire page.</p>
+<pre>
+html { 
+  background: url(img_flower.jpg) no-repeat center center fixed;
+  background-size: cover;
+}
+</pre>
+
+<p><b>Exercise 4</b></p>
+<p>Specify that the background image position should start from the upper left corner of the 
+  content-box.</p>
+<pre>
+div { 
+  border: 10px solid black;
+  padding: 35px;
+  background: url(img_flwr.gif);
+  background-repeat: no-repeat;
+  background-origin: content-box;
+}
+</pre>
+
+<p><b>Exercise 5</b></p>
+<p>Specify that the "painting area" of the background should be to the outside edge of the padding.</p>
+<pre>
+div { 
+  border: 10px dotted black;
+  padding: 35px;
+  background: lightblue;
+  background-clip: padding-box;
+}
+</pre>
+
+
+</body>
+</html>

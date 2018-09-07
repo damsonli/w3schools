@@ -1,0 +1,354 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+<meta charset="UTF-8">
+<title>CSS Shadows</title>
+<style>
+#shadow1 {
+    text-shadow: 2px 2px;
+}
+
+#shadow2 {
+    text-shadow: 2px 2px red;
+}
+
+#shadow3 {
+    text-shadow: 2px 2px 5px red;
+}
+
+#shadow4 {
+    color: white;
+    text-shadow: 2px 2px 4px #000000;
+}
+
+#shadow5 {
+    text-shadow: 0 0 3px #FF0000;
+}
+
+#shadow6 {
+    text-shadow: 0 0 3px #FF0000, 0 0 5px #0000FF;
+}
+
+#shadow7 {
+    color: white;
+    text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
+}
+
+#shadow8 {
+    color: yellow;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+
+#div1 {
+    width: 300px;
+    height: 100px;
+    padding: 15px;
+    background-color: yellow;
+    box-shadow: 10px 10px;
+}
+
+#div2 {
+    width: 300px;
+    height: 100px;
+    padding: 15px;
+    background-color: yellow;
+    box-shadow: 10px 10px grey;
+}
+
+#div3 {
+    width: 300px;
+    height: 100px;
+    padding: 15px;
+    background-color: yellow;
+    box-shadow: 10px 10px 5px grey;
+}
+
+#boxshadow {
+    position: relative;
+    -moz-box-shadow: 1px 2px 4px rgba(0, 0, 0,0.5);
+    -webkit-box-shadow: 1px 2px 4px rgba(0, 0, 0, .5);
+    box-shadow: 1px 2px 4px rgba(0, 0, 0, .5);
+    padding: 10px;
+    background: white;
+}
+
+/* Make the image fit the box */
+#boxshadow img {
+    width: 100%;
+    border: 1px solid #8a4419;
+    border-style: inset;
+}
+
+#boxshadow::after {
+    content: '';
+    position: absolute;
+    z-index: -1; /* hide shadow behind image */
+    -webkit-box-shadow: 0 15px 20px rgba(0, 0, 0, 0.3);
+    -moz-box-shadow: 0 15px 20px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 15px 20px rgba(0, 0, 0, 0.3);                
+    width: 70%; 
+    left: 15%; /* one half of the remaining 30% */
+    height: 100px;
+    bottom: 0;
+}
+
+div.card1 {
+    width: 250px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    text-align: center;
+}
+
+div.header1 {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px;
+    font-size: 40px;
+}
+
+div.container1 {
+    padding: 10px;
+}
+
+div.polaroid2 {
+  width: 250px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  text-align: center;
+}
+
+div.container2 {
+  padding: 10px;
+}
+</style>
+</head>
+
+<body>
+<h3>CSS Shadow Effects</h3>
+<p>With CSS you can add shadow to text and to elements.</p>
+<p>In this chapter you will learn about the following properties:</p>
+<ul>
+    <li>text-shadow</li>
+    <li>box-shadow</li>
+</ul>
+<hr />
+
+<h3>CSS Text Shadow</h3>
+<p>The CSS text-shadow property applies shadow to text.</p>
+<p>In its simplest use, you only specify the horizontal shadow (2px) and the vertical shadow (2px)</p>
+<pre>
+h1 {
+    text-shadow: 2px 2px;
+}
+</pre>
+<p id="shadow1">Text-shadow effect!</p>
+
+<p>Next, add a color to the shadow:</p>
+<pre>
+h1 {
+    text-shadow: 2px 2px red;
+}
+</pre>
+<p id="shadow2">Text-shadow effect!</p>
+
+<p>Then, add a blur effect to the shadow:</p>
+<pre>
+h1 {
+    text-shadow: 2px 2px 5px red;
+}
+</pre>
+<p id="shadow3">Text-shadow effect!</p>
+
+<p>The following example shows a white text with black shadow:</p>
+<pre>
+h1 {
+    color: white;
+    text-shadow: 2px 2px 4px #000000;
+}
+</pre>
+<p id="shadow4">Text-shadow effect!</p>
+
+<p>The following example shows a red neon glow shadow:</p>
+<pre>
+h1 {
+    text-shadow: 0 0 3px #FF0000;
+}
+</pre>
+<p id="shadow5">Text-shadow effect!</p>
+<hr />
+
+<h3>Multiple Shadows</h3>
+<p>To add more than one shadow to the text, you can add a comma-separated list of shadows.</p>
+<p>The following example shows a red and blue neon glow shadow:</p>
+<pre>
+h1 {
+    text-shadow: 0 0 3px #FF0000, 0 0 5px #0000FF;
+}
+</pre>
+<p id="shadow6">Text-shadow effect!</p>
+
+<p>The following example shows a white text with black, blue, and darkblue shadow:</p>
+<pre>
+h1 {
+    color: white;
+    text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
+}
+</pre>
+<p id="shadow7">Text-shadow effect!</p>
+
+<p>You can also use the text-shadow property to create a plain border around some text (without shadows):</p>
+<pre>
+h1 {
+    color: yellow;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+</pre>
+<p id="shadow8">Text-shadow effect!</p>
+<hr />
+
+<h3>CSS box-shadow Property</h3>
+<p>The CSS box-shadow property applies shadow to elements.</p>
+<p>In its simplest use, you only specify the horizontal shadow and the vertical shadow:</p>
+<pre>
+div {
+    box-shadow: 10px 10px;
+}
+</pre>
+<div id="div1">This is a div element with a box-shadow</div>
+
+<p>Next, add a color to the shadow:</p>
+<pre>
+div {
+    box-shadow: 10px 10px grey;
+}
+</pre>
+<div id="div2">This is a div element with a box-shadow</div>
+
+<p>Next, add a blur effect to the shadow:</p>
+<pre>
+div {
+    box-shadow: 10px 10px 5px grey;
+}
+</pre>
+<div id="div3">This is a div element with a box-shadow</div>
+
+<p>You can also add shadows to the ::before and ::after pseudo-elements, to create an interesting effect:</p>
+<pre>
+#boxshadow {
+    position: relative;
+    box-shadow: 1px 2px 4px rgba(0, 0, 0, .5);
+    padding: 10px;
+    background: white;
+}
+
+#boxshadow img {
+    width: 100%;
+    border: 1px solid #8a4419;
+    border-style: inset;
+}
+
+#boxshadow::after {
+    content: '';
+    position: absolute;
+    z-index: -1; /* hide shadow behind image */
+    box-shadow: 0 15px 20px rgba(0, 0, 0, 0.3);
+    width: 70%;
+    left: 15%; /* one half of the remaining 30% */
+    height: 100px;
+    bottom: 0;
+}
+</pre>
+<div id="boxshadow">
+  <img src="https://www.w3schools.com/css/rock600x400.jpg" alt="Norway" width="600" height="400">
+</div>
+<hr />
+
+<h3>Cards</h3>
+<p>An example of using the box-shadow property to create paper-like cards:</p>
+<pre>
+div.card {
+    width: 250px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    text-align: center;
+}
+</pre>
+<p>Text Card</p>
+<div class="card1">
+  <div class="header1">
+    <h1>1</h1>
+  </div>
+
+  <div class="container1">
+    <p>January 1, 2016</p>
+  </div>
+</div>
+
+<p>Image Card</p>
+<div class="polaroid2">
+  <img src="https://www.w3schools.com/css/rock600x400.jpg" alt="Norway" style="width:100%">
+  <div class="container2">
+    <p>Hardanger, Norway</p>
+  </div>
+</div>
+<hr />
+
+<h3>CSS Shadow Properties</h3>
+<p>The following table lists the CSS shadow properties:</p>
+<table>
+    <tr>
+        <th>Property</th>
+        <th>Description</th>
+    </tr>
+    <tr>
+        <td>box-shadow</td>
+        <td>Adds one or more shadows to an element</td>
+    </tr>
+    <tr>
+        <td>text-shadow</td>
+        <td>Adds one or more shadows to a text</td>
+    </tr>
+</table>
+<hr />
+
+<h3>Exercises</h3>
+<p><b>Exercise 1</b></p>
+<p>Set a "2px" horizontal, and "2px" vertical, text shadow for the h1 element.</p>
+<pre>
+h1 {
+	text-shadow: 2px 2px;
+}
+</pre>
+
+<p><b>Exercise 2</b></p>
+<p>Change the color of the text shadow to "green", and set a "5px" blur radius.</p>
+<pre>
+h1 {
+    text-shadow: 2px 2px 5px green;
+}
+</pre>
+
+<p><b>Exercise 3</b></p>
+<p>Add a new shadow (do not remove the current one) to the h1 element with: no horizontal or vertical 
+    shadow, 10px blur, and a red color.</p>
+<pre>
+h1 {
+    text-shadow: 2px 2px 5px green, 0px 0px 10px red;
+}
+</pre>
+
+<p><b>Exercise 4</b></p>
+<p>Set a "10px" horizontal, and "10px" vertical, box shadow for the div element.</p>
+<pre>
+div {
+	box-shadow: 10px 10px;
+}
+</pre>
+
+<p><b>Exercise 5</b></p>
+<p>Change the color of the box shadow to "grey", and set a "5px" blur.</p>
+<pre>
+div {
+    box-shadow: 10px 10px 5px grey;
+}
+</pre>
+
+</body>
+</html>
